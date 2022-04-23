@@ -10,7 +10,8 @@ C'est juste Prototype mais la c'est un jeu littéralement
         |- Rapport avec (ex: Le Joueur)
            |- Joueur.stl
    |- C++ Classes
-      |- ControleDuJoueur.cpp
+      |- RPG
+         |- ControleDuJoueur.cpp
 ```
 
 ### 2. Metiers prevu en prioriter
