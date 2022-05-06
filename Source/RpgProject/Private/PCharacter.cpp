@@ -30,23 +30,51 @@ void APCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	// Bind keybind for MoveZ
+	// Bind axis for MoveZ
 	PlayerInputComponent->BindAxis(TEXT("MoveZ"), this, &APCharacter::MoveZ);
 
-	// Bind keybind for MoveX
-	PlayerInputComponent->BindAxis(TEXT("MoveX"), this, &APCharacter::AddControllerYawInput);
+	// Bind axis for MoveX
+	PlayerInputComponent->BindAxis(TEXT("MoveX"), this, &APCharacter::MoveX);
+
+	// Bind key for sprinting
+	PlayerInputComponent->BindAction(TEXT("Sprint"), IE_Pressed, this, &APCharacter::SprintStart);
+	PlayerInputComponent->BindAction(TEXT("Sprint"), IE_Released, this, &APCharacter::SprintStop);
+
+	// Bind key for inventory
+
 
 }
 
 // Move Forward or Backward
 void APCharacter::MoveZ(float axis)
 {
+	if (isBusy)
+		return;
+	if (!isSprinting)
+		axis *= 0.3;
 	AddMovementInput(GetActorForwardVector() * axis);
 }
 
 // Move to the left or the right
 void APCharacter::MoveX(float axis)
 {
+	if (isBusy)
+		return;
+	if (!isSprinting)
+		axis *= 0.3;
 	AddMovementInput(GetActorRightVector() * axis);
 }
 
+// Start sprint mode 
+void APCharacter::SprintStart()
+{
+	if (isSprinting != true)
+		isSprinting = true;
+}
+
+// Stop sprint mode
+void APCharacter::SprintStop()
+{
+	if (isSprinting != false)
+		isSprinting = false;
+}

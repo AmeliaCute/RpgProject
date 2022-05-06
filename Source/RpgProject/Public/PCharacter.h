@@ -27,9 +27,25 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 protected:
-	// Move Forward or Backward
+	// Boolean to know if player is sprinting
+	bool isSprinting = false;
+	
+	// Boolean to know if player do something where normally he can't move
+	bool isBusy = false;
+
+	// Start sprint mode
+	void SprintStart();
+
+	// Stop sprint
+	void SprintStop();
+
+	// Move forward or backward
 	void MoveZ(float axis);
 
 	// Move to the left or the right
 	void MoveX(float axis);
+
+	void OpenInventory();
+
+	void CloseInventory();
 };
