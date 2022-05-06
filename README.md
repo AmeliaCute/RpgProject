@@ -1,5 +1,6 @@
 # Rpg
-C'est juste Prototype mais la c'est un jeu littéralement
+- C'est juste Prototype mais la c'est un jeu littéralement
+- Version original : https://github.com/MignonPetitXelow/Prototype/
 
 ### 1. Architecture des fichiers
 
@@ -8,10 +9,13 @@ C'est juste Prototype mais la c'est un jeu littéralement
    |- Content
       |- Type D'asset (ex: Modeles)
         |- Rapport avec (ex: Le Joueur)
-           |- Joueur.stl
+           @- Joueur.stl
    |- C++ Classes
       |- RPG
-         |- ControleDuJoueur.cpp
+         |- Public
+            @- PCharacter.cpp
+         |- Private
+            @- PCharacter.h
 ```
 
 ### 2. Metiers prevu en prioriter
