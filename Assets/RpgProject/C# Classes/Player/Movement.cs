@@ -2,14 +2,15 @@
 
 public class Movement : MonoBehaviour
 {
-    public CharacterController Controller;
-    public RectTransform EnduranceBar;
 
-    public float WalkingSpeed = 5f;
-    public float SprintingSpeed = 7f;
+    [SerializeField] private CharacterController Controller;
+    [SerializeField] private RectTransform EnduranceBar;
 
-    private float MaxEndurance = 500f;
-    public float ActualEndurance;
+    [SerializeField] private float WalkingSpeed = 5f;
+    [SerializeField] private float SprintingSpeed = 7f;
+
+    [SerializeField] private float MaxEndurance = 500f;
+    [SerializeField] private float ActualEndurance;
 
     private bool isSprinting = false;
     private float TargetAngleSmoothTime = 0.1f;
@@ -21,7 +22,6 @@ public class Movement : MonoBehaviour
         EnduranceBar.sizeDelta = new Vector2(ActualEndurance/2, 14f);
         EnduranceBar.transform.position = new Vector3(0f, 18, 0);
     }
-
     void Update()
     {
         //Sprinting
