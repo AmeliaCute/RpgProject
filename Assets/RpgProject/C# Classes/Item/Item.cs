@@ -9,4 +9,13 @@ public class Item : ScriptableObject
     public int price = 0;
     public GameObject itemModel;
     public Sprite itemIcon;
+
+    public enum rarity
+    {
+        Common,
+        Uncommon,
+        Rare,
+        Epic,
+        Legendary
+    }
 }

@@ -1,28 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-// A simple entity ai
-public class BadHumanAI : MonoBehaviour
+public class BadHumanAI : enemy
 {
-    private float distance;
-
-    private float followRange = 6;
-    private float attackRange = 1.7f;
-
-    private float attackCooldown = 1;
-    private float attackTime;
-
-    private float DamageGiven = 16;
-
     public Transform target;
-    public NavMeshAgent agent;
+    public NavMeshAgent agent;  
 
-    private void Start()
+    public BadHumanAI()
     {
-        attackTime = Time.time;
+        name = "BadHuman";
+        level = 1;
+        maxHealth = 100;
+        maxEndurance = 100;
+        attackCooldown = 1;
+        DamageGiven = 16;
     }
 
-    void Update()
+    void Event()
     {
         target = GameObject.Find("Player").transform;
         distance = Vector3.Distance(target.position, transform.position);
