@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-//A simple bad entity ai
+// A simple entity ai
 public class BadHumanAI : MonoBehaviour
 {
     private float distance;
@@ -25,7 +25,6 @@ public class BadHumanAI : MonoBehaviour
     void Update()
     {
         target = GameObject.Find("Player").transform;
-
         distance = Vector3.Distance(target.position, transform.position);
 
         if(distance > followRange)
@@ -37,9 +36,7 @@ public class BadHumanAI : MonoBehaviour
     }
 
     void Idle()
-    {
-        return;
-    }
+    {}
 
     void Follow()
     {
@@ -50,7 +47,7 @@ public class BadHumanAI : MonoBehaviour
     {
         if(Time.time > attackTime)
         {
-            target.GetComponent<Player>().takeDamage(DamageGiven);
+            target.GetComponent<Player>().damage(DamageGiven);
             attackTime = Time.time + attackCooldown;
         }
     }

@@ -14,10 +14,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float SprintingSpeed = 7f;
 
     [SerializeField] private float MaxEndurance = 100f;
-    [SerializeField] private float CurrentEndurance;
+    private float CurrentEndurance;
 
     [SerializeField] private float MaxHealth = 100f;
-    [SerializeField] private float CurrentHealth;
+    private float CurrentHealth;
 
     private bool isAlive = true;
     private bool isBusy = false;
@@ -36,19 +36,14 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
-        // Debug
-        debugFunction();
-
         // Gravity
         isFlying();
 
         // Hud
         updateHud();
 
-
         if (!isAlive) { dead(); return; } //TODO Faire une animation sur l'ecran lorsque que le joueur meurt
         if (isBusy) return; 
-
 
         // Sprinting
         updateSprint();
@@ -67,7 +62,7 @@ public class Player : MonoBehaviour
                 isSprinting = false;
     }
 
-    public void takeDamage(float damage)
+    public void damage(float damage)
     {
         CurrentHealth = CurrentHealth - damage; //TODO Prendre en compte les states des items
         if (CurrentHealth <= 0)
@@ -80,7 +75,7 @@ public class Player : MonoBehaviour
     private void dead()
     {
         Debug.Log("Player is dead");
-        //... > line 45
+        // ... > line 45
     }
 
     private void isFlying()
@@ -131,11 +126,33 @@ public class Player : MonoBehaviour
         EnduranceBar.fillAmount = EndurancePerc;
     }
 
-    private void debugFunction()
+    public void restoreHealth()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            takeDamage(10);
-        }
+        CurrentHealth = MaxHealth;
+    }
+
+    public void restoreEndurance()
+    {
+        CurrentEndurance = MaxEndurance;
+    }
+
+    public float getHealth()
+    {
+        return CurrentHealth;
+    }
+
+    public float getEndurance()
+    {
+        return CurrentEndurance;
+    }
+
+    public bool _isAlive()
+    {
+        return isAlive;
+    }
+
+    public bool _isBusy()
+    {
+        return isBusy;
     }
 }
