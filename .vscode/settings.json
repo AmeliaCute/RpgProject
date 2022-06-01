@@ -1,0 +1,22 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/**.asset": true,
+        "**/**.cs.meta": true,
+        "**/**.csproj": true,
+        "**/**.meta": true,
+        "Assets/Scripts": true,
+        "Assets/HDRPDefaultResources": true,
+        "Assets/Settings": true,
+        "Library": true,
+        "obj": true,
+        "Packages": true,
+        "ProjectSettings": true
+    },
+    "explorerExclude.backup": null
+}

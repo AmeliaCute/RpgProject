@@ -1018,9 +1018,7 @@ MonoBehaviour:
   WalkingSpeed: 5
   SprintingSpeed: 7
   MaxEndurance: 100
-  CurrentEndurance: 0
   MaxHealth: 100
-  CurrentHealth: 0
 --- !u!111 &804723829
 Animation:
   m_ObjectHideFlags: 0
@@ -2183,8 +2181,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1729886051}
   - component: {fileID: 1729886053}
-  - component: {fileID: 1729886052}
   - component: {fileID: 1729886054}
+  - component: {fileID: 1729886052}
   m_Layer: 0
   m_Name: TestDamageEntity
   m_TagString: Untagged
@@ -2216,10 +2214,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1729886050}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 003c7b67825e8274ba35b7c6666e54dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 1fe1eff10f1e90143b5a41be262bf370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 804723826}
+  _name: BadHuman
+  level: 1
+  health: 100
   agent: {fileID: 1729886053}
 --- !u!195 &1729886053
 NavMeshAgent:

@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.AI;
 
+<<<<<<< Updated upstream:Assets/RpgProject/C# Classes/Entity/BadHumanAI.cs
 // A simple entity ai
 public class BadHumanAI : MonoBehaviour
 {
@@ -23,8 +24,25 @@ public class BadHumanAI : MonoBehaviour
     }
 
     void Update()
+=======
+class BadHuman : enemy
+{
+    private float distance;
+    private float followRange = 6;
+    private float attackRange = 1.7f;
+
+    private Transform target;
+    public NavMeshAgent agent;
+
+    public BadHuman(): base("BadHuman", 1, 100f, 1, 30) {}
+
+    public override void init() {}
+
+    public override void update()
+>>>>>>> Stashed changes:Assets/RpgProject/C# Classes/Entity/BadHuman.cs
     {
         target = GameObject.Find("Player").transform;
+
         distance = Vector3.Distance(target.position, transform.position);
 
         if(distance > followRange)
@@ -32,23 +50,25 @@ public class BadHumanAI : MonoBehaviour
         if (distance < followRange && distance > attackRange)
             Follow();
         if (distance < attackRange)
-            Attack();
+            attack();
+
     }
 
-    void Idle()
-    {}
+    void Idle() {}
 
-    void Follow()
-    {
-        agent.destination = target.position;
-    }
+    void Follow() { agent.destination = target.position; }
 
-    void Attack()
+    void attack()
     {
         if(Time.time > attackTime)
         {
             target.GetComponent<Player>().damage(DamageGiven);
             attackTime = Time.time + attackCooldown;
         }
+    }
+
+    public override void die()
+    {
+        Destroy(gameObject);
     }
 }

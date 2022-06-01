@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
         // Hud
         updateHud();
 
-        if (!isAlive) { dead(); return; } //TODO Faire une animation sur l'ecran lorsque que le joueur meurt
+        if (!isAlive) return; //TODO Faire une animation sur l'ecran lorsque que le joueur meurt
         if (isBusy) return; 
 
         // Sprinting
@@ -68,6 +68,7 @@ public class Player : MonoBehaviour
         if (CurrentHealth <= 0)
         {
             CurrentHealth = 0;
+            dead();
             isAlive = false;
         }
     }
@@ -75,7 +76,8 @@ public class Player : MonoBehaviour
     private void dead()
     {
         Debug.Log("Player is dead");
-        // ... > line 45
+        Destroy(gameObject);
+        SceneManager.LoadScene(0);
     }
 
     private void isFlying()
