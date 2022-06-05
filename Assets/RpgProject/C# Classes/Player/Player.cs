@@ -87,23 +87,30 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void attack()
+    private void interact()
     {
-        if(Time.time > CurrentCooldown)
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.TransformDirection(Vector3.right), out hit, attackRange))
         {
-            RaycastHit hit;
-            
-            if(Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.TransformDirection(Vector3.right), out hit, attackRange))
+            Debug.DrawLine(transform.position + Vector3.up * 0.25f, hit.point, Color.red);
+            Debug.Log("Entity name: " + hit.transform.name);
+
+            string tag = hit.transform.tag;
+
+            switch (tag)
             {
-                Debug.DrawLine(transform.position + Vector3.up * 0.25f, hit.point, Color.red);
-                Debug.Log("Entity name: " + hit.transform.name);
-                if(hit.transform.tag.Equals("Enemy"))
-                {
-                    hit.transform.GetComponent<enemy>().takeDamage(DamageGiven);
-                }
+                case "Enemy":
+                    if (Time.time > CurrentCooldown)
+                    {
+                        hit.transform.GetComponent<enemy>().takeDamage(DamageGiven);
+                        CurrentCooldown = Time.time + attackCooldown;
+                    }
+                    break;
+                    //case "Chest":
+                    //case "Npc":
             }
 
-            CurrentCooldown = Time.time + attackCooldown;
         }
     }
     
@@ -164,7 +171,7 @@ public class Player : MonoBehaviour
     private void updateInput()
     {
         if (Input.GetButtonDown("Fire1"))
-            attack();
+            interact();
     }
 
     private void updateStats()
