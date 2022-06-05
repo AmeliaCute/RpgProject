@@ -11,6 +11,6 @@ public class Armor : ForgedItem
         Feet,
     }
 
-    public int MagiqueResistance = 0;
-    public int PhysiqueResistance = 0;
+    public float MagiqueResistance = 0;
+    public float PhysiqueResistance = 0;
 }

@@ -14,4 +14,7 @@ public class ForgedItem : Item
 
     public int Durability = 1000; 
     public Quality quality = Quality.B;
+
+    public int getDurability() { return Durability; }
+    public void DamageItem(int damage) { Durability -= damage; }
 }

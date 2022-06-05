@@ -17,7 +17,8 @@ MonoBehaviour:
   price: 0
   itemModel: {fileID: 0}
   itemIcon: {fileID: 0}
+  Durability: 1000
   quality: 2
-  Damage: 157
-  reloadTime: 250
-  durability: 1250
+  Damage: 70
+  reloadTime: 0.3
+  attackRange: 1.9

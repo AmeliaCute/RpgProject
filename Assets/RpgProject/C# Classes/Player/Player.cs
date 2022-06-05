@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-
     [SerializeField] private CharacterController Controller;
     [SerializeField] private Image EnduranceBar;
     [SerializeField] private Image HealthBar;
     [SerializeField] private Animation CharacterAnimation;
+    private InventorySlot inventory;
 
     [SerializeField] private float WalkingSpeed = 5f;
     [SerializeField] private float SprintingSpeed = 7f;
@@ -19,6 +19,11 @@ public class Player : MonoBehaviour
     [SerializeField] private float MaxHealth = 100f;
     private float CurrentHealth;
 
+    [SerializeField] private float attackCooldown = 1f;
+    private float CurrentCooldown;
+    private float attackRange = 100f;
+    private float DamageGiven = 5f;
+
     private bool isAlive = true;
     private bool isBusy = false;
 
@@ -28,8 +33,11 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        inventory = GetComponent<InventorySlot>();
+
         CurrentEndurance = MaxEndurance;
         CurrentHealth = MaxHealth;
+        CurrentCooldown = Time.time;
 
         EnduranceBar.transform.position = new Vector3(100f, 18, 0);
         HealthBar.transform.position = new Vector3(100f, 34, 0);
@@ -50,6 +58,12 @@ public class Player : MonoBehaviour
 
         // Move
         updateMovement();
+
+        // Other input like attack input
+        updateInput();
+
+        // Player stats 
+        updateStats();
     }
 
     private void updateSprint()
@@ -72,12 +86,31 @@ public class Player : MonoBehaviour
             isAlive = false;
         }
     }
+
+    private void attack()
+    {
+        if(Time.time > CurrentCooldown)
+        {
+            RaycastHit hit;
+            
+            if(Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.TransformDirection(Vector3.right), out hit, attackRange))
+            {
+                Debug.DrawLine(transform.position + Vector3.up * 0.25f, hit.point, Color.red);
+                Debug.Log("Entity name: " + hit.transform.name);
+                if(hit.transform.tag.Equals("Enemy"))
+                {
+                    hit.transform.GetComponent<enemy>().takeDamage(DamageGiven);
+                }
+            }
+
+            CurrentCooldown = Time.time + attackCooldown;
+        }
+    }
     
     private void dead()
     {
         Debug.Log("Player is dead");
-        Destroy(gameObject);
-        SceneManager.LoadScene(0);
+        CharacterAnimation.Play("Die");
     }
 
     private void isFlying()
@@ -126,6 +159,28 @@ public class Player : MonoBehaviour
 
         HealthBar.fillAmount = HealthPerc;
         EnduranceBar.fillAmount = EndurancePerc;
+    }
+
+    private void updateInput()
+    {
+        if (Input.GetButtonDown("Fire1"))
+            attack();
+    }
+
+    private void updateStats()
+    {
+        if (inventory.getWeapon() != null)
+        {
+            DamageGiven = inventory.getWeapon().Damage;
+            attackRange = inventory.getWeapon().attackRange;
+            attackCooldown = inventory.getWeapon().reloadTime;
+        }
+        else
+        {
+           attackCooldown = 1f;
+           attackRange = 1.8f;
+           DamageGiven = 5f;
+}
     }
 
     public void restoreHealth()

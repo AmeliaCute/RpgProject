@@ -1,4 +1,3 @@
-using System.Threading;
 using UnityEngine;
 
 abstract class enemy : MonoBehaviour
@@ -12,17 +11,15 @@ abstract class enemy : MonoBehaviour
     public float attackCooldown;
     public float attackTime; 
     public float DamageGiven;
-
-    /**
-      * <summary>
-      * Constructor of the enemy class
-      * </summary>
-      * <param name="name">Name of the enemy</param>
-      * <param name="level">Level of the enemy</param>
-      * <param name="health">Health of the enemy</param>
-      * <param name="attackCooldown">Time between each attack</param>
-      * <param name="damageGiven">Damage given by the enemy</param>
-      */
+    
+    /// <summary>
+    /// Constructor of the enemy class
+    /// </summary>
+    /// <param name="name">Name of the enemy</param>
+    /// <param name="level">Level of the enemy</param>
+    /// <param name="health">Health of the enemy</param>
+    /// <param name="attackCooldown">Time between each attack</param>
+    /// <param name="damageGiven">Damage given by the enemy</param>
     public enemy(string _name, int level, float health, float attackCooldown, float DamageGiven)
     {
         this._name = _name;
