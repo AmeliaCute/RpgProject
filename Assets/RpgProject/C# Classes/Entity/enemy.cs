@@ -36,10 +36,15 @@ public class enemy : MonoBehaviour
 
         attackTime = Time.time;
 
+<<<<<<< Updated upstream
         Init();
     }
 
     void Update() { Event;}
+=======
+    public abstract void init();
+    public abstract void die();
+>>>>>>> Stashed changes
 
     public void Init() { }
     public void Event() { }

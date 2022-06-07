@@ -71,6 +71,38 @@ public class Player : MonoBehaviour
             isAlive = false;
         }
     }
+<<<<<<< Updated upstream
+=======
+
+    private void interact()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.TransformDirection(Vector3.right), out hit, attackRange)) //<<< Change the range system 
+        {
+            Debug.DrawLine(transform.position + Vector3.up * 0.25f, hit.point, Color.red);
+            Debug.Log("Entity name: " + hit.transform.name);
+
+            string tag = hit.transform.tag;
+
+            switch (tag)
+            {
+                case "Enemy":
+                    if (Time.time > CurrentCooldown)
+                    {
+                        hit.transform.GetComponent<enemy>().takeDamage(DamageGiven);
+                        if(inventory.getWeapon() != null)
+                            inventory.getWeapon().DamageItem(0.3f);
+                        CurrentCooldown = Time.time + attackCooldown;
+                    }
+                    break;
+                    //case "Chest":
+                    //case "Npc":
+            }
+
+        }
+    }
+>>>>>>> Stashed changes
     
     private void dead()
     {
@@ -126,6 +158,31 @@ public class Player : MonoBehaviour
         EnduranceBar.fillAmount = EndurancePerc;
     }
 
+<<<<<<< Updated upstream
+=======
+    private void updateInput()
+    {
+        if (Input.GetButtonDown("Fire1"))
+            interact();
+    }
+
+    private void updateStats()
+    {
+        if (inventory.getWeapon() != null)
+        {
+            DamageGiven = inventory.getWeapon().Damage;
+            attackRange = inventory.getWeapon().attackRange;
+            attackCooldown = inventory.getWeapon().reloadTime;
+        }
+        else
+        {
+           attackCooldown = 1f;
+           attackRange = 1.8f;
+           DamageGiven = 5f;
+        }
+    }
+
+>>>>>>> Stashed changes
     public void restoreHealth()
     {
         CurrentHealth = MaxHealth;

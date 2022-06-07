@@ -12,6 +12,13 @@ public class ForgedItem : Item
         D,
     }
 
-    public int Durability = 1000; 
+    public float Durability = 1000; 
     public Quality quality = Quality.B;
+<<<<<<< Updated upstream
+=======
+
+    public int getDurability() { return Durability; }
+    public void DamageItem(float damage) { Durability -= damage; }
+    public bool isBroken() { if(Durability <= 0) { return true; } return false; }
+>>>>>>> Stashed changes
 }
