@@ -104,11 +104,14 @@ public class Player : MonoBehaviour
                     if (Time.time > CurrentCooldown)
                     {
                         hit.transform.GetComponent<enemy>().takeDamage(DamageGiven);
+                        if (inventory.getWeapon() != null)
+                            inventory.getWeapon().DamageItem(0.3f);
                         CurrentCooldown = Time.time + attackCooldown;
                     }
                     break;
-                    //case "Chest":
-                    //case "Npc":
+                case "Npc":
+                    hit.transform.GetComponent<villager>().interact();
+                    break;
             }
 
         }

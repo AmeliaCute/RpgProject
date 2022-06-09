@@ -12,9 +12,9 @@ public class ForgedItem : Item
         D,
     }
 
-    public int Durability = 1000; 
+    public float Durability = 1000; 
     public Quality quality = Quality.B;
 
-    public int getDurability() { return Durability; }
-    public void DamageItem(int damage) { Durability -= damage; }
+    public float getDurability() { return Durability; }
+    public void DamageItem(float damage) { Durability -= damage; }
 }
