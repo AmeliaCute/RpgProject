@@ -23,7 +23,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   exposure:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 10
   multiplier:
     m_OverrideState: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   hdriSky:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {fileID: 8900000, guid: 54a3a0570aebe8949bec4966f1376581, type: 3}
   enableBackplate:
     m_OverrideState: 0
@@ -135,8 +135,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   skyAmbientMode:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   fogType:
     m_OverrideState: 1
     m_Value: 3
@@ -153,9 +153,9 @@ MonoBehaviour:
   m_Name: Fog
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
+  m_AdvancedMode: 1
   enabled:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   colorMode:
     m_OverrideState: 0
@@ -196,14 +196,14 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 50
   albedo:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.9035347, g: 0.6304017, b: 0.4412883, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 250.72
+    m_Value: 50
     min: 1
   enableVolumetricFog:
     m_OverrideState: 1

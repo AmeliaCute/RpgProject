@@ -112,6 +112,9 @@ public class Player : MonoBehaviour
                 case "Npc":
                     hit.transform.GetComponent<villager>().interact();
                     break;
+                case "Teleporter":
+                    hit.transform.GetComponent<Teleporter>().interact(this);
+                    break;
             }
 
         }
@@ -190,7 +193,7 @@ public class Player : MonoBehaviour
            attackCooldown = 1f;
            attackRange = 1.8f;
            DamageGiven = 5f;
-}
+        }
     }
 
     public void restoreHealth()
@@ -221,5 +224,10 @@ public class Player : MonoBehaviour
     public bool _isBusy()
     {
         return isBusy;
+    }
+
+    public void teleport(Vector3 position)
+    {
+        transform.position = position;
     }
 }
