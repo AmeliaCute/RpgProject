@@ -11,10 +11,10 @@
    |- Contents
       |- Type D'asset (ex: Modeles)
         |- Rapport avec (ex: Le Joueur)
-           @- Joueur.obj
+           |- Joueur.obj
    |- C# Classes
       |- Rapport avec (ex: Le Joueur)
-          |- PlayerMovement.cs
+           |- PlayerMovement.cs
 ```
 
 ### ⚜️ Metiers prevu
