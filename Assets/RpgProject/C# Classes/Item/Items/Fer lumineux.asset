@@ -15,6 +15,7 @@ MonoBehaviour:
   _name: Fer lumineux
   description: "Tres utilis\xE9 pour voir si j'ai bien dev"
   price: 1024
-  itemModel: {fileID: 0}
+  itemModel: {fileID: -2432090755550338912, guid: 331bc80424c523246a803ebcfe761d37,
+    type: 3}
   itemIcon: {fileID: 0}
   Type: 1

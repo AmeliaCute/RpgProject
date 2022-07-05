@@ -96,9 +96,7 @@ public class Player : MonoBehaviour
             Debug.DrawLine(transform.position + Vector3.up * 0.25f, hit.point, Color.red);
             Debug.Log("Entity name: " + hit.transform.name);
 
-            string tag = hit.transform.tag;
-
-            switch (tag)
+            switch (hit.transform.tag)
             {
                 case "Enemy":
                     if (Time.time > CurrentCooldown)
@@ -109,11 +107,20 @@ public class Player : MonoBehaviour
                         CurrentCooldown = Time.time + attackCooldown;
                     }
                     break;
-                case "Npc":
-                    hit.transform.GetComponent<villager>().interact();
-                    break;
+
                 case "Teleporter":
                     hit.transform.GetComponent<Teleporter>().interact(this);
+                    break;
+
+                case "Ore":
+                    if (Time.time > CurrentCooldown)
+                    {
+                        if (inventory.getPickaxe() != null)
+                        {
+                            inventory.getPickaxe().DamageItem(0.3f);
+                            hit.transform.GetComponent<ore>().Damage(inventory.getPickaxe().DamageToOre);
+                        }
+                    }
                     break;
             }
 

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd4f1025ff8005419977b2ba2f93d84, type: 3}
+  m_Name: Pioche lumineuse
+  m_EditorClassIdentifier: 
+  _name: Glowing pickaxe
+  description: Idk it's just glow
+  price: 686
+  itemModel: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  itemIcon: {fileID: 0}
+  Durability: 998.2001
+  quality: 0
+  DamageToOre: 92.32
+  reloadTime: 0.5

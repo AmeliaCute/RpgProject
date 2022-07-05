@@ -5,6 +5,10 @@ abstract class villager : MonoBehaviour
     public string _name;
     public float health;
 
+    private Transform target;
+    private float distance;
+    private bool showTalkIcon;
+
     /// <summary>
     /// The constructor of the villager class
     /// </summary>
@@ -22,12 +26,27 @@ abstract class villager : MonoBehaviour
     private void Update()
     {
         update();
+        distance = Vector3.Distance(target.position, transform.position);
+        if (distance < 2.5f)
+        {
+            if (!showTalkIcon)
+            {
+                showTalkIcon = true;
+                TalkIconOption();
+            }
+            if (Input.GetButtonDown("pickup"))
+            {
+                interact();
+            }
+        }
+        else { if (showTalkIcon) { showTalkIcon = false; TalkIconOption(); } }
     }
 
     private void Start()
     {
         gameObject.transform.tag = "Npc";
         init();
+        target = GameObject.Find("Player").transform;
     }
 
     /// <summary>
@@ -48,4 +67,24 @@ abstract class villager : MonoBehaviour
     public abstract void init();
     public abstract void die();
     public abstract void update();
+
+    private void TalkIconOption()
+    {
+        if (showTalkIcon)
+        {
+            GameObject ga = new GameObject("TalkIcon");
+            ga.AddComponent<SpriteRenderer>();
+            ga.transform.position = new Vector3(transform.position.x, transform.position.y + 1.3f, transform.position.z);
+            ga.transform.rotation = Quaternion.Euler(25f, 0f, 0f);
+
+            SpriteRenderer spriteRen = ga.GetComponent<SpriteRenderer>();
+            spriteRen.sprite = IconList.GetSprite(1);
+            spriteRen.drawMode = SpriteDrawMode.Sliced;
+            spriteRen.size = new Vector2(0.9f, 0.9f);
+
+            ga.transform.parent = null;
+
+        }
+        else { try { Destroy(GameObject.Find("TalkIcon")); } catch { } }
+    }
 }

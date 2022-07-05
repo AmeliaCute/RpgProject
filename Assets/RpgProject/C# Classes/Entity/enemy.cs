@@ -15,7 +15,7 @@ abstract class enemy : MonoBehaviour
     /// <summary>
     /// Constructor of the enemy class
     /// </summary>
-    /// <param name="name">Name of the enemy</param>
+    /// <param name="_name">Name of the enemy</param>
     /// <param name="level">Level of the enemy</param>
     /// <param name="health">Health of the enemy</param>
     /// <param name="attackCooldown">Time between each attack</param>

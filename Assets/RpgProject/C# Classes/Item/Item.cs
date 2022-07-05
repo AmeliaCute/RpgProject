@@ -9,7 +9,7 @@ public class Item : ScriptableObject
     public string description; 
 
     public int price = 0;
-    public GameObject itemModel;
+    public Mesh itemModel;
     public Sprite itemIcon;
 
     public readonly string uuid = Guid.NewGuid().ToString(); //DONT TOUCH
@@ -17,7 +17,7 @@ public class Item : ScriptableObject
     public string getName() { return _name; }
     public string getDescription() { return description;  }
     public int getPrice() { return price; }
-    public GameObject getModel() { return itemModel; }
+    public Mesh getModel() { return itemModel; }
     public Sprite getIcon() { return itemIcon; }
     public string getUuid() { return uuid; }
 }

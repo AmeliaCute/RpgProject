@@ -46,7 +46,7 @@ class BadHuman : enemy
     }
 
     public override void die()
-    {
+    {   
         Destroy(gameObject);
     }
 }
