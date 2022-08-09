@@ -41,6 +41,16 @@ public class Player : MonoBehaviour
 
         EnduranceBar.transform.position = new Vector3(100f, 18, 0);
         HealthBar.transform.position = new Vector3(100f, 34, 0);
+
+        DialogueMan.Instance.OnShowDialogue += () =>
+        {
+            Gamestates.set(GameState.BUSY);
+        };
+
+        DialogueMan.Instance.OnCloseDialogue += () =>
+        {
+            Gamestates.set(GameState.PLAYING);
+        };
     }
     void Update()
     {
@@ -53,17 +63,22 @@ public class Player : MonoBehaviour
         if (!isAlive) return; //TODO Faire une animation sur l'ecran lorsque que le joueur meurt
         if (isBusy) return; 
 
-        // Sprinting
-        updateSprint();
-
-        // Move
-        updateMovement();
-
         // Other input like attack input
         updateInput();
 
         // Player stats 
         updateStats();
+
+        if(Gamestates.get() != GameState.BUSY)
+        {
+            // Sprinting
+            updateSprint();
+
+            // Move
+            updateMovement();
+
+        }
+
     }
 
     private void updateSprint()

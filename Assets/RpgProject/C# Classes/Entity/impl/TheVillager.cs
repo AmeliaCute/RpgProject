@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 class TheVillager : villager
 {
@@ -16,7 +18,10 @@ class TheVillager : villager
 
     public override void interact()
     {
-        Debug.LogError("Npc: "+name+" say hi");
+        DialogueMan.Instance.ShowDialogue(new Dialogue("Le villageois", new List<string>
+         { "Salut, je suis le villageois", 
+        "Je suis utile pour tester les dialogues",
+        "Je suis le villageois" }));
     }
 
     public override void update()

@@ -49,7 +49,10 @@ abstract class enemy : MonoBehaviour
 
     void Update()
     { 
-        update();
+        if(Gamestates.get() != GameState.BUSY)
+        {
+            update();
+        }
     }
 
     public abstract void init();
