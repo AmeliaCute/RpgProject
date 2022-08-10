@@ -474,6 +474,8 @@ MonoBehaviour:
     name: 
     dialogueText: []
   IsDialogueOpen: 0
+  IsChoiceOpen: 0
+  hasChoices: 0
 --- !u!114 &200991721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2293,8 +2295,8 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 730968965}
-  m_Father: {fileID: 1785541717}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4062,8 +4064,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1021039839}
+  m_Children: []
   m_Father: {fileID: 375414923}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4362,7 +4363,7 @@ Transform:
   - {fileID: 2023201369}
   - {fileID: 1237049605}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2145968101
 GameObject:
