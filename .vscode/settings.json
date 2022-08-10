@@ -16,7 +16,12 @@
         "Library": true,
         "obj": true,
         "Packages": true,
-        "ProjectSettings": true
+        "ProjectSettings": true,
+        "RpgProject.sln": true,
+        ".vsconfig": true,
+        ".vscode": true,
+        "Logs": true,
+        "UserSettings": true
     },
-    "explorerExclude.backup": null
+    "explorerExclude.backup": {}
 }

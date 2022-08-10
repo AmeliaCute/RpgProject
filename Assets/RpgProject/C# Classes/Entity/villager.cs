@@ -1,5 +1,12 @@
 ﻿using UnityEngine;
 
+public enum NpcState{
+    IDLE,
+    WALKING,
+    TALKING
+
+}
+
 abstract class villager : MonoBehaviour
 {
     public string _name;
@@ -25,6 +32,10 @@ abstract class villager : MonoBehaviour
 
     private void Update()
     {
+        if(state == NpcState.TALKING)
+        {
+            return;
+        }
         update();
         distance = Vector3.Distance(target.position, transform.position);
         if (distance < 2.5f)
@@ -47,6 +58,16 @@ abstract class villager : MonoBehaviour
         gameObject.transform.tag = "Npc";
         init();
         target = GameObject.Find("Player").transform;
+
+        DialogueMan.Instance.OnShowDialogue += () =>
+        {
+            state = NpcState.TALKING;
+        };
+
+        DialogueMan.Instance.OnCloseDialogue += () =>
+        {
+            state = NpcState.IDLE;
+        };
     }
 
     /// <summary>
@@ -63,6 +84,8 @@ abstract class villager : MonoBehaviour
         }
     }
 
+    private NpcState state;
+    public abstract NpcState DefState();
     public abstract void interact();
     public abstract void init();
     public abstract void die();
