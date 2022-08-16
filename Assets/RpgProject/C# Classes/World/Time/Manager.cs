@@ -11,21 +11,19 @@ public class Manager : MonoBehaviour
 
     private Fog fog;
 
-    [SerializeField, Range(0, 24)] private float time;
-
     private void Update()
     {
         if(preset == null)
             return;
         if(Application.isPlaying)
         {
-            time += Time.deltaTime / 60;
-            time %= 24;
-            UpdateLighting(time / 24f);
+            LightVar.time += Time.deltaTime / 60;
+            LightVar.time %= 24;
+            UpdateLighting(LightVar.time / 24f);
         }    
         else
         {
-            UpdateLighting(time / 24f);
+            UpdateLighting(LightVar.time / 24f);
         }
     }
 
@@ -61,6 +59,6 @@ public class Manager : MonoBehaviour
 
     public float getTime()
     {
-        return time;
+        return LightVar.time;
     }
 }

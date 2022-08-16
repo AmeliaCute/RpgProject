@@ -12,6 +12,7 @@ public class DialogueMan : MonoBehaviour
     public GameObject ContDote;
     public Text DialogueText;
     public Text DialogueName;
+    public Text DialogueEntitySubtitle;
 
     public event UnityAction OnShowDialogue;
     public event UnityAction OnCloseDialogue;
@@ -38,6 +39,7 @@ public class DialogueMan : MonoBehaviour
         CurrentDialogue = dialogue;
 
         DialogueName.text = dialogue.Name;
+        DialogueEntitySubtitle.text = dialogue.EntitySubtitle;
         DialogueBox.SetActive(true);
 
         hasChoices = false;

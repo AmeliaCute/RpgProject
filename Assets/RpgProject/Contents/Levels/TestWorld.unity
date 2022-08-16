@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.96810704, g: 0.83671343, b: 0.77452004, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -469,9 +469,11 @@ MonoBehaviour:
   ContDote: {fileID: 1606804365}
   DialogueText: {fileID: 506102810}
   DialogueName: {fileID: 1728526441}
+  DialogueEntitySubtitle: {fileID: 654858107}
   CurrLine: 0
   CurrentDialogue:
     name: 
+    entitySubtitle: 
     dialogueText: []
   IsDialogueOpen: 0
   IsChoiceOpen: 0
@@ -1038,11 +1040,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1400,7 +1402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &654858106
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1787,7 +1789,8 @@ GameObject:
   - component: {fileID: 804723827}
   - component: {fileID: 804723828}
   - component: {fileID: 804723830}
-  - component: {fileID: 804723829}
+  - component: {fileID: 804723831}
+  - component: {fileID: 804723832}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1844,28 +1847,15 @@ MonoBehaviour:
   Controller: {fileID: 804723827}
   EnduranceBar: {fileID: 1171083724}
   HealthBar: {fileID: 1116345272}
-  CharacterAnimation: {fileID: 804723829}
+  CharacterAnimation: {fileID: 0}
   WalkingSpeed: 5
   SprintingSpeed: 7
-  MaxEndurance: 100
-  MaxHealth: 100
+  CurrentEndurance: 0
+  MaxEndurance: 0
+  CurrentHealth: 0
+  MaxHealth: 0
   attackCooldown: 1
---- !u!111 &804723829
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 804723825}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 75b485034b9facc4bb4cb15aff9a93f4, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 75b485034b9facc4bb4cb15aff9a93f4, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 1
-  m_CullingType: 0
+  DamageGiven: 5
 --- !u!114 &804723830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1881,6 +1871,30 @@ MonoBehaviour:
   weapon: {fileID: 11400000, guid: cbb0bc28748de334eaa984fc0c2a0e05, type: 2}
   pickaxe: {fileID: 11400000, guid: 5aabf1fba2539904d87a8ded2a6c665e, type: 2}
   backpack: []
+--- !u!114 &804723831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804723825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17fb24e5d8c41e47aed31ddde9227d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &804723832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804723825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fab1b0186576b5429427516d8c89ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &883429957
 GameObject:
   m_ObjectHideFlags: 0
@@ -2656,7 +2670,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244838771}
-  m_LocalRotation: {x: 0.011376112, y: 0.98767215, z: -0.13002947, w: 0.08641018}
+  m_LocalRotation: {x: 0.023536664, y: 0.9591816, z: -0.26902512, w: 0.08391757}
   m_LocalPosition: {x: -9.880707, y: 25.229706, z: 0.25761792}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2797,7 +2811,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.7703438, b: 0.69782066, a: 1}
+  m_Color: {r: 1, g: 0.94369453, b: 0.9259139, a: 1}
   m_Intensity: 9000
   m_Range: 10
   m_SpotAngle: 30
@@ -2863,7 +2877,6 @@ MonoBehaviour:
   _light: {fileID: 1244838774}
   Volumefog: {fileID: 11400000, guid: a123fc0ac58cb774e8592c925f167e7c, type: 2}
   preset: {fileID: 11400000, guid: 9f4adb142476d0e44a76f1c0a4622503, type: 2}
-  time: 7
 --- !u!1 &1267230892
 GameObject:
   m_ObjectHideFlags: 0

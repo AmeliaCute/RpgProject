@@ -9,20 +9,21 @@ public class Player : MonoBehaviour
     [SerializeField] private Image HealthBar;
     [SerializeField] private Animation CharacterAnimation;
     private InventorySlot inventory;
+    private InventoryStats inventoryStats;
+    private InventoryJobs inventoryJobs;
 
     [SerializeField] private float WalkingSpeed = 5f;
     [SerializeField] private float SprintingSpeed = 7f;
 
-    [SerializeField] private float MaxEndurance = 100f;
-    private float CurrentEndurance;
-
-    [SerializeField] private float MaxHealth = 100f;
-    private float CurrentHealth;
+    [SerializeField] private float CurrentEndurance;
+    [SerializeField] private float MaxEndurance;
+    [SerializeField] private float CurrentHealth;
+    [SerializeField] private float MaxHealth;
 
     [SerializeField] private float attackCooldown = 1f;
     private float CurrentCooldown;
     private float attackRange = 100f;
-    private float DamageGiven = 5f;
+    [SerializeField] private float DamageGiven = 5f;
 
     private bool isAlive = true;
     private bool isBusy = false;
@@ -34,13 +35,17 @@ public class Player : MonoBehaviour
     private void Start()
     {
         inventory = GetComponent<InventorySlot>();
+        inventoryStats = GetComponent<InventoryStats>();
+        inventoryJobs = GetComponent<InventoryJobs>();
 
-        CurrentEndurance = MaxEndurance;
-        CurrentHealth = MaxHealth;
+        CurrentEndurance = inventoryStats.getStat("Stamina").GetTotal();
+        CurrentHealth = inventoryStats.getStat("Vitality").GetTotal();
+        MaxEndurance = CurrentEndurance;
+        MaxHealth = CurrentHealth;
         CurrentCooldown = Time.time;
 
         EnduranceBar.transform.position = new Vector3(100f, 18, 0);
-        HealthBar.transform.position = new Vector3(100f, 34, 0);
+        HealthBar.transform.position = new Vector3(100f, 34, 0);    
 
         DialogueMan.Instance.OnShowDialogue += () =>
         {
@@ -50,6 +55,18 @@ public class Player : MonoBehaviour
         DialogueMan.Instance.OnCloseDialogue += () =>
         {
             Gamestates.set(GameState.PLAYING);
+        };
+        Stat.StatsUpdateEvent += () =>
+        {
+            updateStats();
+        };
+        InventorySlot.InventoryUpdateEvent += () =>
+        {
+            updateStats();
+        };
+        Job.StatsUpdateEvent += () =>
+        {
+            updateStats();
         };
     }
     void Update()
@@ -65,9 +82,6 @@ public class Player : MonoBehaviour
 
         // Other input like attack input
         updateInput();
-
-        // Player stats 
-        updateStats();
 
         if(Gamestates.get() != GameState.BUSY)
         {
@@ -204,9 +218,16 @@ public class Player : MonoBehaviour
 
     private void updateStats()
     {
+        Debug.Log("Stats update");
+        
+
+        MaxHealth = inventoryStats.getStat("Vitality").GetTotal();
+        MaxEndurance = inventoryStats.getStat("Stamina").GetTotal();
+
+
         if (inventory.getWeapon() != null)
         {
-            DamageGiven = inventory.getWeapon().Damage;
+            DamageGiven = inventoryStats.getStat("Strength").GetTotal();
             attackRange = inventory.getWeapon().attackRange;
             attackCooldown = inventory.getWeapon().reloadTime;
         }
@@ -216,6 +237,7 @@ public class Player : MonoBehaviour
            attackRange = 1.8f;
            DamageGiven = 5f;
         }
+        Debug.Log("Task sucess!");
     }
 
     public void restoreHealth()
@@ -251,5 +273,10 @@ public class Player : MonoBehaviour
     public void teleport(Vector3 position)
     {
         transform.position = position;
+    }
+
+    public Player GetPlayer()
+    {
+        return GameObject.Find("Player").GetComponent<Player>();
     }
 }

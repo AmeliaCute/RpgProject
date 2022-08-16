@@ -34,7 +34,7 @@ class TheVillager : villager
         int ChoiSel = 0;
         yield return DialogueMan.Instance.ShowDialogue(
             new Dialogue("Le villageois", 
-            new List<string>{ "Salut, je suis le villageois" }), 
+            new List<string>{ "Salut, je suis le villageois" }, "Grand Maitre Mage"), 
             new List<string>{ "Aurevoir", "Saucisse", "TrucPasDrole" },
             (int choice) => ChoiSel = choice
         );
