@@ -8,9 +8,9 @@ public class Player : MonoBehaviour
     [SerializeField] private Image EnduranceBar;
     [SerializeField] private Image HealthBar;
     [SerializeField] private Animation CharacterAnimation;
-    private InventorySlot inventory;
-    private InventoryStats inventoryStats;
-    private InventoryJobs inventoryJobs;
+
+    public Inventory inventory;
+    public static Player instance;
 
     [SerializeField] private float WalkingSpeed = 5f;
     [SerializeField] private float SprintingSpeed = 7f;
@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     private float CurrentCooldown;
     private float attackRange = 100f;
     [SerializeField] private float DamageGiven = 5f;
+    public int money = 100;
+    public string Name = "Emilia";
 
     private bool isAlive = true;
     private bool isBusy = false;
@@ -32,14 +34,14 @@ public class Player : MonoBehaviour
     private float TargetAngleSmoothTime = 0.1f;
     private float TargetAngleSmoothVelocity;
 
+    private void Awake() { instance = this; }
+
     private void Start()
     {
-        inventory = GetComponent<InventorySlot>();
-        inventoryStats = GetComponent<InventoryStats>();
-        inventoryJobs = GetComponent<InventoryJobs>();
+        inventory = GetComponent<Inventory>();
 
-        CurrentEndurance = inventoryStats.getStat("Stamina").GetTotal();
-        CurrentHealth = inventoryStats.getStat("Vitality").GetTotal();
+        CurrentEndurance = InventoryStats.getStat("Stamina").GetTotal();
+        CurrentHealth = InventoryStats.getStat("Vitality").GetTotal();
         MaxEndurance = CurrentEndurance;
         MaxHealth = CurrentHealth;
         CurrentCooldown = Time.time;
@@ -60,10 +62,6 @@ public class Player : MonoBehaviour
         {
             updateStats();
         };
-        InventorySlot.InventoryUpdateEvent += () =>
-        {
-            updateStats();
-        };
         Job.StatsUpdateEvent += () =>
         {
             updateStats();
@@ -71,24 +69,24 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
-        // Gravity
+        // Gravity:
         isFlying();
 
-        // Hud
+        // Hud:
         updateHud();
 
-        if (!isAlive) return; //TODO Faire une animation sur l'ecran lorsque que le joueur meurt
+        if (!isAlive) return;
         if (isBusy) return; 
 
-        // Other input like attack input
+        // Other input like attack input:
         updateInput();
 
         if(Gamestates.get() != GameState.BUSY)
         {
-            // Sprinting
+            // Sprinting:
             updateSprint();
 
-            // Move
+            // Move:
             updateMovement();
 
         }
@@ -107,7 +105,7 @@ public class Player : MonoBehaviour
 
     public void damage(float damage)
     {
-        CurrentHealth = CurrentHealth - damage; //TODO Prendre en compte les states des items
+        CurrentHealth = CurrentHealth - damage;
         if (CurrentHealth <= 0)
         {
             CurrentHealth = 0;
@@ -137,10 +135,6 @@ public class Player : MonoBehaviour
                     }
                     break;
 
-                case "Teleporter":
-                    hit.transform.GetComponent<Teleporter>().interact(this);
-                    break;
-
                 case "Ore":
                     if (Time.time > CurrentCooldown)
                     {
@@ -159,14 +153,16 @@ public class Player : MonoBehaviour
     private void dead()
     {
         Debug.Log("Player is dead");
-        CharacterAnimation.Play("Die");
+        //CharacterAnimation.Play("Die");  <== Obsolete
     }
 
     private void isFlying()
     {
         Vector3 moveVector = Vector3.zero;
+
         if (Controller.isGrounded == false)
             moveVector += Physics.gravity;
+
         Controller.Move(moveVector * Time.deltaTime);
     }
 
@@ -188,7 +184,7 @@ public class Player : MonoBehaviour
             }
             else
                 if (CurrentEndurance < MaxEndurance)
-                CurrentEndurance++;
+                    CurrentEndurance++;
 
             float TargetAngle = Mathf.Atan2(-Direction.z, Direction.x) * Mathf.Rad2Deg;
             float Angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, TargetAngle, ref TargetAngleSmoothVelocity, TargetAngleSmoothTime);
@@ -198,7 +194,7 @@ public class Player : MonoBehaviour
         }
         else // Endurance
             if (CurrentEndurance < MaxEndurance)
-            CurrentEndurance++;
+                CurrentEndurance++;
     }
 
     private void updateHud()
@@ -214,6 +210,8 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
             interact();
+        if (Input.GetButtonDown("InventoryOpen"))
+            inventory.ToggleInventory();
     }
 
     private void updateStats()
@@ -221,21 +219,21 @@ public class Player : MonoBehaviour
         Debug.Log("Stats update");
         
 
-        MaxHealth = inventoryStats.getStat("Vitality").GetTotal();
-        MaxEndurance = inventoryStats.getStat("Stamina").GetTotal();
+        MaxHealth = InventoryStats.getStat("Vitality").GetTotal();
+        MaxEndurance = InventoryStats.getStat("Stamina").GetTotal();
 
 
         if (inventory.getWeapon() != null)
         {
-            DamageGiven = inventoryStats.getStat("Strength").GetTotal();
+            DamageGiven = InventoryStats.getStat("Strength").GetTotal();
             attackRange = inventory.getWeapon().attackRange;
             attackCooldown = inventory.getWeapon().reloadTime;
         }
         else
         {
-           attackCooldown = 1f;
-           attackRange = 1.8f;
-           DamageGiven = 5f;
+            attackCooldown = 1f;
+            attackRange = 1.8f;
+            DamageGiven = 5f;
         }
         Debug.Log("Task sucess!");
     }
@@ -275,8 +273,26 @@ public class Player : MonoBehaviour
         transform.position = position;
     }
 
-    public Player GetPlayer()
+    public void setMoney(int quantity)
     {
-        return GameObject.Find("Player").GetComponent<Player>();
+        money = quantity;
+    }
+
+    public void addMoney(int quantity)
+    {
+        money += quantity;
+    }
+
+    public void removeMoney(int quantity)
+    {
+        if(!(money - quantity < 0))
+        {
+            money -= quantity;
+        }
+    }
+
+    public static Player GetPlayer()
+    {
+        return instance;
     }
 }

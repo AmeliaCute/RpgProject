@@ -26,10 +26,9 @@ public class DialogueMan : MonoBehaviour
 
     public static DialogueMan Instance { get; private set; }
 
-    private void Awake() {
-        Instance = this;
-    }
+    private void Awake() { Instance = this; }
 
+    //FIXME: C'est d'la merde
     public IEnumerator ShowDialogue(Dialogue dialogue, List<string> choices=null, Action<int> onChoiceSelect=null)
     {
         yield return new WaitForEndOfFrame();
@@ -45,30 +44,27 @@ public class DialogueMan : MonoBehaviour
         hasChoices = false;
 
         StartCoroutine(TypeDialogue(dialogue.DialogueText[0]));
+        yield return new WaitForEndOfFrame();
 
-        if(choices != null && choices.Count > 1)
+        if(choices != null && choices.Count > 1) 
         {
             hasChoices = true;
             IsChoiceOpen = true;
             yield return choiceBox.ShowChoices(choices, onChoiceSelect);
             IsChoiceOpen = false;
-        }
+        } 
     }
 
     private void Update() {
         if (Input.GetButtonDown("Fire1") && !IsDialogueOpen && !IsChoiceOpen)
         {
             ++CurrLine;
-            if(CurrLine < CurrentDialogue.DialogueText.Count)
-                StartCoroutine(TypeDialogue(CurrentDialogue.DialogueText[CurrLine]));
+            if(CurrLine < CurrentDialogue.DialogueText.Count) StartCoroutine(TypeDialogue(CurrentDialogue.DialogueText[CurrLine]));
             else
             {
                 CurrLine = 0;
                 DialogueBox.SetActive(false);
-
-                
                 ContDote.SetActive(false);
-
                 OnCloseDialogue?.Invoke();
             }
         }

@@ -25,28 +25,22 @@ public class Job
         this.exp = exp;
     }
 
-    public void AddBonus(InventoryStats stats)
+    public void AddBonus()
     {
-        if(level == 0)
-        {
-            return;
-        }
+        if(level == 0) return;
         for(int i = 0; i < StatModifiers.Count; i++)
         {
-            stats.AddBonusToStat(StatModifiers[i].getName(), StatModifiers[i].getValue()*level);
+            InventoryStats.AddBonusToStat(StatModifiers[i].getName(), StatModifiers[i].getValue()*level);
             StatsUpdateEvent?.Invoke();
         }
     }
 
-    public void RemoveBonus(InventoryStats stats)
+    public void RemoveBonus()
     {
-        if(level == 0)
-        {
-            return;
-        }
+        if(level == 0) return;
         for(int i = 0; i < StatModifiers.Count; i++)
         {
-            stats.RemoveBonusFromStat(StatModifiers[i].getName(), StatModifiers[i].getValue()*level);
+            InventoryStats.RemoveBonusFromStat(StatModifiers[i].getName(), StatModifiers[i].getValue()*level);
             StatsUpdateEvent?.Invoke();
         }
     }
@@ -78,7 +72,7 @@ public class Job
             case 10:
                 return "Dieu";            
         }
-        return "Novice";
+        return "NULL";
     }
 
     public int getLevelExp(int i)
@@ -111,45 +105,24 @@ public class Job
         return 0;
     }
 
-    public void LevelUp(InventoryStats stats)
+    public void LevelUp()
     {
         if(level <= 10)
         {
             if(level != 0)
-            {
-                RemoveBonus(stats);
-            }
-            AddBonus(stats);
+                RemoveBonus();
+            AddBonus();
             level++;
             exp = 0;
-
         }
-        Debug.Log("Level up to " + level + "!");
-        return;
     }
 
-    public void AddExp(int exp, InventoryStats stats)
+    public void AddExp(int exp)
     {
         this.exp += exp;
-        if(this.exp >= getLevelExp(level + 1))
-        {
-            LevelUp(stats);
-        }
+        if(this.exp >= getLevelExp(level + 1)) LevelUp();
     }
 
-    public string getName()
-    {
-        return Name;
-    }
-
-    public void PrintInfos()
-    {
-        Debug.Log("Name: " + Name);
-        Debug.Log("Level: " + level);
-        Debug.Log("Exp: " + exp);
-        Debug.Log("Next level exp: " + getLevelExp(level+1));
-        Debug.Log("Level name: " + getLevelName());
-    }
-
+    public string getName() { return Name; }
 
 }

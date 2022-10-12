@@ -15,3 +15,11 @@
       |- Rapport avec (ex: Le Joueur)
            |- PlayerMovement.cs
 ```
+
+
+### 📃 Plugins VsCode recommandés :
+
+- Unity Code Snippets
+- Explorer Exclude
+- C# snippets
+- C#  

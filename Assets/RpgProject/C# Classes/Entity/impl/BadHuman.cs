@@ -4,13 +4,18 @@ using UnityEngine.AI;
 class BadHuman : enemy
 {
     private float distance;
-    private float followRange = 6;
-    private float attackRange = 1.7f;
+    public float followRange => 6;
+    public float attackRange => 1.7f;
+
+    public override string name => "BadHuman";
+    public override int level => 1;
+
+    public override float maxHealth => 100;
+    public override float attackCooldown => 1;
+    public override float damageGiven => 30;
 
     private Transform target;
     public NavMeshAgent agent;
-
-    public BadHuman(): base("BadHuman", 1, 100f, 1, 30) {}
 
     public override void init()
     {
@@ -40,7 +45,7 @@ class BadHuman : enemy
     {
         if(Time.time > attackTime)
         {
-            target.GetComponent<Player>().damage(DamageGiven);
+            target.GetComponent<Player>().damage(damageGiven);
             attackTime = Time.time + attackCooldown;
         }
     }

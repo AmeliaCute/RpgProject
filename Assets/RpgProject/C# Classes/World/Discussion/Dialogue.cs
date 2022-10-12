@@ -18,6 +18,5 @@ public class Dialogue
 
     public string Name { get { return name; } }
     public List<string> DialogueText { get { return dialogueText; } }
-
     public string EntitySubtitle { get { return entitySubtitle; } }
 }

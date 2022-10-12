@@ -21,7 +21,9 @@
         ".vsconfig": true,
         ".vscode": true,
         "Logs": true,
-        "UserSettings": true
+        "UserSettings": true,
+        "Temp": true,
+        "**/*.prefab": true
     },
     "explorerExclude.backup": {}
 }

@@ -22,6 +22,12 @@
 # Visual Studio cache directory
 .vs/
 
+# Xelow garbage
+.XeIdea
+
+# Venodez garbage
+.VeIdea
+
 # Gradle cache directory
 .gradle/
 

@@ -1,42 +1,30 @@
 ﻿using UnityEngine;
 
-public enum NpcState{
+public enum NpcState
+{
     IDLE,
     WALKING,
     TALKING
-
 }
 
-abstract class villager : MonoBehaviour
+abstract class villager : Entity
 {
-    public string _name;
-    public float health;
+    public override float maxHealth => 100;
+    public override string entityID => "villager:"+name;
+    public override string EntityMarker => "VILLAGER";
 
     private Transform target;
     private float distance;
     private bool showTalkIcon;
+    private NpcState state;
 
-    /// <summary>
-    /// The constructor of the villager class
-    /// </summary>
-    /// <param name="_name"> parameter to define the name of the npc </param>
-    /// <param name="health"> parameter can be used like when the player is attacking for no reason a poor villager </param>
-    public villager(string _name, float health)
-    {
-        this._name = _name;
-        this.health = health;
-    }
-
-    public string Name { get { return _name; } set { _name = value; } }
-    public float Health { get { return health; } set { health = value; } }
-
-    private void Update()
+    //FIXME: Use hitbox vector instead of distance (line 28)
+    public override void update()
     {
         if(state == NpcState.TALKING)
         {
             return;
         }
-        update();
         distance = Vector3.Distance(target.position, transform.position);
         if (distance < 2.5f)
         {
@@ -55,8 +43,6 @@ abstract class villager : MonoBehaviour
 
     private void Start()
     {
-        gameObject.transform.tag = "Npc";
-        init();
         target = GameObject.Find("Player").transform;
 
         DialogueMan.Instance.OnShowDialogue += () =>
@@ -70,26 +56,8 @@ abstract class villager : MonoBehaviour
         };
     }
 
-    /// <summary>
-    /// Function to decrease the health of the npc
-    /// </summary>
-    /// <param name="damage"></param>
-    public void takeDamage(float damage)
-    {
-        health -= damage;
-        if (health <= 0)
-        {
-            health = 0;
-            die();
-        }
-    }
-
-    private NpcState state;
-    public abstract NpcState DefState();
-    public abstract void interact();
-    public abstract void init();
-    public abstract void die();
-    public abstract void update();
+    public virtual NpcState DefState => NpcState.IDLE;
+    public virtual void interact() { }
 
     private void TalkIconOption()
     {

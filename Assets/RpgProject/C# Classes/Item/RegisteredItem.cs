@@ -27,7 +27,7 @@ public class RegisteredItem : MonoBehaviour
             }
             if (Input.GetButtonDown("pickup"))
             {
-                target.GetComponent<InventorySlot>().AddItemBackpack(item);
+                Player.GetPlayer().inventory.AddItem(item);
                 try { Destroy(GameObject.Find("PickUpIcon")); } catch { }
                 Destroy(gameObject);
             }

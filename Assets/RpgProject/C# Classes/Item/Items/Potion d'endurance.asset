@@ -16,7 +16,7 @@ MonoBehaviour:
   description: test
   price: 4096
   itemModel: {fileID: 0}
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: ada2c431f1f12304aaae9cc48c74a1f6, type: 3}
   pvRegen: 0
   enduranceRegen: 314.1592
   manaRegen: 0

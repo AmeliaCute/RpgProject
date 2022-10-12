@@ -21,9 +21,7 @@ public class ChoiceBox : MonoBehaviour
         CurrChoice = 0;
 
         foreach (Transform child in transform)
-        {
             Destroy(child.gameObject);
-        }
 
         choiceTexts = new List<ChoiceText>();
         for(int i = 0; i < choices.Count; ++i)
@@ -46,31 +44,19 @@ public class ChoiceBox : MonoBehaviour
     private void Update()
     {
         float AxisVer = Input.GetAxisRaw("Vertical");
-        if(AxisVer > 0.5)
-        {
-            if(CurrChoice < choiceTexts.Count - 1)
-            {
+
+        if(AxisVer > 0.9) 
+            if(CurrChoice < choiceTexts.Count - 1) 
                 ++CurrChoice;
-            }
-        }
-        else if(AxisVer < - 0.5)
-        {
-            if(CurrChoice > 0)
-            {
+
+        if(AxisVer < -0.9) 
+            if(CurrChoice > 0) 
                 --CurrChoice;
-            }
-        }
 
         CurrChoice = Mathf.Clamp(CurrChoice, 0, choiceTexts.Count - 1);
 
-        for(int i = 0; i < choiceTexts.Count; ++i)
-        {
-                choiceTexts[i].setSelected(i == CurrChoice);
-        }
+        for(int i = 0; i < choiceTexts.Count; ++i) choiceTexts[i].setSelected(i == CurrChoice);
 
-        if(Input.GetButtonUp("Fire1"))
-        {
-            ChoiceSelect = true;
-        }
+        if(Input.GetButtonUp("Fire1")) ChoiceSelect = true;
     }
 }

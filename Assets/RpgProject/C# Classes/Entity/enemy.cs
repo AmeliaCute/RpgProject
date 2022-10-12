@@ -1,71 +1,21 @@
 using UnityEngine;
 
-abstract class enemy : MonoBehaviour
+abstract class enemy : Entity
 {
-    public string _name;
-    public int level;
+    public override bool damageable => true;
 
-    public float health;
-    private float currentHealth;
+    public override string entityID => "enemy:"+name.ToLower();
 
-    public float attackCooldown;
-    public float attackTime; 
-    public float DamageGiven;
-    
-    /// <summary>
-    /// Constructor of the enemy class
-    /// </summary>
-    /// <param name="_name">Name of the enemy</param>
-    /// <param name="level">Level of the enemy</param>
-    /// <param name="health">Health of the enemy</param>
-    /// <param name="attackCooldown">Time between each attack</param>
-    /// <param name="damageGiven">Damage given by the enemy</param>
-    public enemy(string _name, int level, float health, float attackCooldown, float DamageGiven)
-    {
-        this._name = _name;
-        this.level = level;
-        this.health = health;
-        this.currentHealth = health;
-        this.attackCooldown = attackCooldown;
-        this.DamageGiven = DamageGiven;
-    }
+    public override string EntityMarker => "ENEMY";
 
-    public string _Name { get { return _name; } set { _name = value; } }
+    public virtual int level { get; } 
 
-    public int _Level { get { return level; } set { level = value; } }
-
-    public float _Health { get { return health; } set { health = value; } }
-
-    public float _attackCooldown { get { return attackCooldown; } set { attackCooldown = value; } }
-
-    public float _DamageGiven { get { return DamageGiven; } set { DamageGiven = value; } }
+    public abstract float attackCooldown { get; } 
+    public float attackTime;
+    public abstract float damageGiven { get; } 
 
     void Start()
     {
-        currentHealth = health;
         attackTime = Time.time;
-        init();
-    }
-
-    void Update()
-    { 
-        if(Gamestates.get() != GameState.BUSY)
-        {
-            update();
-        }
-    }
-
-    public abstract void init();
-    public abstract void update();
-    public abstract void die();
-
-    public void takeDamage(float damage)
-    {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
-        {
-            currentHealth = 0;
-            die();
-        }
     }
 }
