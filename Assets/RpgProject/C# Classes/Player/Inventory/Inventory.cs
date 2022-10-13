@@ -64,7 +64,7 @@ public class Inventory : MonoBehaviour
 
     private void Start() {
         objects = new List<GameObject>();
-        player = GetComponent<Player>();
+        player = Player.GetPlayer();
         inventory = GameObject.Find("Inventory").GetComponent<Canvas>();
         hud = GameObject.Find("Hud").GetComponentInChildren<Canvas>();
         uiCamera = GameObject.Find("UI Camera").GetComponent<Camera>();

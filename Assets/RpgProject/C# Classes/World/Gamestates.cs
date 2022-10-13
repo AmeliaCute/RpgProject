@@ -9,7 +9,7 @@ public enum GameState
     DEAD,                   //
 
 
-    /*===================( MULTIPLIER )===================*/
+    /*===================( MULTIPLAYER )===================*/
 
     CLIENT_CONNECTING,      // Client trying to connect to server
     CLIENT_DISCONNECTING,   // Client disconnecting from server

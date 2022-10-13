@@ -43,7 +43,7 @@ abstract class villager : Entity
 
     private void Start()
     {
-        target = GameObject.Find("Player").transform;
+        target = Player.getObject().transform;
 
         DialogueMan.Instance.OnShowDialogue += () =>
         {

@@ -31,8 +31,6 @@ public class DialogueMan : MonoBehaviour
     //FIXME: C'est d'la merde
     public IEnumerator ShowDialogue(Dialogue dialogue, List<string> choices=null, Action<int> onChoiceSelect=null)
     {
-        yield return new WaitForEndOfFrame();
-
         OnShowDialogue?.Invoke();
 
         CurrentDialogue = dialogue;
@@ -44,7 +42,6 @@ public class DialogueMan : MonoBehaviour
         hasChoices = false;
 
         StartCoroutine(TypeDialogue(dialogue.DialogueText[0]));
-        yield return new WaitForEndOfFrame();
 
         if(choices != null && choices.Count > 1) 
         {

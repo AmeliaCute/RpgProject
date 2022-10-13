@@ -30,7 +30,7 @@ public class InventoryStats
         return null;
     }
 
-    public static Stat getStatFromInt(int index)
+    public static Stat getStatFromIndex(int index)
     {
         try { return stats[index]; }
         catch (Exception e) { Debug.Log(e.Message); }

@@ -22,20 +22,15 @@ public class InventoryJobs
 
     public void AddExp(string name, int exp)
     {
-        for(int i = 0; i < jobs.Count; i++)
-            if(jobs[i].Name == name)
-                jobs[i].AddExp(exp);
+        if(getJob(name) != null)
+            getJob(name).AddExp(exp);
     }
 
     public Job getJob(string name)
     {
         for(int i = 0; i < jobs.Count; i++)
-        {
             if(jobs[i].Name == name)
-            {
                 return jobs[i];
-            }
-        }
         return null;
     }
 }

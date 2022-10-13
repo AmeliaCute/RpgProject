@@ -295,4 +295,9 @@ public class Player : MonoBehaviour
     {
         return instance;
     }
+
+    public static GameObject getObject()
+    {
+        return instance.gameObject;
+    }
 }
