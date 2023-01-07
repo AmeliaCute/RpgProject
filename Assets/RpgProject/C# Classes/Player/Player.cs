@@ -1,303 +1,258 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+class Player : Entity
 {
-    [SerializeField] private CharacterController Controller;
-    [SerializeField] private Image EnduranceBar;
-    [SerializeField] private Image HealthBar;
-    [SerializeField] private Animation CharacterAnimation;
+    /*===================( ENTITY )===================*/
 
-    public Inventory inventory;
-    public static Player instance;
+        /*==============={ Basic datas }================*/
+            public override string name => "Emilia";
+            public override string EntityMarker => "PLAYER";
 
-    [SerializeField] private float WalkingSpeed = 5f;
-    [SerializeField] private float SprintingSpeed = 7f;
+        /*==============={ Basic stats }================*/
+            public override float maxHealth => 100;
+            public override float maxEndurance => 100;
 
-    [SerializeField] private float CurrentEndurance;
-    [SerializeField] private float MaxEndurance;
-    [SerializeField] private float CurrentHealth;
-    [SerializeField] private float MaxHealth;
+        /*==============={ Entity Parameters }================*/
+            public override bool damageable => true;
+            public override bool hasEndurance => true;
+            public override bool byPassGamestatesPriority => true;
 
-    [SerializeField] private float attackCooldown = 1f;
-    private float CurrentCooldown;
-    private float attackRange = 100f;
-    [SerializeField] private float DamageGiven = 5f;
-    public int money = 100;
-    public string Name = "Emilia";
 
-    private bool isAlive = true;
-    private bool isBusy = false;
+        public override void init() { instance = this; }
 
-    private bool isSprinting = false;
-    private float TargetAngleSmoothTime = 0.1f;
-    private float TargetAngleSmoothVelocity;
+    /*===================( PLAYER )===================*/
 
-    private void Awake() { instance = this; }
+        /*==============={ Classes }================*/
+            public static Player instance;
+            public Inventory inventory;
 
-    private void Start()
-    {
-        inventory = GetComponent<Inventory>();
+        /*==============={ Movements }================*/
+            private float WalkingSpeed = 5f;
+            private float SprintingSpeed = 7f;
 
-        CurrentEndurance = InventoryStats.getStat("Stamina").GetTotal();
-        CurrentHealth = InventoryStats.getStat("Vitality").GetTotal();
-        MaxEndurance = CurrentEndurance;
-        MaxHealth = CurrentHealth;
-        CurrentCooldown = Time.time;
+            private bool isSprinting = false;
+            private float TargetAngleSmoothTime = 0.1f;
+            private float TargetAngleSmoothVelocity;
 
-        EnduranceBar.transform.position = new Vector3(100f, 18, 0);
-        HealthBar.transform.position = new Vector3(100f, 34, 0);    
+        /*==============={ Attacks }================*/
+            private float attackCooldown = 1f;
+            private float CurrentCooldown;
+            private float attackRange = 100f;
+            private float DamageGiven = 5f;
 
-        DialogueMan.Instance.OnShowDialogue += () =>
+        /*==============={ Objects }================*/
+            private CharacterController Controller;
+            [SerializeField] private Image EnduranceBar;
+            [SerializeField] private Image HealthBar;
+            private Animation CharacterAnimation;
+
+        /*==============={ Others }================*/
+            public bool isAlive = true;
+            public bool isBusy = false;
+            public int money = 100;
+            public Quest[] quests;
+            public bool isCheckingQuest = false;
+
+
+        public void Start() 
         {
-            Gamestates.set(GameState.BUSY);
-        };
+            Controller = GetComponent<CharacterController>();
+            inventory = GetComponent<Inventory>();
 
-        DialogueMan.Instance.OnCloseDialogue += () =>
-        {
-            Gamestates.set(GameState.PLAYING);
-        };
-        Stat.StatsUpdateEvent += () =>
-        {
-            updateStats();
-        };
-        Job.StatsUpdateEvent += () =>
-        {
-            updateStats();
-        };
-    }
-    void Update()
-    {
-        // Gravity:
-        isFlying();
+            endurance = InventoryStats.getStat("Stamina").GetTotal();
+            health = InventoryStats.getStat("Vitality").GetTotal();
 
-        // Hud:
-        updateHud();
+            maxEndurance = endurance;
+            maxHealth = health;
+            
+            CurrentCooldown = Time.time;
 
-        if (!isAlive) return;
-        if (isBusy) return; 
+            EnduranceBar.transform.position = new Vector3(100f, 18, 0);
+            HealthBar.transform.position = new Vector3(100f, 34, 0);    
 
-        // Other input like attack input:
-        updateInput();
-
-        if(Gamestates.get() != GameState.BUSY)
-        {
-            // Sprinting:
-            updateSprint();
-
-            // Move:
-            updateMovement();
-
+            DialogueMan.Instance.OnShowDialogue += () => { Gamestates.set(GameState.BUSY); };
+            DialogueMan.Instance.OnCloseDialogue += () => { Gamestates.set(GameState.PLAYING);};
+            Stat.StatsUpdateEvent += () => { updateStats(); };
+            Job.StatsUpdateEvent += () => { updateStats(); };
         }
 
-    }
-
-    private void updateSprint()
-    {
-        if (Input.GetButtonDown("Sprint"))
-            if (isSprinting != true)
-                isSprinting = true;
-        if (Input.GetButtonUp("Sprint"))
-            if (isSprinting != false)
-                isSprinting = false;
-    }
-
-    public void damage(float damage)
-    {
-        CurrentHealth = CurrentHealth - damage;
-        if (CurrentHealth <= 0)
+        public override void update()
         {
-            CurrentHealth = 0;
-            dead();
-            isAlive = false;
-        }
-    }
+            isFlying();
+            updateHud();
 
-    private void interact()
-    {
-        RaycastHit hit;
+            if (!isAlive) return;
+            if (isBusy) return; 
 
-        if (Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.TransformDirection(Vector3.right), out hit, attackRange))
-        {
-            Debug.DrawLine(transform.position + Vector3.up * 0.25f, hit.point, Color.red);
-            Debug.Log("Entity name: " + hit.transform.name);
-
-            switch (hit.transform.tag)
+            updateInput();
+            if(Gamestates.get() != GameState.BUSY)
             {
-                case "Enemy":
-                    if (Time.time > CurrentCooldown)
-                    {
-                        hit.transform.GetComponent<enemy>().takeDamage(DamageGiven);
-                        if (inventory.getWeapon() != null)
-                            inventory.getWeapon().DamageItem(0.3f);
-                        CurrentCooldown = Time.time + attackCooldown;
-                    }
-                    break;
-
-                case "Ore":
-                    if (Time.time > CurrentCooldown)
-                    {
-                        if (inventory.getPickaxe() != null)
-                        {
-                            inventory.getPickaxe().DamageItem(0.3f);
-                            hit.transform.GetComponent<ore>().Damage(inventory.getPickaxe().DamageToOre);
-                        }
-                    }
-                    break;
+                updateSprint();
+                updateMovement();
             }
-
         }
-    }
-    
-    private void dead()
-    {
-        Debug.Log("Player is dead");
-        //CharacterAnimation.Play("Die");  <== Obsolete
-    }
 
-    private void isFlying()
-    {
-        Vector3 moveVector = Vector3.zero;
-
-        if (Controller.isGrounded == false)
-            moveVector += Physics.gravity;
-
-        Controller.Move(moveVector * Time.deltaTime);
-    }
-
-    private void updateMovement()
-    {
-        float AxisHor = Input.GetAxisRaw("Horizontal");
-        float AxisVer = Input.GetAxisRaw("Vertical");
-        Vector3 Direction = new Vector3(AxisHor, 0f, AxisVer).normalized;
-
-        if (Direction.magnitude >= 0.1f)
+        private void isFlying()
         {
-            float speed = WalkingSpeed;
-            if (isSprinting)
+            Vector3 moveVector = Vector3.zero;
+
+            if (Controller.isGrounded == false) moveVector += Physics.gravity;
+            Controller.Move(moveVector * Time.deltaTime);
+        }
+
+        private void updateHud()
+        {
+            HealthBar.fillAmount =  ((health * 100) / maxHealth) / 100;
+            EnduranceBar.fillAmount = ((endurance * 100) / maxEndurance) / 100;
+        }
+
+        private void updateInput()
+        {
+            if(Input.GetButtonUp("Fire1")) interact();
+
+            if(Input.GetButtonUp("Inventory")) inventory.ToggleInventory();
+        }
+
+        private void updateStats()
+        {
+            maxHealth = InventoryStats.getStat("Vitality").GetTotal();
+            maxEndurance = InventoryStats.getStat("Stamina").GetTotal();
+
+
+            if (inventory.getWeapon() != null)
             {
-                if (CurrentEndurance != 0)
-                    speed = SprintingSpeed;
-                if (CurrentEndurance > 0)
-                    CurrentEndurance = CurrentEndurance - 0.5f;
+                DamageGiven = InventoryStats.getStat("Strength").GetTotal();
+                attackRange = inventory.getWeapon().attackRange;
+                attackCooldown = inventory.getWeapon().reloadTime;
             }
             else
-                if (CurrentEndurance < MaxEndurance)
-                    CurrentEndurance++;
-
-            float TargetAngle = Mathf.Atan2(-Direction.z, Direction.x) * Mathf.Rad2Deg;
-            float Angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, TargetAngle, ref TargetAngleSmoothVelocity, TargetAngleSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, Angle, 0f);
-
-            Controller.Move(Direction * speed * Time.deltaTime);
+            {
+                attackCooldown = 1f;
+                attackRange = 1.8f;
+                DamageGiven = 5f;
+            }
         }
-        else // Endurance
-            if (CurrentEndurance < MaxEndurance)
-                CurrentEndurance++;
-    }
 
-    private void updateHud()
-    {
-        float HealthPerc = ((CurrentHealth * 100) / MaxHealth) / 100;
-        float EndurancePerc = ((CurrentEndurance * 100) / MaxEndurance) / 100;
-
-        HealthBar.fillAmount = HealthPerc;
-        EnduranceBar.fillAmount = EndurancePerc;
-    }
-
-    private void updateInput()
-    {
-        if (Input.GetButtonDown("Fire1"))
-            interact();
-        if (Input.GetButtonDown("InventoryOpen"))
-            inventory.ToggleInventory();
-    }
-
-    private void updateStats()
-    {
-        Debug.Log("Stats update");
-        
-
-        MaxHealth = InventoryStats.getStat("Vitality").GetTotal();
-        MaxEndurance = InventoryStats.getStat("Stamina").GetTotal();
-
-
-        if (inventory.getWeapon() != null)
+        private void updateMovement()
         {
-            DamageGiven = InventoryStats.getStat("Strength").GetTotal();
-            attackRange = inventory.getWeapon().attackRange;
-            attackCooldown = inventory.getWeapon().reloadTime;
+            float AxisHor = Input.GetAxisRaw("Horizontal");
+            float AxisVer = Input.GetAxisRaw("Vertical");
+            Vector3 Direction = new Vector3(AxisHor, 0f, AxisVer).normalized;
+
+            if (Direction.magnitude >= 0.1f)
+            {
+                float speed = WalkingSpeed;
+                if (isSprinting)
+                {
+                    if (endurance != 0)
+                        speed = SprintingSpeed;
+                    if (endurance > 0)
+                        endurance = endurance - 0.5f;
+                }
+                else
+                    if (endurance < maxEndurance)
+                        endurance++;
+
+                float TargetAngle = Mathf.Atan2(-Direction.z, Direction.x) * Mathf.Rad2Deg;
+                float Angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, TargetAngle, ref TargetAngleSmoothVelocity, TargetAngleSmoothTime);
+                transform.rotation = Quaternion.Euler(0f, Angle, 0f);
+
+                Controller.Move(Direction * speed * Time.deltaTime);
+            }
+            else 
+                if (endurance < maxEndurance)
+                    endurance++;
         }
-        else
+
+        private void updateSprint()
         {
-            attackCooldown = 1f;
-            attackRange = 1.8f;
-            DamageGiven = 5f;
+            if (Input.GetButtonDown("Sprint"))
+                if (isSprinting != true)
+                    isSprinting = true;
+            if (Input.GetButtonUp("Sprint"))
+                if (isSprinting != false)
+                    isSprinting = false;
+
+            if (Input.GetButtonUp("Cancel"))
+                Quest.hideQuest();
         }
-        Debug.Log("Task sucess!");
-    }
 
-    public void restoreHealth()
-    {
-        CurrentHealth = MaxHealth;
-    }
-
-    public void restoreEndurance()
-    {
-        CurrentEndurance = MaxEndurance;
-    }
-
-    public float getHealth()
-    {
-        return CurrentHealth;
-    }
-
-    public float getEndurance()
-    {
-        return CurrentEndurance;
-    }
-
-    public bool _isAlive()
-    {
-        return isAlive;
-    }
-
-    public bool _isBusy()
-    {
-        return isBusy;
-    }
-
-    public void teleport(Vector3 position)
-    {
-        transform.position = position;
-    }
-
-    public void setMoney(int quantity)
-    {
-        money = quantity;
-    }
-
-    public void addMoney(int quantity)
-    {
-        money += quantity;
-    }
-
-    public void removeMoney(int quantity)
-    {
-        if(!(money - quantity < 0))
+        private void interact()
         {
-            money -= quantity;
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.TransformDirection(Vector3.right), out hit, attackRange))
+            {
+                Debug.DrawLine(transform.position + Vector3.up * 0.25f, hit.point, Color.red);
+                Debug.Log("Entity name: " + hit.transform.name);
+
+                switch (hit.transform.tag)
+                {
+                    case "Enemy":
+                        if (Time.time > CurrentCooldown)
+                        {
+                            hit.transform.GetComponent<enemy>().takeDamage(DamageGiven);
+                            if (inventory.getWeapon() != null)
+                                inventory.getWeapon().DamageItem(0.3f);
+                            CurrentCooldown = Time.time + attackCooldown;
+                        }
+                        break;
+
+                    case "Ore":
+                        if (Time.time > CurrentCooldown)
+                        {
+                            if (inventory.getPickaxe() != null)
+                            {
+                                inventory.getPickaxe().DamageItem(0.3f);
+                                hit.transform.GetComponent<ore>().Damage(inventory.getPickaxe().DamageToOre);
+                            }
+                        }
+                        break;
+                }
+
+            }
         }
-    }
 
-    public static Player GetPlayer()
-    {
-        return instance;
-    }
+        public void restoreHealth()
+        {
+            health = maxHealth;
+        }
 
-    public static GameObject getObject()
-    {
-        return instance.gameObject;
-    }
+        public void restoreEndurance()
+        {
+            endurance = maxEndurance;
+        }
+
+        public void teleport(Vector3 position)
+        {
+            transform.position = position;
+        }
+
+        public void setMoney(int quantity)
+        {
+            money = quantity;
+        }
+
+        public void addMoney(int quantity)
+        {
+            money += quantity;
+        }
+
+        public void removeMoney(int quantity)
+        {
+            if(!(money - quantity < 0))
+                money -= quantity;
+        }
+
+        public static Player GetPlayer()
+        {
+            return instance;
+        }
+
+        public static GameObject getObject()
+        {
+            return instance.gameObject;
+        }
 }

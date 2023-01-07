@@ -10,7 +10,6 @@ public enum NpcState
 abstract class villager : Entity
 {
     public override float maxHealth => 100;
-    public override string entityID => "villager:"+name;
     public override string EntityMarker => "VILLAGER";
 
     private Transform target;
@@ -69,7 +68,7 @@ abstract class villager : Entity
             ga.transform.rotation = Quaternion.Euler(25f, 0f, 0f);
 
             SpriteRenderer spriteRen = ga.GetComponent<SpriteRenderer>();
-            spriteRen.sprite = IconList.GetSprite(1);
+            spriteRen.sprite = Resources.Load<Sprite>("Sprites/World/TalkIcon");
             spriteRen.drawMode = SpriteDrawMode.Sliced;
             spriteRen.size = new Vector2(0.9f, 0.9f);
 

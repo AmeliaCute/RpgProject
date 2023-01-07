@@ -20,10 +20,10 @@ class TheVillager : villager
         yield return DialogueMan.Instance.ShowDialogue(
             new Dialogue("Le villageois", 
             new List<string>{ "Salut, je suis le villageois", "J'adore les pommes", "Blablabla" }, "Grand Maitre Mage"), 
-            new List<string>{ "Aurevoir", "Argent ++", "TrucPasDrole" },
+            new List<string>{ "Aurevoir", "Argent ++", "TrucPasDrole", "Quete" },
             (int choice) => Choice = choice
         );
-
+    
         switch(Choice)
         {
             case 0:
@@ -40,6 +40,11 @@ class TheVillager : villager
             case 2:
                 Debug.Log("TrucPasDrole");
                 DialogueMan.Instance.CloseDialogue();
+                break;
+
+            case 3:
+                DialogueMan.Instance.CloseDialogue();
+                Resources.Load<Quest>("Quest/Test").showQuest();
                 break;
 
             default: 

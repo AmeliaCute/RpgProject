@@ -13,6 +13,8 @@ public class ChoiceBox : MonoBehaviour
     private List<ChoiceText> choiceTexts;
     private int CurrChoice;
 
+    private float CurrentCooldown;
+
     public IEnumerator ShowChoices(List<string> choices, Action<int> onChoiceSelect)
     {
         ChoiceSelect = false;
@@ -41,17 +43,27 @@ public class ChoiceBox : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    private void Start() {
+        CurrentCooldown = Time.time;
+    }
+
     private void Update()
     {
         float AxisVer = Input.GetAxisRaw("Vertical");
+        float actionCooldown = 0.1f;
 
-        if(AxisVer > 0.9) 
-            if(CurrChoice < choiceTexts.Count - 1) 
-                ++CurrChoice;
+        if (Time.time > CurrentCooldown)
+        {
+            if(AxisVer > 0.95) 
+                if(CurrChoice < choiceTexts.Count - 1) 
+                    ++CurrChoice;
 
-        if(AxisVer < -0.9) 
-            if(CurrChoice > 0) 
-                --CurrChoice;
+            if(AxisVer < -0.95) 
+                if(CurrChoice > 0) 
+                    --CurrChoice;
+
+            CurrentCooldown = Time.time + actionCooldown;
+        }
 
         CurrChoice = Mathf.Clamp(CurrChoice, 0, choiceTexts.Count - 1);
 

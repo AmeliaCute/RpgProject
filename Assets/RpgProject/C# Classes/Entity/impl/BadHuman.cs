@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 class BadHuman : enemy
 {
@@ -45,7 +48,7 @@ class BadHuman : enemy
     {
         if(Time.time > attackTime)
         {
-            target.GetComponent<Player>().damage(damageGiven);
+            target.GetComponent<Player>().takeDamage(damageGiven);
             attackTime = Time.time + attackCooldown;
         }
     }

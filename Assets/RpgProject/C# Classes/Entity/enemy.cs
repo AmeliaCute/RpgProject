@@ -4,8 +4,6 @@ abstract class enemy : Entity
 {
     public override bool damageable => true;
 
-    public override string entityID => "enemy:"+name.ToLower();
-
     public override string EntityMarker => "ENEMY";
 
     public virtual int level { get; } 

@@ -9,28 +9,30 @@ abstract class Entity : MonoBehaviour
     // SPECIFIC PARAMETERS:
     public virtual bool damageable => false;
     public virtual bool hasEndurance => false;
+    public virtual bool byPassGamestatesPriority => false;
     public virtual string name => "NULL";
-    public abstract string entityID { get; }
+    public string entityID { get => EntityMarker+":"+name; }
     public virtual string EntityMarker => "ENTITY";
 
     // HEALTH:
-    public virtual float maxHealth => 1;
+    public virtual float maxHealth { get; set; }
     public float health;
 
     // ENDURANCE:
-    public virtual float maxEndurance => 1;
+    public virtual float maxEndurance { get; set; }
     public float endurance;
 
     // INIT FUNCTION:
     private void Awake()
     {
+        init();
         if(damageable) health = maxHealth;
         if(hasEndurance) endurance = maxEndurance;
     }
 
     // UPDATE FUNCTION:
     private void Update() {
-        if(Gamestates.get() != GameState.BUSY) update();
+        if(Gamestates.get() != GameState.BUSY || byPassGamestatesPriority) update();
     }
 
     // TOOLS FUNCTIONS:

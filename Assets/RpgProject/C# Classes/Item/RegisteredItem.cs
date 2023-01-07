@@ -12,7 +12,7 @@ public class RegisteredItem : MonoBehaviour
     private void Start()
     {
         target = GameObject.Find("Player").transform;
-        pickupIcon = IconList.GetSprite(0);
+        pickupIcon = Resources.Load<Sprite>("Sprites/World/PickUpIcon");
     }
 
     private void Update()
