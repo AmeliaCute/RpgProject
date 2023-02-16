@@ -25,5 +25,6 @@
         "Temp": true,
         "**/*.prefab": true
     },
-    "explorerExclude.backup": {}
+    "explorerExclude.backup": {},
+    "hide-files.files": []
 }

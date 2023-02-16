@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 
 [CreateAssetMenu(fileName = "Consumable", menuName = "RpgProject/Consumable")]
 public class Consumable : Item
@@ -7,3 +7,4 @@ public class Consumable : Item
     public float enduranceRegen = 0;
     public float manaRegen = 0;
 }
+*/

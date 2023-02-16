@@ -99,7 +99,7 @@ GameObject:
   m_Layer: 0
   m_Name: BadHuman
   m_TagString: Enemy
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -153,12 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe1eff10f1e90143b5a41be262bf370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: BadHuman
-  level: 1
   health: 100
-  attackCooldown: 1
+  endurance: 0
   attackTime: 0
-  DamageGiven: 26.12
   agent: {fileID: 7840340302361544148}
 --- !u!65 &7840340302361544146
 BoxCollider:

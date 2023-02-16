@@ -1,23 +1,44 @@
-﻿using System;
-using System.Diagnostics;
+using System.Collections.Generic;
 using UnityEngine;
 
-//Base for all item
-public class Item : ScriptableObject
+namespace RpgProject.Objects
 {
-    public string _name = ""; 
-    public string description; 
+    public enum Rarity
+    {
+        COMMON,
+        UNCOMON,
+        RARE,
+        EPIC,
+        LEGENDARY,
+    }
 
-    public int price = 0;
-    public Mesh itemModel;
-    public Sprite itemIcon;
+    public class Item
+    {
+        private string name;
+        private string description; 
 
-    public readonly string uuid = Guid.NewGuid().ToString(); //DONT TOUCH
+        private int price;
+        private Mesh itemModel;
+        private Sprite itemIcon;
+        private Rarity itemRarity;
+        public virtual int stackSize => 128;
 
-    public string getName() { return _name; }
-    public string getDescription() { return description;  }
-    public int getPrice() { return price; }
-    public Mesh getModel() { return itemModel; }
-    public Sprite getIcon() { return itemIcon; }
-    public string getUuid() { return uuid; }
+        public Item(string name, Rarity rarity, string description, int price, Mesh itemModel, Sprite itemIcon)
+        {
+            this.name = name;
+            this.description = description;
+            this.price = price;
+            this.itemModel = itemModel;
+            this.itemIcon = itemIcon;
+            this.itemRarity = rarity;
+        }
+
+        public string getName() { return name; }
+        public string getDescription() { return description;  }
+        public int getPrice() { return price; }
+        public Mesh getModel() { return itemModel; }
+        public Sprite getIcon() { return itemIcon; }
+        public Rarity getRarity() { return itemRarity; }
+        public int getStackSize() { return stackSize; }
+    }    
 }

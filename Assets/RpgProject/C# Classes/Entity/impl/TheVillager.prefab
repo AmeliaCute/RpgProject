@@ -115,7 +115,7 @@ GameObject:
   m_Layer: 0
   m_Name: TheVillager
   m_TagString: Npc
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -182,8 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e8c9c5cc59e8fe4ea37b9894771dcbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Le villageois
   health: 150
+  endurance: 0
 --- !u!1 &9172540523978178252
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ class Player : Entity
 
     /*===================( PLAYER )===================*/
 
-        /*==============={ Classes }================*/
+        /*==============={ Objects }================*/
             public static Player instance;
             public Inventory inventory;
 
@@ -69,9 +69,6 @@ class Player : Entity
             
             CurrentCooldown = Time.time;
 
-            EnduranceBar.transform.position = new Vector3(100f, 18, 0);
-            HealthBar.transform.position = new Vector3(100f, 34, 0);    
-
             DialogueMan.Instance.OnShowDialogue += () => { Gamestates.set(GameState.BUSY); };
             DialogueMan.Instance.OnCloseDialogue += () => { Gamestates.set(GameState.PLAYING);};
             Stat.StatsUpdateEvent += () => { updateStats(); };
@@ -82,6 +79,9 @@ class Player : Entity
         {
             isFlying();
             updateHud();
+
+            if (Input.GetButtonUp("Cancel"))
+                Quest.hideQuest();
 
             if (!isAlive) return;
             if (isBusy) return; 
@@ -124,8 +124,8 @@ class Player : Entity
             if (inventory.getWeapon() != null)
             {
                 DamageGiven = InventoryStats.getStat("Strength").GetTotal();
-                attackRange = inventory.getWeapon().attackRange;
-                attackCooldown = inventory.getWeapon().reloadTime;
+                attackRange = inventory.getWeapon().getAttackRange();
+                attackCooldown = inventory.getWeapon().getReloadTime();
             }
             else
             {
@@ -174,9 +174,6 @@ class Player : Entity
             if (Input.GetButtonUp("Sprint"))
                 if (isSprinting != false)
                     isSprinting = false;
-
-            if (Input.GetButtonUp("Cancel"))
-                Quest.hideQuest();
         }
 
         private void interact()
@@ -206,7 +203,7 @@ class Player : Entity
                             if (inventory.getPickaxe() != null)
                             {
                                 inventory.getPickaxe().DamageItem(0.3f);
-                                hit.transform.GetComponent<ore>().Damage(inventory.getPickaxe().DamageToOre);
+                                hit.transform.GetComponent<ore>().Damage(inventory.getPickaxe().getDamage());
                             }
                         }
                         break;

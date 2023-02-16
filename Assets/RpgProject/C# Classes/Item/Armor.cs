@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine;
 
-[CreateAssetMenu(fileName = "Armor", menuName = "RpgProject/Armor")]
-public class Armor : ForgedItem
+namespace RpgProject.Objects
 {
     public enum slot
     {
@@ -11,6 +11,17 @@ public class Armor : ForgedItem
         Feet,
     }
 
-    public float MagiqueResistance = 0;
-    public float PhysiqueResistance = 0;
+    public class Armor : ForgedItem
+    {
+        private slot slot;
+        private int MagicResistance;
+        private int PhysiqueResistance;
+
+        public Armor(string name, Rarity rarity, string description, int price, Mesh itemModel, Sprite itemIcon, float Durability, Quality quality, int MagicRes, int PhyRes, slot slot): base(name, rarity, description, price, itemModel, itemIcon, Durability, quality)
+        {
+            this.slot = slot;
+            this.MagicResistance = MagicRes;
+            this.PhysiqueResistance = PhyRes;
+        }
+    }
 }

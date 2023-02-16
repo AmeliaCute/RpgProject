@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using RpgProject.Objects;
+using RpgProject.UI;
 
 public enum Categories
 {
@@ -19,9 +21,9 @@ public class Inventory : MonoBehaviour
     private List<GameObject> objects;
     private GameObject playerModel;
     private Inventory instance;
-    [SerializeField] private List<Item> items;
-    [SerializeField] private Sword weapon = null;
-    [SerializeField] private Pickaxe pickaxe = null;
+    private List<Item> items;
+    public Sword weapon = null;
+    public Pickaxe pickaxe = null;
 
     public const int INITIAL_HEIGHT = 585;
     public const int INITIAL_WIDTH = 40;
@@ -68,7 +70,7 @@ public class Inventory : MonoBehaviour
         inventory = GameObject.Find("Inventory").GetComponent<Canvas>();
         hud = GameObject.Find("Hud").GetComponentInChildren<Canvas>();
         uiCamera = GameObject.Find("UI Camera").GetComponent<Camera>();
-        InventoryStats.AddBonusToStat("Strength", weapon.getDamage());
+        InventoryStats.AddBonusToStat("Strength",  weapon != null ? weapon.getDamage() : 0);
         Myriad = Resources.Load<Font>("Fonts/myriad");
     }
 

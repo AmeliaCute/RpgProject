@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using RpgProject.Objects;
 
 public enum QuestType{
     PVP,
@@ -8,7 +9,6 @@ public enum QuestType{
     INTERACTION,
     EXPLORATION,
     LOOTING,
-
 }
 
 [CreateAssetMenu(fileName = "Quest", menuName = "RpgProject/Quest")]
@@ -33,8 +33,8 @@ public class Quest : ScriptableObject {
         Image ba0 = _base.AddComponent<Image>();
         RectTransform ba1 = _base.GetComponent<RectTransform>();
 
-        bg1.position = new Vector3(960, 540, 0);
-        ba1.position = new Vector3(960, 540, 0);  
+        bg1.position = new Vector3(Screen.width/2, Screen.height/2, 0);
+        ba1.position = new Vector3(Screen.width/2, Screen.height/2, 0);  
         
         bg1.localScale = new Vector3(4000, 4000, 0);
         ba1.sizeDelta = new Vector2(535, 820);
@@ -112,14 +112,14 @@ public class Quest : ScriptableObject {
         rewards_label.transform.SetParent(_base.transform);
 
         x.transform.SetParent(GameObject.Find("Canvas").transform);
-
+        Gamestates.set(GameState.BUSY);
     }
 
     public static void hideQuest()
     {
         if(Player.instance.isCheckingQuest)
+            Gamestates.set(GameState.PLAYING);
             GameObject.Destroy(GameObject.Find("QuestDetails"));
-
             Player.instance.isCheckingQuest = false;
     }
 }

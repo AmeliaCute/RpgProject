@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 [CreateAssetMenu(fileName = "Artifact", menuName = "RpgProject/Artifact")]
 public class Artifact : Item
@@ -20,4 +20,4 @@ public class Artifact : Item
     }
 
     public float UpgradeValue = 0;
-}
+}*/

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using RpgProject.Objects;
 
 public class RegisteredItem : MonoBehaviour
 {

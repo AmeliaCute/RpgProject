@@ -1,4 +1,5 @@
 using UnityEngine;
+using RpgProject.Objects;
 
 public class drop : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class drop : MonoBehaviour
     public void createNewDrop()
     {
         GameObject entity = GameObject.Find("Entity");
-        GameObject _drop = new GameObject("[l]"+item.uuid);
+        GameObject _drop = new GameObject("[l]"+item.getName());
 
         _drop.AddComponent<MeshFilter>();
         _drop.AddComponent<MeshRenderer>();

@@ -1,15 +1,25 @@
-﻿using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine;
 
-[CreateAssetMenu(fileName = "Other", menuName = "RpgProject/Other")]
-public class Other : Item
+namespace RpgProject.Objects
 {
-    public enum type
+    public enum type 
     {
         Useless,
         Ressource,
         Quest,
-        Essential,
+        Essential
     }
 
-    public type Type = type.Useless;
+    public class Other : Item 
+    {
+        private type type;
+        
+        public Other(string name, Rarity rarity, string description, int price, Mesh itemModel, Sprite itemIcon, type type): base(name, rarity, description, price, itemModel, itemIcon)
+        {
+            this.type = type;
+        }
+
+        public type getType() { return this.type; }
+    }
 }
