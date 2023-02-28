@@ -6,12 +6,12 @@
 ### 🛕 Architecture des fichiers :
 
 ```
-|- All
-   |- Contents
+|- Assets
+   |- Resources
       |- Type D'asset (ex: Modeles)
         |- Rapport avec (ex: Le Joueur)
            |- Joueur.obj
-   |- C# Classes
+   |- Rpg Project
       |- Rapport avec (ex: Le Joueur)
            |- PlayerMovement.cs
 ```
