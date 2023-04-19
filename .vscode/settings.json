@@ -23,8 +23,13 @@
         "Logs": true,
         "UserSettings": true,
         "Temp": true,
-        "**/*.prefab": true
+        "**/*.prefab": true,
+        ".vs": true,
+        ".idea": true
     },
     "explorerExclude.backup": {},
-    "hide-files.files": []
+    "hide-files.files": [
+        ".vs",
+        ".idea"
+    ]
 }
