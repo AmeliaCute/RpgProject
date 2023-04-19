@@ -10,6 +10,6 @@ public class Recipes {
     {
         RpgClass.LOADING_ETA = LOADING_STATE.LOADING_RECIPES;
 
-        STICK = new RecipeWorkbench(new List<ItemComponent>(), new List<Item>(), 0, false);
+        STICK = new RecipeWorkbench(new List<ItemComponent>{new ItemComponent(Items.DEBUG_ITEM,3)}, new List<ItemComponent>{new ItemComponent(Items.WOODEN_STICK,1)}, 0, false);
     }
 }

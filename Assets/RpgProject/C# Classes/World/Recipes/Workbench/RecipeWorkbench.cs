@@ -5,7 +5,7 @@ public class RecipeWorkbench
 {
     /*==============={ Necessary }================*/
         public List<ItemComponent> recipeRequires;
-        public List<Item> recipeResults;
+        public List<ItemComponent> recipeResults;
 
     /*==============={ Optionnal }================*/
 
@@ -15,7 +15,7 @@ public class RecipeWorkbench
         // !!FOR VERY SPECIFIC CASE!!
         public bool KeepItems;
 
-    public RecipeWorkbench(List<ItemComponent> a, List<Item> b, int unlockAtLevel, bool KeepItems)
+    public RecipeWorkbench(List<ItemComponent> a, List<ItemComponent> b, int unlockAtLevel, bool KeepItems)
     {
         recipeRequires = a;
         recipeResults = b;
@@ -36,7 +36,7 @@ public class RecipeWorkbench
         //Blabla delete items and give item to player
         for(int i = 0; i < recipeResults.Count; ++i)
         {
-            Player.instance.inventory.AddItem(recipeResults[i]);
+            Player.instance.inventory.AddItem(recipeResults[i].getItem());
         }
     }
 }

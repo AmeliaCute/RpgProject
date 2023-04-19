@@ -1,6 +1,7 @@
 using RpgProject.Objects;
 using UnityEngine;
 using UnityEngine.UI;
+ using UnityEngine.EventSystems;
 
 namespace RpgProject.UI
 {
@@ -12,7 +13,7 @@ namespace RpgProject.UI
             RectTransform icon_rectTransform = icon.AddComponent<RectTransform>();
             icon.layer = LayerMask.NameToLayer("UI");
             icon_rectTransform.localScale = new Vector2(iconSize, iconSize);
-            icon_rectTransform.position = new Vector3(960+pos.x, 540+pos.y, 0);
+            icon_rectTransform.position = new Vector3(pos.x, pos.y, 0);
             
             iconSize = iconSize/100;
             GameObject background = new GameObject("Background");
@@ -65,6 +66,9 @@ namespace RpgProject.UI
             border.GetComponent<RectTransform>().localScale = new Vector2(iconSize, iconSize);
             border.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Inventory/items/Border");
 
+            ItemGraphique_EventHandlers graphique_EventHandlers = new ItemGraphique_EventHandlers();
+            graphique_EventHandlers.gameObject.transform.SetParent(icon.transform);
+
             if(x.getQuantity() > 1)
             {
                 GameObject QuantityOverlay = new GameObject("Quantity_Overlay");
@@ -90,5 +94,29 @@ namespace RpgProject.UI
 
             return icon;
         }
+    }
+
+    public class ItemGraphique_EventHandlers : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    {
+             private bool mouse_over = false;
+            void Update()
+            {
+                if (mouse_over)
+                {
+                    Debug.Log("Mouse Over");
+                }
+            }
+        
+            public void OnPointerEnter(PointerEventData eventData)
+            {
+                mouse_over = true;
+                Debug.Log("Mouse enter");
+            }
+        
+            public void OnPointerExit(PointerEventData eventData)
+            {
+                mouse_over = false;
+                Debug.Log("Mouse exit");
+            }
     }
 }

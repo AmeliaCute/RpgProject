@@ -47,7 +47,7 @@ class workbench : machine
 
             _CloseButton.onClick.AddListener(closeMenu);
 
-            ItemGraphique.itemIcon(new ItemComponent(Items.DEBUG_ITEM, 19), new Vector2(0,0), 128).transform.SetParent(ba0.transform);
+            ItemGraphique.itemIcon(new ItemComponent(Items.DEBUG_ITEM, 19), new Vector2(960, 540), 128).transform.SetParent(ba0.transform);
 
             CloseButton.transform.SetParent(_base.transform);
             x.transform.SetParent(GameObject.Find("Canvas").transform);
