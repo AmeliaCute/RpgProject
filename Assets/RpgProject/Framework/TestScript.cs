@@ -23,7 +23,7 @@ public class TestScript : MonoBehaviour
         (
             new Container
             {
-                Color = new UnityEngine.Color(255,0,255),
+                Color = new UnityEngine.Color(0.541f, 0.169f, 0.886f),
                 Size = new UnityEngine.Vector2(1504, 1045),
                 Children = {
                     new Button

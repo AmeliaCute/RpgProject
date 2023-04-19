@@ -10,7 +10,8 @@ namespace RpgProject.Framework.Graphics.Overlays
 {
     public class Button : Drawable
     {
-        private int _LabelSize = -1;
+        public int _LabelSize = -1;
+        public readonly float INTERFACE_MARGIN = 0.1f;
 
         public string Label { get; set; }
         public int LabelSize { get { return _LabelSize; } set { _LabelSize = value; } }
@@ -21,7 +22,6 @@ namespace RpgProject.Framework.Graphics.Overlays
 
         public Action<object> Action { get; set; }
         
-        private const float INTERFACE_MARGIN = 0.1f;
         public override GameObject CreateGameObject()
         {
             GameObject buttonObject = new GameObject("Button");
@@ -61,16 +61,21 @@ namespace RpgProject.Framework.Graphics.Overlays
         }
     }
 
-    public class Button_Handlers : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
-    {       
-            private Action<object> action = null;
-            private bool mouse_over = false;
+    public class Button_Handlers : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+    {
+        public Action<object> Action { get; set; }
+        private bool mouseOver = false;
 
-            public Button_Handlers(Action<object> cx) { action = cx; }
-            void Update() { if(mouse_over) if(Input.GetButtonUp("Fire1")) Task.Factory.StartNew(action, "alpha"); }
-    
-            public void OnPointerEnter(PointerEventData eventData) { mouse_over = true; }
-        
-            public void OnPointerExit(PointerEventData eventData) { mouse_over = false; }
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            mouseOver = true;
+        }
+
+        public void OnPointerExit(PointerEventData eventData) { mouseOver = false; }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (mouseOver) Task.Factory.StartNew(Action, "alpha");
+        }
     }
 }
