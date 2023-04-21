@@ -24,14 +24,34 @@ public class TestScript : MonoBehaviour
             new Container
             {
                 Color = new UnityEngine.Color(0.541f, 0.169f, 0.886f),
-                Size = new UnityEngine.Vector2(1504, 1045),
+                Width = 14f,
+                Height = 6f,
                 Children = {
-                    new Button
+                    new RoundedButton
                     {
-                        Label = "Coucou j'adore les pommes et vous?",
-                        Size = new UnityEngine.Vector2(1.5f, 1f),
+                        Label = "Coucou j'adore les pommes et vous? sfsnkfs sjkfsf lsekrfj lksejf",
+                        Size = 1f,
                         Color = new UnityEngine.Color(0,0,0),
-                        Action = action
+                        Action = action,
+                        Offset = new UnityEngine.Vector2(-2, 2),
+                        Margin = 5f
+                    },
+                    new Container
+                    {
+                        Color = new UnityEngine.Color(0.5f,0.5f,0f),
+                        Width = 4,
+                        Height = 4.5f,
+                        Offset = new UnityEngine.Vector2(3, 0),
+                        Children = {
+                            new RoundedButton
+                            {
+                                Label = "Il est beau le deuxieme bouton hein?",
+                                Size = 1.2f,
+                                Color = new UnityEngine.Color(0f,0f,0.553f),
+                                Action = action,
+                                Offset = new UnityEngine.Vector2(0, -1),
+                            }
+                        }
                     }
                 }
             }
