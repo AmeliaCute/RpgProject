@@ -9,8 +9,6 @@ namespace RpgProject.Framework.Graphics
         public List<Drawable> Children = new List<Drawable>();
         public UnityEngine.Color Color = UnityEngine.Color.clear;
         public float Gap { get; set;} = 0;
-        public float Width;
-        public float Height;
 
         public override GameObject CreateGameObject()
         {
