@@ -1,24 +1,15 @@
-using System.Diagnostics;
-using System.Numerics;
-using System.Drawing;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using RpgProject.Framework.Graphics;
 using RpgProject.Framework.Graphics.Overlays;
 using System;
-using System.Threading;
-using System.Threading.Tasks;
+using Action = RpgProject.Framework.Graphics.Overlays.Action;
+using RpgProject.Framework.Graphics.Screens;
 
 public class TestScript : MonoBehaviour
 {
-    void Start()
+    void Awake()
     {
-        Action<object> action = (object obj) =>
-        {
-            UnityEngine.Debug.Log("T'es tilté boubou");
-        };
-        
+
         Drawable.Create
         (
             new Container
@@ -32,7 +23,7 @@ public class TestScript : MonoBehaviour
                         Label = "Coucou j'adore les pommes et vous? sfsnkfs sjkfsf lsekrfj lksejf",
                         Size = 1f,
                         Color = new UnityEngine.Color(0,0,0),
-                        Action = action,
+                        Action = null,
                         Offset = new UnityEngine.Vector2(-2, 2),
                         Margin = 5f
                     },
@@ -48,8 +39,24 @@ public class TestScript : MonoBehaviour
                                 Label = "Il est beau le deuxieme bouton hein?",
                                 Size = 1.2f,
                                 Color = new UnityEngine.Color(0f,0f,0.553f),
-                                Action = action,
+                                Action = null,
                                 Offset = new UnityEngine.Vector2(0, -1),
+                            },
+                            new RoundedButton
+                            {
+                                Label = "(TEST) CharactereConfig",
+                                Size = 1.2f,
+                                Color = new UnityEngine.Color(0f,0f,0.553f),
+                                Action = null,
+                                Offset = new UnityEngine.Vector2(0,2),
+                            },
+                            new TabBarButton
+                            {
+                                Label = "",
+                                Size = 0.8f,
+                                Color = new UnityEngine.Color(0f,0f,0.553f),
+                                Action = new OpenConfig(),
+                                Offset = new UnityEngine.Vector2(0,1),
                             }
                         }
                     }
@@ -58,3 +65,5 @@ public class TestScript : MonoBehaviour
         );
     }
 }
+
+class OpenConfig : Action { public override void Start() { Drawable.Clear(); new CharacterConfig();  } }

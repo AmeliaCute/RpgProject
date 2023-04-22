@@ -1,8 +1,5 @@
-using UnityEngine;
-using UnityEngine.UI;
-using System.Threading;
 using System.Threading.Tasks;
-using RpgProject.Framework.Graphics.Overlays;
+using UnityEngine;
 
 namespace RpgProject.Framework.Graphics
 {
@@ -10,6 +7,8 @@ namespace RpgProject.Framework.Graphics
     {
         public UnityEngine.Vector2 _Offset = new UnityEngine.Vector2(0,0);
         public UnityEngine.Vector2 Offset { get { return _Offset; } set { _Offset = value; } }
+         public float Width { get; set; }
+        public float Height { get; set; }
         public virtual GameObject CreateGameObject() { return null; }
 
         public static GameObject Create(params Drawable[] drawables)
@@ -30,6 +29,11 @@ namespace RpgProject.Framework.Graphics
 
             drawableObject.transform.SetParent(GameObject.Find("Canvas").transform);
             return drawableObject;
+        }
+
+        public static void Clear()
+        {
+            GameObject.Destroy(GameObject.Find("Drawable"));
         }
     }
 }

@@ -13,9 +13,6 @@ namespace RpgProject.Framework.Graphics
     {
         public List<Drawable> Children = new List<Drawable>();
         private UnityEngine.Color _Color = UnityEngine.Color.clear;
-
-        public float Width { get; set; }
-        public float Height { get; set; }
         public UnityEngine.Color Color { get { return _Color; } set { _Color = value; } }
 
         public override GameObject CreateGameObject()
@@ -24,7 +21,7 @@ namespace RpgProject.Framework.Graphics
             containerObject.AddComponent<RectTransform>();
             containerObject.AddComponent<Image>();
 
-            containerObject.GetComponent<RectTransform>().sizeDelta = new UnityEngine.Vector2(Width * Screen.width / 16f, Height * Screen.height / 8f);
+            containerObject.GetComponent<RectTransform>().sizeDelta = new UnityEngine.Vector2(Width * Screen.width / 16f, Height * Screen.height / 9f);
             containerObject.GetComponent<Image>().color = Color;
 
             foreach (Drawable child in Children)
@@ -32,7 +29,7 @@ namespace RpgProject.Framework.Graphics
                 {
                     GameObject childObject = child.CreateGameObject();
 
-                    childObject.transform.position = new UnityEngine.Vector2(child._Offset.x * Screen.width / 16f, child._Offset.y * Screen.height / 8f);
+                    childObject.transform.position = new UnityEngine.Vector2(child._Offset.x * Screen.width / 16f, child._Offset.y * Screen.height / 9f);
 
                     if (childObject != null)
                         childObject.transform.SetParent(containerObject.transform, false);

@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System.Threading.Tasks;
-using System;
 
 namespace RpgProject.Framework.Graphics.Overlays
 {
@@ -11,7 +9,7 @@ namespace RpgProject.Framework.Graphics.Overlays
         public float _Size = 1f; 
         public float INTERFACE_MARGIN = 1f;
 
-        public Action<object> Action { get; set; }
+        public Action Action { get; set; }
         public float Size { get {return _Size; } set { _Size = value; }}
         
         public override GameObject CreateGameObject()
@@ -22,11 +20,7 @@ namespace RpgProject.Framework.Graphics.Overlays
 
             image.color = Color;
 
-            Rendering.Text text = new Rendering.Text
-            {
-                Label = Label,
-                Margin = Margin
-            };
+            Rendering.Text text = new Rendering.Text { Label = Label, Margin = Margin };
             GameObject textobject = text.AddObject(buttonObject);
 
 
@@ -35,6 +29,7 @@ namespace RpgProject.Framework.Graphics.Overlays
 
             Button_Handlers rtrt = buttonObject.AddComponent<Button_Handlers>();
             rtrt.Action = Action;
+            rtrt.targetSize = new Vector2(_Size * Screen.width / 6  + 10, textobject.GetComponent<Text>().preferredHeight / 2 + 10);
 
             return buttonObject;
         }
@@ -42,11 +37,39 @@ namespace RpgProject.Framework.Graphics.Overlays
 
     public class Button_Handlers : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
-        public Action<object> Action { get; set; }
+        public Action Action { get; set; }
         private bool mouseOver = false;
 
-        public void OnPointerEnter(PointerEventData eventData) { mouseOver = true; }
-        public void OnPointerExit(PointerEventData eventData) { mouseOver = false; }
-        public void OnPointerClick(PointerEventData eventData) { if (mouseOver) Task.Factory.StartNew(Action, "alpha"); }
+        public Vector3 targetSize;
+        public float duration = 1.5f; 
+
+        private Vector2 startSize; 
+        private float startTime;
+        
+        void Start()
+        {
+            startSize = GetComponent<RectTransform>().sizeDelta; 
+            startTime = Time.time;
+        }
+
+        void Update()
+        {
+            
+        }
+
+        public void OnPointerEnter(PointerEventData eventData) 
+        { 
+            mouseOver = true; 
+        }
+        public void OnPointerExit(PointerEventData eventData) 
+        { 
+            mouseOver = false; 
+        }
+        public void OnPointerClick(PointerEventData eventData) { Action.Start(); }
+    }
+
+    public abstract class Action
+    {
+        public abstract void Start();
     }
 }

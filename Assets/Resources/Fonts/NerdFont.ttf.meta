@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: aa645a09832821048a1876467d243a70
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - InconsolataGo NF
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 8286219cc87b4d74fb4b9329198d5bd9, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

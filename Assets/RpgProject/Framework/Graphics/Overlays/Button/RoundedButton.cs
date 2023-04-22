@@ -1,5 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System.Threading.Tasks;
+using System;
+using System.Threading;
 
 namespace RpgProject.Framework.Graphics.Overlays
 {
@@ -24,21 +28,80 @@ namespace RpgProject.Framework.Graphics.Overlays
             
             //Optional sprite >> x
 
-            Rendering.Text text = new Rendering.Text
-            {
-                Label = Label,
-                Margin = Margin
-            };
+            Rendering.Text text = new Rendering.Text { Label = Label, Margin = Margin };
             GameObject textobject = text.AddObject(buttonObject);
             
             float xHeight = textobject.GetComponent<Text>().preferredHeight / 2;
             rectTransform.sizeDelta = new UnityEngine.Vector2(_Size * Screen.width / 6, xHeight);
             backgroundRectTransform.sizeDelta = new UnityEngine.Vector2(_Size * Screen.width / 6, xHeight);
 
-            Button_Handlers rtrt = buttonObject.AddComponent<Button_Handlers>();
+            RoundedButton_Handlers rtrt = buttonObject.AddComponent<RoundedButton_Handlers>();
             rtrt.Action = Action;
+            rtrt.targetSize = new Vector2(_Size * Screen.width / 6  + 5, xHeight + 5);
+            rtrt.targetFontSize = text.LabelSize + 2;
 
             return buttonObject;
         }
     }
+
+    public class RoundedButton_Handlers : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+    {
+        public Action Action { get; set; }
+
+        public Vector2 targetSize;
+        public float targetFontSize;
+        public float duration = 0.2f;
+
+        private float startFontSize;
+        private Vector2 startSize;
+        private float startTime;
+        private bool isPointerInside = false;
+        private bool animPointerExit = false;
+
+        void Start()
+        {
+            startSize = GetComponent<RectTransform>().sizeDelta;
+            startFontSize = gameObject.transform.Find("Text").GetComponent<UnityEngine.UI.Text>().fontSize;
+        }
+
+        void Update()
+        {
+            if (isPointerInside)
+            {
+                float elapsedTime = Time.time - startTime;
+                float t = Mathf.Clamp01(elapsedTime / duration);
+                GetComponent<RectTransform>().sizeDelta = Vector2.Lerp(startSize, targetSize, t);
+                gameObject.transform.Find("Background").GetComponent<RectTransform>().sizeDelta = Vector2.Lerp(startSize, targetSize, t);
+                gameObject.transform.Find("Text").GetComponent<UnityEngine.UI.Text>().fontSize = Mathf.RoundToInt(Mathf.Lerp(startFontSize, targetFontSize, t));
+            }
+            if(animPointerExit)
+            {
+                float elapsedTime = Time.time - startTime;
+                float t = Mathf.Clamp01(elapsedTime / duration);
+                GetComponent<RectTransform>().sizeDelta = Vector2.Lerp(targetSize, startSize, t);
+                gameObject.transform.Find("Background").GetComponent<RectTransform>().sizeDelta = Vector2.Lerp(targetSize, startSize, t);
+                gameObject.transform.Find("Text").GetComponent<UnityEngine.UI.Text>().fontSize = Mathf.RoundToInt(Mathf.Lerp(targetFontSize, startFontSize, t));
+                if(GetComponent<RectTransform>().sizeDelta == startSize) animPointerExit = false;
+            }
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            isPointerInside = true;
+            startTime = Time.time;
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            isPointerInside = false;
+            animPointerExit = true;
+            startTime = Time.time;
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            Action.Start();
+        }
+    }
+
 }
