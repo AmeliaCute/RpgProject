@@ -4,12 +4,11 @@ using UnityEngine.UI;
 
 namespace RpgProject.Framework.Graphics
 {
-    public class HorizontalGrid : Drawable
+    public class VerticalGrid : Drawable
     {
         public List<Drawable> Children = new List<Drawable>();
         public UnityEngine.Color Color = UnityEngine.Color.clear;
         public float Gap { get; set;} = 0;
-
         public override GameObject CreateGameObject()
         {
             GameObject containerObject = new GameObject("Container");
@@ -20,7 +19,7 @@ namespace RpgProject.Framework.Graphics
             containerRectTransform.transform.position = new UnityEngine.Vector2(_Offset.x * Screen.width / 16f, _Offset.y * Screen.height / 9f);
             containerImage.color = Color;
 
-            float xOffset = -(Width * Screen.width / 16f / 2f);
+            float yOffset = (Height * Screen.height / 9f / 2f);
             foreach (Drawable child in Children)
             {
                 if (child != null)
@@ -28,11 +27,11 @@ namespace RpgProject.Framework.Graphics
                     GameObject childObject = child.CreateGameObject();
                     RectTransform childRectTransform = childObject.GetComponent<RectTransform>();
 
-                    float childWidth = childRectTransform.sizeDelta.x;
-                    float childXOffset = xOffset + childWidth / 2f;
-                    childRectTransform.anchoredPosition = new Vector2(childXOffset, 0f);
+                    float childHeight = childRectTransform.sizeDelta.y;
+                    float childYOffset = yOffset - childHeight / 2f;
+                    childRectTransform.anchoredPosition = new Vector2(0f, childYOffset);
 
-                    xOffset += childWidth + (Gap * Screen.width / 16);
+                    yOffset -= childHeight + (Gap * Screen.height / 9f);
 
                     if (childObject != null)
                         childObject.transform.SetParent(containerObject.transform, false);

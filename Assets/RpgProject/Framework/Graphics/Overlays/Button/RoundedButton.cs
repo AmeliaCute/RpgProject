@@ -32,12 +32,12 @@ namespace RpgProject.Framework.Graphics.Overlays
             GameObject textobject = text.AddObject(buttonObject);
             
             float xHeight = textobject.GetComponent<Text>().preferredHeight / 2;
-            rectTransform.sizeDelta = new UnityEngine.Vector2(_Size * Screen.width / 6, xHeight);
-            backgroundRectTransform.sizeDelta = new UnityEngine.Vector2(_Size * Screen.width / 6, xHeight);
+            rectTransform.sizeDelta = new UnityEngine.Vector2(_Size * Screen.width / 6, xHeight < 50 ? 50 : xHeight);
+            backgroundRectTransform.sizeDelta = new UnityEngine.Vector2(_Size * Screen.width / 6, xHeight < 50 ? 50 : xHeight);
 
             RoundedButton_Handlers rtrt = buttonObject.AddComponent<RoundedButton_Handlers>();
             rtrt.Action = Action;
-            rtrt.targetSize = new Vector2(_Size * Screen.width / 6  + 5, xHeight + 5);
+            rtrt.targetSize = new Vector2(_Size * Screen.width / 6  + 5, (xHeight < 50 ? 50 : xHeight) + 5);
             rtrt.targetFontSize = text.LabelSize + 2;
 
             return buttonObject;

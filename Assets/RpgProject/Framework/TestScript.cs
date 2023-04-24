@@ -12,6 +12,7 @@ public class TestScript : MonoBehaviour
 
         Drawable.Create
         (
+            DrawableType.Foreground,
             new Container
             {
                 Color = new UnityEngine.Color(0.541f, 0.169f, 0.886f),
@@ -50,12 +51,12 @@ public class TestScript : MonoBehaviour
                                 Action = null,
                                 Offset = new UnityEngine.Vector2(0,2),
                             },
-                            new TabBarButton
+                            new RoundedButton
                             {
-                                Label = "",
-                                Size = 0.8f,
+                                Label = "Show overlay",
+                                Size = 1.2f,
                                 Color = new UnityEngine.Color(0f,0f,0.553f),
-                                Action = new OpenConfig(),
+                                Action = new ShowOverlay(),
                                 Offset = new UnityEngine.Vector2(0,1),
                             }
                         }
@@ -66,4 +67,4 @@ public class TestScript : MonoBehaviour
     }
 }
 
-class OpenConfig : Action { public override void Start() { Drawable.Clear(); new CharacterConfig();  } }
+class ShowOverlay : Action { public override void Start() { Drawable.ClearAll(); new HotbarOverlay();  } }

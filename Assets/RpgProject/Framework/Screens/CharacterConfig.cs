@@ -2,61 +2,64 @@
 using RpgProject.Framework.Graphics.Overlays;
 using RpgProject.Framework.Graphics;
 using Color = UnityEngine.Color;
+using RpgProject.Framework.Graphics.Screens;
 
 namespace RpgProject.Framework.Graphics.Screens
 {
-    public class CharacterConfig
+    public class HotbarOverlay
     {
-        public CharacterConfig()
+        public HotbarOverlay()
         {
             Drawable.Create(
-                new Container
+                DrawableType.Overlay,
+                new HorizontalGrid
                 {
                     Width = 16f,
-                    Height = 9f,
-                    Color = UnityEngine.Color.clear,
-                    Children = {
-                        new HorizontalGrid
+                    Height = 0.5f,
+                    Color = new Color(0.15f,0.15f,0.15f),
+                    Offset = new UnityEngine.Vector2(0,4.25f),
+                    Children =
+                    {
+                        new TabBarButton 
                         {
-                            Width = 16f,
+                            Size = 0.5f,
+                            Color = Color.cyan,
+                            Label = "",
+                            Action = new OpenConfigurationScreen()
+                        },
+                        new Container
+                        {
+                            Width = 3.3f,
                             Height = 0.5f,
-                            Color = new UnityEngine.Color(0.2f, 0.2f, 0.2f),
-                            Offset = new UnityEngine.Vector2(0,4.25f),
+                            Color = Color.clear,
                             Children =
                             {
-                                new Container
+                                new Header
                                 {
-                                    Width = 3.3f,
+                                    Label = "Character creation",
                                     Height = 0.5f,
-                                    Color = Color.clear,
-                                    Children =
-                                    {
-                                        new Header
-                                        {
-                                            Label = "Character creation",
-                                            Height = 0.5f,
-                                            Width = 3f,
-                                            Offset = new UnityEngine.Vector2(0.05f,0)
-                                        }
-                                    }
-                                },
-                                new TabBarButton
-                                {
-                                    Size = 0.5f,
-                                    Color = Color.white,
-                                    Label = "",
-                                },
-                                new TabBarButton
-                                {
-                                    Size = 0.5f,
-                                    Color = Color.white,
-                                    Label = "",
-                                },
+                                    Width = 3f,
+                                    Offset = new UnityEngine.Vector2(0.025f,0)
+                                }
                             }
-                        }
+                        },
+                        new TabBarButton
+                        {
+                            Size = 0.5f,
+                            Color = Color.white,
+                            Label = "",
+                        },
+                        new TabBarButton
+                        {
+                            Size = 0.5f,
+                            Color = Color.white,
+                            Label = "",
+                        },
                     }
                 }
             );
         }
     }
 }
+
+class OpenConfigurationScreen : Action { public override void Start() { if(UnityEngine.GameObject.Find("game.config_Drawable") == null) new ConfigurationScreen(); else Drawable.Clear("game.config"); } }

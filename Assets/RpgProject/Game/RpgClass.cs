@@ -25,7 +25,6 @@ public class RpgClass : MonoBehaviour{
     {
         Player.instance.inventory.weapon = Items.WOODEN_STICK;
     }
-
 }
 
 public enum LOADING_STATE {
@@ -34,6 +33,5 @@ public enum LOADING_STATE {
     LOADING_ITEMS,
     LOADING_RECIPES,
     LOADING_ENTITY,
-    
     FINISH,
 }
