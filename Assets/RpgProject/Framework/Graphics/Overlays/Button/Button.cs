@@ -14,17 +14,15 @@ namespace RpgProject.Framework.Graphics.Overlays
         
         public override GameObject CreateGameObject()
         {
-            GameObject buttonObject = new GameObject("Button");
+            var buttonObject = new GameObject("Button");
             var rectTransform = buttonObject.AddComponent<RectTransform>();
             var image = buttonObject.AddComponent<Image>();
-
             image.color = Color;
 
             Rendering.Text text = new Rendering.Text { Label = Label, Margin = Margin };
             GameObject textobject = text.AddObject(buttonObject);
-
-
             textobject.GetComponent<RectTransform>().SetParent(rectTransform);
+
             rectTransform.sizeDelta = new UnityEngine.Vector2(_Size * Screen.width / 6, textobject.GetComponent<Text>().preferredHeight / 2);
 
             Button_Handlers rtrt = buttonObject.AddComponent<Button_Handlers>();

@@ -19,14 +19,19 @@ public class TestScript : MonoBehaviour
                 Width = 14f,
                 Height = 6f,
                 Children = {
-                    new RoundedButton
+                    new BorderRoundedButton
                     {
-                        Label = "Coucou j'adore les pommes et vous? sfsnkfs sjkfsf lsekrfj lksejf",
-                        Size = 1f,
-                        Color = new UnityEngine.Color(0,0,0),
-                        Action = null,
-                        Offset = new UnityEngine.Vector2(-2, 2),
-                        Margin = 5f
+                        Size = new Vector2(2.2f,5f),
+                        Color = new Color(0.8f,0.8f,0.8f),
+                        Sprite = Resources.Load<Sprite>("Sprites/Test/Banner/Banner_Wizard"),
+                        Offset = new Vector2(-2, 0)
+                    },
+                    new BorderRoundedButton
+                    {
+                        Size = new Vector2(2.2f,5f),
+                        Color = new Color(0.8f,0.8f,0.8f),
+                        Sprite = Resources.Load<Sprite>("Sprites/Test/Banner/Banner_Blacksmith"),
+                        Offset = new Vector2(-4.5f, 0)
                     },
                     new Container
                     {
@@ -45,10 +50,10 @@ public class TestScript : MonoBehaviour
                             },
                             new RoundedButton
                             {
-                                Label = "(TEST) CharactereConfig",
+                                Label = "Show Starting menu",
                                 Size = 1.2f,
                                 Color = new UnityEngine.Color(0f,0f,0.553f),
-                                Action = null,
+                                Action = new ShowStartingMenu(),
                                 Offset = new UnityEngine.Vector2(0,2),
                             },
                             new RoundedButton
@@ -68,3 +73,4 @@ public class TestScript : MonoBehaviour
 }
 
 class ShowOverlay : Action { public override void Start() { Drawable.ClearAll(); new HotbarOverlay();  } }
+class ShowStartingMenu : Action { public override void Start() { Drawable.ClearAll(); new StartingMenu();  } }

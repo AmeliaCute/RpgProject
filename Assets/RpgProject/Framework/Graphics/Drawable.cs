@@ -45,7 +45,7 @@ namespace RpgProject.Framework.Graphics
             drawableObject.transform.position = new Vector3(Screen.width/2, Screen.height/2, 0);
 
             Texture2D cursorTexture = Resources.Load<Texture2D>("Sprites/Hud/cursor");
-            Cursor.SetCursor(cursorTexture, new Vector2(cursorTexture.width / 2, cursorTexture.height / 2), CursorMode.Auto);
+            Cursor.SetCursor(cursorTexture, new Vector2(cursorTexture.width / 2.5f, cursorTexture.height / 2.5f), CursorMode.Auto);
 
             drawableObject.transform.SetParent(GameObject.Find("Canvas").transform);
             return drawableObject;
