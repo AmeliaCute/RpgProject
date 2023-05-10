@@ -19,6 +19,7 @@ namespace RpgProject.Framework.Graphics.Rendering
         public override GameObject CreateGameObject()
         {
             GameObject textObject = new GameObject("Text");
+            RpgClass.RPGLOGGER.Log("Creating a new text component");
             var textRectTransform = textObject.AddComponent<RectTransform>();
             var textComponent = textObject.AddComponent<UnityEngine.UI.Text>();
             textRectTransform.anchorMin = UnityEngine.Vector2.zero;
@@ -32,14 +33,21 @@ namespace RpgProject.Framework.Graphics.Rendering
             textComponent.alignment = TextAnchor.MiddleCenter;
             textComponent.text = Label;
 
+            RpgClass.RPGLOGGER.Passed("Text finished to be created");
             return textObject;
         }
 
         public GameObject AddObject(GameObject gameObject)
         {
             GameObject textObject = new GameObject("Text");
-            var textRectTransform = textObject.AddComponent<RectTransform>();
-            textObject.GetComponent<RectTransform>().SetParent(gameObject.GetComponent<RectTransform>());
+            RpgClass.RPGLOGGER.Log("Creating a new text component");
+            var textRectTransform = textObject.AddComponent<RectTransform>();            
+            try {
+                RpgClass.RPGLOGGER.Warning("Attaching a text component to a "+gameObject.name);
+                textObject.GetComponent<RectTransform>().SetParent(gameObject.GetComponent<RectTransform>()); 
+            }
+            catch { RpgClass.RPGLOGGER.Error("Attach failed."); }
+
             var textComponent = textObject.AddComponent<UnityEngine.UI.Text>();
             textRectTransform.anchorMin = UnityEngine.Vector2.zero;
             textRectTransform.anchorMax = UnityEngine.Vector2.one;
@@ -52,6 +60,7 @@ namespace RpgProject.Framework.Graphics.Rendering
             textComponent.alignment = TextAnchor.MiddleCenter;
             textComponent.text = Label;
 
+            RpgClass.RPGLOGGER.Passed("Text finished to be created");
             return textObject;
         }
     }

@@ -7,7 +7,7 @@ using RpgProject.Framework.Graphics.Screens;
 
 public class TestScript : MonoBehaviour
 {
-    void Awake()
+    void Start()
     {
 
         Drawable.Create
@@ -58,6 +58,14 @@ public class TestScript : MonoBehaviour
                             },
                             new RoundedButton
                             {
+                                Label = "Show Inventory menu",
+                                Size = 1.2f,
+                                Color = new UnityEngine.Color(0f,0f,0.553f),
+                                Action = new ShowInventoryMenu(),
+                                Offset = new UnityEngine.Vector2(0,0),
+                            },
+                            new RoundedButton
+                            {
                                 Label = "Show overlay",
                                 Size = 1.2f,
                                 Color = new UnityEngine.Color(0f,0f,0.553f),
@@ -74,3 +82,5 @@ public class TestScript : MonoBehaviour
 
 class ShowOverlay : Action { public override void Start() { Drawable.ClearAll(); new HotbarOverlay();  } }
 class ShowStartingMenu : Action { public override void Start() { Drawable.ClearAll(); new StartingMenu();  } }
+
+class ShowInventoryMenu : Action { public override void Start() { Drawable.ClearAll(); new InventoryMenu();  } }

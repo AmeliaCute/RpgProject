@@ -61,9 +61,7 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-# Crashlytics generated file
-crashlytics-build.properties
-UserSettings/HDRPUserSettings.asset
+launch.json
+UserSettings
 UserSettings/Layouts/default-2021.dwlt
-
-.gitignore
+UserSettings/HDRPUserSettings.asset

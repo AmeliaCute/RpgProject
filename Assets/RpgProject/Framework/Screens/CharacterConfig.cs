@@ -24,7 +24,7 @@ namespace RpgProject.Framework.Graphics.Screens
                         {
                             Size = 0.5f,
                             Color = Color.cyan,
-                            Label = "",
+                            Label = "",
                             Action = new OpenConfigurationScreen()
                         },
                         new Container
@@ -42,18 +42,6 @@ namespace RpgProject.Framework.Graphics.Screens
                                     Offset = new UnityEngine.Vector2(0.025f,0)
                                 }
                             }
-                        },
-                        new TabBarButton
-                        {
-                            Size = 0.5f,
-                            Color = Color.white,
-                            Label = "",
-                        },
-                        new TabBarButton
-                        {
-                            Size = 0.5f,
-                            Color = Color.white,
-                            Label = "",
                         },
                     }
                 }

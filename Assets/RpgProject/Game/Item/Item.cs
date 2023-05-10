@@ -16,7 +16,7 @@ namespace RpgProject.Objects
     {
         private string name;
         private string description; 
-
+        public virtual string type => "unknown"; 
         private int price;
         private Mesh itemModel;
         private Sprite itemIcon;

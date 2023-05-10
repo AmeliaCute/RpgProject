@@ -16,6 +16,7 @@ namespace RpgProject.Objects
         private slot slot;
         private int MagicResistance;
         private int PhysiqueResistance;
+        public override string type => "armor";
 
         public Armor(string name, Rarity rarity, string description, int price, Mesh itemModel, Sprite itemIcon, float Durability, Quality quality, int MagicRes, int PhyRes, slot slot): base(name, rarity, description, price, itemModel, itemIcon, Durability, quality)
         {

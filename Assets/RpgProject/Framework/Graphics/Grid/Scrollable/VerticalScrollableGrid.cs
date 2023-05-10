@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -11,21 +12,23 @@ namespace RpgProject.Framework.Graphics
             GameObject containerObject = new GameObject("Container");
             var containerRectTransform = containerObject.AddComponent<RectTransform>();
             var containerImage = containerObject.AddComponent<Image>();
+            var scrollableDiv = containerObject.AddComponent<Scrollable_Handler>();
+            
             containerObject.AddComponent<Mask>();
             containerImage.color = Color;
             containerImage.sprite = Resources.Load<Sprite>("Sprites/WhiteSquare");
             
             GameObject backgroundObject = new GameObject("BackgroundContainer");
             var backgroundRectTransform = backgroundObject.AddComponent<RectTransform>();
-            backgroundObject.AddComponent<Scrollabe_Handler>();
+            scrollableDiv.contentTransform = backgroundRectTransform;
             backgroundRectTransform.SetParent(containerObject.transform);
 
             containerRectTransform.sizeDelta = new Vector2(Width * Screen.width / 16f, Height * Screen.height / 9f);
-            backgroundRectTransform.sizeDelta = new Vector2(Width * Screen.width / 16f, Height * Screen.height / 9f);
+            backgroundRectTransform.sizeDelta = containerRectTransform.sizeDelta;
             containerRectTransform.transform.position = new UnityEngine.Vector2(_Offset.x * Screen.width / 16f, _Offset.y * Screen.height / 9f);
             
 
-            float yOffset = (Height * Screen.height / 9f / 2f);
+            float yOffset = containerRectTransform.sizeDelta.y / 2;
             foreach (Drawable child in Children)
             {
                 if (child != null)
@@ -47,7 +50,7 @@ namespace RpgProject.Framework.Graphics
         }
     }
 
-    public class Scrollabe_Handler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class Scrollable_Handler : MonoBehaviour, IDragHandler,  IPointerEnterHandler, IPointerExitHandler        
     {
         public RectTransform contentTransform;
         public float speed = 400f;
@@ -57,45 +60,49 @@ namespace RpgProject.Framework.Graphics
         private Vector2 _startPos;
         private Vector2 _contentStartPos;
         private float _smoothY;
-        private bool pointerInside;
-
-        public void OnPointerEnter(PointerEventData eventData)
-        {
-            pointerInside = true;
-        }
-
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            pointerInside = false;
-        }
+        [SerializeField] private bool _pointerInside;
 
         private void Start()
         {
             _startPos = transform.position;
-            contentTransform = GetComponent<RectTransform>();
             _contentStartPos = contentTransform.position;
             _smoothY = contentTransform.position.y;
         }
 
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            _pointerInside = true;
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            _pointerInside = false;
+        }
+
+        public void OnDrag(PointerEventData eventData)
+        {
+            float input = eventData.delta.y;
+            float scrollInput = Input.GetAxis("Mouse ScrollWheel") * -1;
+
+            float newY = contentTransform.position.y + (input + scrollInput * scrollSpeed) * speed * Time.deltaTime;
+            newY = Mathf.Clamp(newY, _contentStartPos.y, _contentStartPos.y + contentTransform.rect.height / 2 + 0.5f);
+
+            // smoothing pos y
+            _smoothY = Mathf.Lerp(_smoothY, newY, smoothing * Time.deltaTime);
+
+            contentTransform.position = new Vector2(contentTransform.position.x, _smoothY);
+
+            float percent = (contentTransform.position.y - _contentStartPos.y) / (contentTransform.rect.height);
+            contentTransform.position = new Vector2(_startPos.x, _startPos.y + percent * contentTransform.rect.height);
+        }
+
         private void Update()
         {
-            if(pointerInside)
+            if (_pointerInside)
             {
-                float input = Input.GetAxis("Vertical");
-                float scrollInput = Input.GetAxis("Mouse ScrollWheel") * -1;
-
-                if (Mathf.Abs(input) > 0f || Mathf.Abs(scrollInput) > 0f)
+                if (Input.GetAxis("Mouse ScrollWheel") != 0)
                 {
-                    float newY = contentTransform.position.y + (input + scrollInput * scrollSpeed) * speed * Time.deltaTime;
-                    newY = Mathf.Clamp(newY, _contentStartPos.y, _contentStartPos.y + contentTransform.rect.height);
-
-                    // Lissage de la position Y
-                    _smoothY = Mathf.Lerp(_smoothY, newY, smoothing * Time.deltaTime);
-
-                    contentTransform.position = new Vector2(contentTransform.position.x, _smoothY);
-
-                    float percent = (contentTransform.position.y - _contentStartPos.y) / (contentTransform.rect.height);
-                    transform.position = new Vector2(_startPos.x, _startPos.y + percent * contentTransform.rect.height);
+                    OnDrag(new PointerEventData(EventSystem.current));
                 }
             }
         }

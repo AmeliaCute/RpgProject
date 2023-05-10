@@ -16,7 +16,7 @@ namespace RpgProject.Framework.Graphics.Overlays
 
             image.color = new UnityEngine.Color(Color.r,Color.g,Color.b, 0f);
 
-            Rendering.Text text = new Rendering.Text { Label = Label, LabelSize = Mathf.RoundToInt(1f * 30 * (Screen.height / 1080f)), Margin = Margin, LabelFont = Resources.Load<Font>("Fonts/NerdFont") };
+            Rendering.Text text = new Rendering.Text { Label = Label, LabelSize = Mathf.RoundToInt(1f * 30 * (Screen.height / 1080f) + Size), Margin = Margin, LabelFont = Resources.Load<Font>("Fonts/fa-solid") };
             GameObject textobject = text.AddObject(buttonObject);
             textobject.GetComponent<RectTransform>().offsetMin = new Vector2(Mathf.Round(-7.5f * (Screen.height / 1080f)), 0f);
             

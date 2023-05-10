@@ -8,6 +8,7 @@ namespace RpgProject.Objects
         private int Damage;
         private float reloadTime;
         private float attackRange;
+        public override string type => "weapon";
 
         public Sword(string name, Rarity rarity, string description, int price, Mesh itemModel, Sprite itemIcon, float Durability, Quality quality, int Damage, float Reloadtime,int attackRange): base(name,rarity, description, price, itemModel, itemIcon, Durability, quality)
         {

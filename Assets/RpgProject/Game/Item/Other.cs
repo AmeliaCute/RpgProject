@@ -13,13 +13,14 @@ namespace RpgProject.Objects
 
     public class Other : Item 
     {
-        private type type;
-        
+        private type classtype;
+        public override string type => "other";
+
         public Other(string name, Rarity rarity, string description, int price, Mesh itemModel, Sprite itemIcon, type type): base(name, rarity, description, price, itemModel, itemIcon)
         {
-            this.type = type;
+            this.classtype = type;
         }
 
-        public type getType() { return this.type; }
+        public type getType() { return this.classtype; }
     }
 }

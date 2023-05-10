@@ -14,6 +14,7 @@ namespace RpgProject.Framework.Graphics
         public static GameObject Create(DrawableType type, params Drawable[] drawables)
         {
             GameObject drawableObject = new GameObject(type+"_Drawable");
+            RpgClass.RPGLOGGER.Log("Creating a new drawable part of type "+type);
 
             foreach (Drawable drawable in drawables)
             {
@@ -34,6 +35,7 @@ namespace RpgProject.Framework.Graphics
         public static GameObject Create(string type, params Drawable[] drawables)
         {
             GameObject drawableObject = new GameObject(type+"_Drawable");
+            RpgClass.RPGLOGGER.Log("Creating a new drawable part of type"+type);
 
             foreach (Drawable drawable in drawables)
             {
@@ -45,7 +47,7 @@ namespace RpgProject.Framework.Graphics
             drawableObject.transform.position = new Vector3(Screen.width/2, Screen.height/2, 0);
 
             Texture2D cursorTexture = Resources.Load<Texture2D>("Sprites/Hud/cursor");
-            Cursor.SetCursor(cursorTexture, new Vector2(cursorTexture.width / 2.5f, cursorTexture.height / 2.5f), CursorMode.Auto);
+            Cursor.SetCursor(cursorTexture, new Vector2(cursorTexture.width / 4f, cursorTexture.height / 4f), CursorMode.Auto);
 
             drawableObject.transform.SetParent(GameObject.Find("Canvas").transform);
             return drawableObject;
@@ -54,11 +56,13 @@ namespace RpgProject.Framework.Graphics
         public static void Clear(DrawableType type)
         {
             GameObject.Destroy(GameObject.Find(type+"_Drawable"));
+            RpgClass.RPGLOGGER.Log("Clearing all Drawable of type "+type);
         }
 
         public static void Clear(string type)
         {
             GameObject.Destroy(GameObject.Find(type+"_Drawable"));
+            RpgClass.RPGLOGGER.Log("Clearing all Drawable of type "+type);
         }
 
         public static void ClearAll()
@@ -66,6 +70,7 @@ namespace RpgProject.Framework.Graphics
             GameObject.Destroy(GameObject.Find("Overlay_Drawable"));
             GameObject.Destroy(GameObject.Find("Foreground_Drawable"));
             GameObject.Destroy(GameObject.Find("Background_Drawable"));
+            RpgClass.RPGLOGGER.Log("Clearing all Drawable in the scene");
         }
     }
 

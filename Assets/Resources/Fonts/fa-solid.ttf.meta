@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aa645a09832821048a1876467d243a70
+guid: 1b9b75c3a18b78242b636cc63004539a
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,9 +9,8 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - InconsolataGo NF
-  fallbackFontReferences:
-  - {fileID: 12800000, guid: 8286219cc87b4d74fb4b9329198d5bd9, type: 3}
+  - Font Awesome 5 Free
+  fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

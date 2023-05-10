@@ -32,7 +32,7 @@ namespace RpgProject.Framework.Graphics.Screens
                     {
                         new FloatingButton
                         {
-                            Label = "",
+                            Label = "",
                             Color = Color.white,
                             Size = 0.5f,
                         },
