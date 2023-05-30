@@ -17,7 +17,7 @@ namespace RpgProject.Framework.Graphics
             GameObject containerObject = new GameObject("Container");
             RpgClass.RPGLOGGER.Log("Creating a new container");
             var rectTransform = containerObject.AddComponent<RectTransform>();
-            rectTransform.transform.position = new UnityEngine.Vector2(_Offset.x * Screen.width / 16f, _Offset.y * Screen.height / 9f);
+            rectTransform.transform.position = new UnityEngine.Vector2(Offset.x * Screen.width / 16f, Offset.y * Screen.height / 9f);
             var image = containerObject.AddComponent<Image>();
             image.color = Color;
             
@@ -49,7 +49,7 @@ namespace RpgProject.Framework.Graphics
                     GameObject childObject = child.CreateGameObject();
                     RpgClass.RPGLOGGER.Log("Creating a "+childObject.name);
 
-                    childObject.transform.position = new UnityEngine.Vector2(child._Offset.x * Screen.width / 16f, child._Offset.y * Screen.height / 9f);
+                    childObject.transform.position = new UnityEngine.Vector2(child.Offset.x * Screen.width / 16f, child.Offset.y * Screen.height / 9f);
                     RpgClass.RPGLOGGER.Log("Child offset applicated to current position ("+child.Offset.x + "," + child.Offset.y + ")");
 
 

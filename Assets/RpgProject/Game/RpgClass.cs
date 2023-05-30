@@ -33,7 +33,7 @@ public class RpgClass : MonoBehaviour{
 
     public void Start()
     {
-        
+        Player.instance.inventory.weapon = Items.WOODEN_WAND;
     }
 
     public void OnApplicationQuit()

@@ -22,7 +22,7 @@ public class Inventory : MonoBehaviour
     private GameObject playerModel;
     private Inventory instance;
     private List<Item> items;
-    public Sword weapon = null;
+    public Weapon weapon = null;
     public Pickaxe pickaxe = null;
 
     public const int INITIAL_HEIGHT = 585;
@@ -43,7 +43,7 @@ public class Inventory : MonoBehaviour
 
     public List<Item> GetItems() { return items; }
     public Item GetItem(Item item) { return items.Find(x => x == item); }
-    public Sword getWeapon() { return weapon; }
+    public Weapon getWeapon() { return weapon; }
     public Pickaxe getPickaxe() { return pickaxe; }
 
     public void AddItem(Item item) { items.Add(item); } 

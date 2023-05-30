@@ -2,7 +2,6 @@
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
 
-[ExecuteAlways]
 public class Manager : MonoBehaviour
 {
     [SerializeField] private Light _light;

@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using System.Threading.Tasks;
 using System;
 using System.Threading;
+using System.Collections.Generic;
 
 namespace RpgProject.Framework.Graphics.Overlays
 {
@@ -45,7 +46,24 @@ namespace RpgProject.Framework.Graphics.Overlays
 
             Rendering.Text text = new Rendering.Text { Label = Label, Margin = Margin };
             GameObject textobject = text.AddObject(buttonObject);
-            
+
+            foreach (Drawable child in Children)
+                if (child != null)
+                {
+                    GameObject childObject = child.CreateGameObject();
+                    RpgClass.RPGLOGGER.Log("Creating a "+childObject.name);
+
+                    childObject.transform.position = new UnityEngine.Vector2(child.Offset.x * Screen.width / 16f, child.Offset.y * Screen.height / 9f);
+                    RpgClass.RPGLOGGER.Log("Child offset applicated to current position ("+child.Offset.x + "," + child.Offset.y + ")");
+
+
+                    if (childObject != null)
+                        childObject.transform.SetParent(buttonContainer.transform, false);
+
+                    RpgClass.RPGLOGGER.Passed("Child created");
+                }
+
+
             rectTransform.sizeDelta = new UnityEngine.Vector2(Size.x * Screen.width / 16, Size.y * Screen.height / 9);
             backgroundRectTransform.sizeDelta = new UnityEngine.Vector2(Size.x * Screen.width / 16, Size.y * Screen.height / 9);
 
@@ -76,7 +94,7 @@ namespace RpgProject.Framework.Graphics.Overlays
 
         void Update()
         {
-            
+            Action.OnObjectUpdate();
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -86,6 +104,7 @@ namespace RpgProject.Framework.Graphics.Overlays
                 isPointerOver = true;
                 animator.speed = 1;
                 animator.Play("over_buttonborder", 0);
+                Action.OnMouseEnter();
             }
         }
 
@@ -96,6 +115,7 @@ namespace RpgProject.Framework.Graphics.Overlays
                 isPointerOver = false;
                 animator.speed = 1;
                 animator.Play("exit_buttonborder", 0);
+                Action.OnMouseExit();
             }
         }
 

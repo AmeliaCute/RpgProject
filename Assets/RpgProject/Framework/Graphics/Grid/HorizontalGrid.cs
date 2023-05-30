@@ -17,7 +17,7 @@ namespace RpgProject.Framework.Graphics
             Image containerImage = containerObject.AddComponent<Image>();
 
             containerRectTransform.sizeDelta = new Vector2(Width * Screen.width / 16f, Height * Screen.height / 9f);
-            containerRectTransform.transform.position = new UnityEngine.Vector2(_Offset.x * Screen.width / 16f, _Offset.y * Screen.height / 9f);
+            containerRectTransform.transform.position = new UnityEngine.Vector2(Offset.x * Screen.width / 16f, Offset.y * Screen.height / 9f);
             containerImage.color = Color;
 
             float xOffset = -(Width * Screen.width / 16f / 2f);

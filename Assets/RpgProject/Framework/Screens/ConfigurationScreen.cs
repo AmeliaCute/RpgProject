@@ -38,7 +38,203 @@ namespace RpgProject.Framework.Graphics.Screens
                             Color = new UnityEngine.Color(0,0,0),
                             Action = null,
                         },
-
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        new RoundedButton
+                        {
+                            Label = "Clear log",
+                            Size = 1.2f,
+                            Color = new UnityEngine.Color(0,0,0),
+                            Action = null,
+                        },
+                        
                     }
                 }
             );

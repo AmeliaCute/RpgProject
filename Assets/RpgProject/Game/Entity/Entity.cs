@@ -25,6 +25,7 @@ abstract class Entity : MonoBehaviour
     // INIT FUNCTION:
     private void Awake()
     {
+        gameObject.tag = EntityMarker;
         init();
         if(damageable) health = maxHealth;
         if(hasEndurance) endurance = maxEndurance;

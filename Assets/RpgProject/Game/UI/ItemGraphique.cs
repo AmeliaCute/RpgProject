@@ -28,27 +28,6 @@ namespace RpgProject.UI
             imgRarity.AddComponent<Image>();
             imgRarity.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
             imgRarity.GetComponent<RectTransform>().localScale = new Vector2(iconSize, iconSize);
-            switch(x.getItem().getRarity())
-            {
-                case Rarity.COMMON:
-                    imgRarity.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Inventory/items/Rarity/common"); 
-                    break;
-                case Rarity.UNCOMON:
-                    imgRarity.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Inventory/items/Rarity/uncommon"); 
-                    break;
-                case Rarity.RARE:
-                    imgRarity.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Inventory/items/Rarity/rare"); 
-                    break;
-                case Rarity.EPIC:
-                    imgRarity.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Inventory/items/Rarity/epic"); 
-                    break;
-                case Rarity.LEGENDARY:
-                    imgRarity.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Inventory/items/Rarity/legendary"); 
-                    break;
-                default: 
-                    imgRarity.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Inventory/items/Rarity/common"); 
-                    break;
-            }
 
             GameObject item = new GameObject("Icon");
             item.transform.SetParent(background.transform);

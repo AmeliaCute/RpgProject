@@ -17,6 +17,7 @@ namespace RpgProject.Objects
         private string name;
         private string description; 
         public virtual string type => "unknown"; 
+        public virtual string secret_type => "unknown";
         private int price;
         private Mesh itemModel;
         private Sprite itemIcon;
@@ -31,6 +32,7 @@ namespace RpgProject.Objects
             this.itemModel = itemModel;
             this.itemIcon = itemIcon;
             this.itemRarity = rarity;
+            RpgClass.RPGLOGGER.Log("Item created: " + this.name + " (" + this.type + ")");
         }
 
         public string getName() { return name; }
@@ -40,5 +42,24 @@ namespace RpgProject.Objects
         public Sprite getIcon() { return itemIcon; }
         public Rarity getRarity() { return itemRarity; }
         public int getStackSize() { return stackSize; }
+
+        public Sprite getSpriteFromRarity()
+        {
+            switch(itemRarity)
+            {
+                case Rarity.COMMON:
+                    return Resources.Load<Sprite>("Sprites/Inventory/items/Rarity/common"); 
+                case Rarity.UNCOMON:
+                    return Resources.Load<Sprite>("Sprites/Inventory/items/Rarity/uncommon"); 
+                case Rarity.RARE:
+                    return Resources.Load<Sprite>("Sprites/Inventory/items/Rarity/rare"); 
+                case Rarity.EPIC:
+                    return Resources.Load<Sprite>("Sprites/Inventory/items/Rarity/epic"); 
+                case Rarity.LEGENDARY:
+                    return Resources.Load<Sprite>("Sprites/Inventory/items/Rarity/legendary"); 
+                default: 
+                    return Resources.Load<Sprite>("Sprites/Inventory/items/Rarity/common"); 
+            }
+        }
     }    
 }

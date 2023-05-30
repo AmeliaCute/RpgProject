@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ namespace RpgProject.Framework.Graphics
 {
     public class VerticalScrollableGrid : VerticalGrid
     {
+        public string optional_Name { get; set; } = null;
         public override GameObject CreateGameObject()
         {
             GameObject containerObject = new GameObject("Container");
@@ -25,7 +27,7 @@ namespace RpgProject.Framework.Graphics
 
             containerRectTransform.sizeDelta = new Vector2(Width * Screen.width / 16f, Height * Screen.height / 9f);
             backgroundRectTransform.sizeDelta = containerRectTransform.sizeDelta;
-            containerRectTransform.transform.position = new UnityEngine.Vector2(_Offset.x * Screen.width / 16f, _Offset.y * Screen.height / 9f);
+            containerRectTransform.transform.position = new UnityEngine.Vector2(Offset.x * Screen.width / 16f, Offset.y * Screen.height / 9f);
             
 
             float yOffset = containerRectTransform.sizeDelta.y / 2;
@@ -60,6 +62,7 @@ namespace RpgProject.Framework.Graphics
         private Vector2 _startPos;
         private Vector2 _contentStartPos;
         private float _smoothY;
+        private float _childrensSize = 0;
         [SerializeField] private bool _pointerInside;
 
         private void Start()
@@ -67,6 +70,9 @@ namespace RpgProject.Framework.Graphics
             _startPos = transform.position;
             _contentStartPos = contentTransform.position;
             _smoothY = contentTransform.position.y;
+            
+            foreach (Transform child in contentTransform.transform) _childrensSize += child.GetComponent<RectTransform>().sizeDelta.y;
+            
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -81,11 +87,12 @@ namespace RpgProject.Framework.Graphics
 
         public void OnDrag(PointerEventData eventData)
         {
+            if(_childrensSize < contentTransform.sizeDelta.y) return;
             float input = eventData.delta.y;
             float scrollInput = Input.GetAxis("Mouse ScrollWheel") * -1;
 
             float newY = contentTransform.position.y + (input + scrollInput * scrollSpeed) * speed * Time.deltaTime;
-            newY = Mathf.Clamp(newY, _contentStartPos.y, _contentStartPos.y + contentTransform.rect.height / 2 + 0.5f);
+            newY = Mathf.Clamp(newY, _contentStartPos.y, _contentStartPos.y + contentTransform.rect.height);
 
             // smoothing pos y
             _smoothY = Mathf.Lerp(_smoothY, newY, smoothing * Time.deltaTime);

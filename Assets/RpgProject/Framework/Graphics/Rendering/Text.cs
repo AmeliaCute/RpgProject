@@ -8,13 +8,14 @@ namespace RpgProject.Framework.Graphics.Rendering
 {
     public class Text : Container
     {
-        public int _LabelSize = Mathf.RoundToInt(1f *  25 * (Screen.height / 1080f));
+        public int _LabelSize = 25;
         public Font _LabelFont = Resources.Load<Font>("Fonts/Comfortaa-Regular");
         public float _Margin = 0;
 
         public string Label { get; set; }
         public int LabelSize { get { return _LabelSize; } set { _LabelSize = value; } }
         public Font LabelFont { get { return _LabelFont; } set { _LabelFont = value; } }
+        public TextAnchor TextAnchor { get; set; } = TextAnchor.MiddleCenter;
         public float Margin { get {return _Margin; } set { _Margin = value; }}
         public override GameObject CreateGameObject()
         {
@@ -29,8 +30,8 @@ namespace RpgProject.Framework.Graphics.Rendering
             textRectTransform.offsetMax = new Vector2(-_Margin, -_Margin);
             textComponent.font = _LabelFont;
             textComponent.color = Color.white;
-            textComponent.fontSize = LabelSize;
-            textComponent.alignment = TextAnchor.MiddleCenter;
+            textComponent.fontSize = Mathf.RoundToInt(1f * LabelSize * (Screen.height / 1080f));
+            textComponent.alignment = TextAnchor;
             textComponent.text = Label;
 
             RpgClass.RPGLOGGER.Passed("Text finished to be created");
@@ -56,7 +57,7 @@ namespace RpgProject.Framework.Graphics.Rendering
             textRectTransform.offsetMax = new Vector2(-_Margin, -_Margin);
             textComponent.font = _LabelFont;
             textComponent.color = Color.white;
-            textComponent.fontSize = this.LabelSize == -1 ? Mathf.RoundToInt(1f *  25 * (Screen.height / 1080f)) : this.LabelSize;
+            textComponent.fontSize = Mathf.RoundToInt(1f * LabelSize * (Screen.height / 1080f));
             textComponent.alignment = TextAnchor.MiddleCenter;
             textComponent.text = Label;
 

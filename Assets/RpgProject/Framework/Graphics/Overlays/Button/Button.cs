@@ -24,6 +24,22 @@ namespace RpgProject.Framework.Graphics.Overlays
             textobject.GetComponent<RectTransform>().SetParent(rectTransform);
 
             rectTransform.sizeDelta = new UnityEngine.Vector2(_Size * Screen.width / 6, textobject.GetComponent<Text>().preferredHeight / 2);
+            
+            foreach (Drawable child in Children)
+                if (child != null)
+                {
+                    GameObject childObject = child.CreateGameObject();
+                    RpgClass.RPGLOGGER.Log("Creating a "+childObject.name);
+
+                    childObject.transform.position = new UnityEngine.Vector2(child.Offset.x * Screen.width / 16f, child.Offset.y * Screen.height / 9f);
+                    RpgClass.RPGLOGGER.Log("Child offset applicated to current position ("+child.Offset.x + "," + child.Offset.y + ")");
+
+
+                    if (childObject != null)
+                        childObject.transform.SetParent(buttonObject.transform, false);
+
+                    RpgClass.RPGLOGGER.Passed("Child created");
+                }
 
             Button_Handlers rtrt = buttonObject.AddComponent<Button_Handlers>();
             rtrt.Action = Action;
@@ -52,16 +68,18 @@ namespace RpgProject.Framework.Graphics.Overlays
 
         void Update()
         {
-            
+            Action.OnObjectUpdate();
         }
 
         public void OnPointerEnter(PointerEventData eventData) 
         { 
             mouseOver = true; 
+            Action.OnMouseEnter();
         }
         public void OnPointerExit(PointerEventData eventData) 
         { 
             mouseOver = false; 
+            Action.OnMouseExit();
         }
         public void OnPointerClick(PointerEventData eventData) { Action.Start(); }
     }
@@ -69,5 +87,8 @@ namespace RpgProject.Framework.Graphics.Overlays
     public abstract class Action
     {
         public abstract void Start();
+        public virtual void OnMouseEnter() {}
+        public virtual void OnMouseExit() {}
+        public virtual void OnObjectUpdate() {}
     }
 }
