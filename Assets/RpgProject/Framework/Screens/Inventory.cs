@@ -1,13 +1,11 @@
-using System.Drawing;
 using RpgProject.Framework.Graphics.Overlays;
-using RpgProject.Framework.Graphics;
 using Color = UnityEngine.Color;
 using RpgProject.Framework.Graphics.Screens;
 using RpgProject.Framework.Graphics.Rendering;
 using RpgProject.Framework.Screens.Inventory;
-using RpgProject.Objects;
 using System.Collections.Generic;
 using UnityEngine;
+using RpgProject.Framework.Resource;
 
 namespace RpgProject.Framework.Graphics.Screens
 {
@@ -29,6 +27,7 @@ namespace RpgProject.Framework.Graphics.Screens
                 "Inventory.Container",
                 new VerticalScrollableGrid
                 {
+                    AnimSpeed = 250,
                     Width = 6.8f,
                     Height = 8.5f,
                     Offset = new UnityEngine.Vector2(-3.9f,-0.3f),
@@ -45,6 +44,7 @@ namespace RpgProject.Framework.Graphics.Screens
 
         public static void Selector(ItemComponent item)
         {
+            if (selected == item) return;
             selected = item;
             RpgClass.RPGLOGGER.Warning("Selected: " + selected.getItem().getName() + "./" + selected.quantity);
             Drawable.Clear("Inventory.Selector.Container");
@@ -93,7 +93,9 @@ namespace RpgProject.Framework.Graphics.Screens
                                             Children = 
                                             {
                                                 new Container { Width = 0.35f, Height = 0.1f, Color = Color.clear }, // Empty space
+                                                RenderSelectorStates(),
                                                 // TODO STATES
+                                                 new Container { Width = 0.35f, Height = 0.1f, Color = Color.clear }, 
                                                 new Text { Label = item.getItem().getDescription(), TextAnchor = TextAnchor.MiddleLeft, Color = Color.white, LabelSize = 20 },
                                             }
                                         }
@@ -104,6 +106,39 @@ namespace RpgProject.Framework.Graphics.Screens
                     }
                 }
             );
+        }
+
+        public static Drawable RenderSelectorStates()
+        {
+            var Children = new Container { Width = 5f, Height = 0.15f, Color = Color.clear };
+            //Basic states:
+            Children.Children.Add(
+                new HorizontalGrid 
+                { 
+                    Width = 5f, Height = 0.15f, Color = Color.clear, Gap = 0.08f, Children = 
+                    {
+                        new Container { Width = 0.335f, Height = 0.15f, Color = Color.clear },
+
+                        State("", Color.white, selected.getItem().getRarity().ToString()),
+                        State("", Color.white, selected.getItem().getPrice().ToString())
+                    } 
+                }
+            );
+
+            return Children;
+        }
+
+        public static Drawable State(string icon, Color32 color, string state)
+        {
+            return new HorizontalGrid 
+            { 
+                Width = 0.8f, Height = 0.15f, Color = Color.clear, Gap = 0.2f,
+                Children = 
+                {
+                    new Text { Label = icon, TextAnchor = TextAnchor.MiddleLeft, Color = color, LabelSize = 15, LabelFont = ResourcesManager.FONT_AWESOME_SOLID},
+                    new Text { Label = state.ToLower(), TextAnchor = TextAnchor.MiddleLeft, Color = Color.white, LabelSize = 15}
+                }
+            };
         }
 
         public List<Drawable> RenderItems(List<ItemComponent> items)

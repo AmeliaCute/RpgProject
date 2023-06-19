@@ -3,6 +3,7 @@ using System.Drawing;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using RpgProject.Framework.Resource;
 
 namespace RpgProject.Framework.Graphics.Overlays
 {
@@ -16,11 +17,11 @@ namespace RpgProject.Framework.Graphics.Overlays
 
             image.color = new UnityEngine.Color(Color.r,Color.g,Color.b, 0f);
 
-            Rendering.Text text = new Rendering.Text { Label = Label, LabelSize = Mathf.RoundToInt(1f * 30 * (Screen.height / 1080f) + Size), Margin = Margin, LabelFont = Resources.Load<Font>("Fonts/fa-solid") };
+            Rendering.Text text = new Rendering.Text { Label = Label, LabelSize = Mathf.RoundToInt(1f * 30 * (Screen.height / 1080f) + Size), Margin = Margin, LabelFont = ResourcesManager.FONT_AWESOME_SOLID };
             GameObject textobject = text.AddObject(buttonObject);
             textobject.GetComponent<RectTransform>().offsetMin = new Vector2(Mathf.Round(-7.5f * (Screen.height / 1080f)), 0f);
             
-            rectTransform.sizeDelta = new UnityEngine.Vector2(_Size * Screen.width / 16, _Size * Screen.height / 9);
+            rectTransform.sizeDelta = new UnityEngine.Vector2(Size * Screen.width / 16, Size * Screen.height / 9);
 
             FloatingButton_Handlers rtrt = buttonObject.AddComponent<FloatingButton_Handlers>();
             rtrt.Action = Action;
@@ -34,18 +35,18 @@ namespace RpgProject.Framework.Graphics.Overlays
     {
         public Action Action { get; set; }
         public Animator animator;
-        public Animation animation_;
+        public Animation animations;
         public RectTransform RectTransform;
         public bool isPointerOver = false;
 
         void Start()
         {
             animator = gameObject.AddComponent<Animator>();
-            animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Ui/Button/Buttonfloating");
-            animation_ = gameObject.AddComponent<Animation>();
-            animation_.AddClip(Resources.Load<AnimationClip>("Animations/Ui/Button/over_buttonfloating"), "over_buttonfloating");
-            animation_.AddClip(Resources.Load<AnimationClip>("Animations/Ui/Button/exit_buttonfloating"), "exit_buttonfloating");
-            animation_.AddClip(Resources.Load<AnimationClip>("Animations/Ui/Button/click_buttonfloating"), "click_buttonfloating");
+            animator.runtimeAnimatorController = ResourcesManager.BUTTON_FLOATING_CONTROLLER;
+            animations = gameObject.AddComponent<Animation>();
+            animations.AddClip(ResourcesManager.BUTTON_FLOATING_OVER_ANIMATION, "over_buttonfloating");
+            animations.AddClip(ResourcesManager.BUTTON_FLOATING_EXIT_ANIMATION, "exit_buttonfloating");
+            animations.AddClip(ResourcesManager.BUTTON_FLOATING_CLICK_ANIMATION, "click_buttonfloating");
         }
 
         void Update()
@@ -77,7 +78,7 @@ namespace RpgProject.Framework.Graphics.Overlays
         {
             animator.Play(null);
             animator.Play("click_buttonfloating", 0);
-            Action.Start();
+            if(Action != null) Action.Start();
         }
     }
 }

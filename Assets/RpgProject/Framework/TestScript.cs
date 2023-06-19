@@ -1,7 +1,6 @@
 using UnityEngine;
 using RpgProject.Framework.Graphics;
 using RpgProject.Framework.Graphics.Overlays;
-using System;
 using Action = RpgProject.Framework.Graphics.Overlays.Action;
 using RpgProject.Framework.Graphics.Screens;
 
@@ -82,5 +81,4 @@ public class TestScript : MonoBehaviour
 
 class ShowOverlay : Action { public override void Start() { Drawable.ClearAll(); new HotbarOverlay();  } }
 class ShowStartingMenu : Action { public override void Start() { Drawable.ClearAll(); new StartingMenu();  } }
-
 class ShowInventoryMenu : Action { public override void Start() { Drawable.ClearAll(); new InventoryMenu();  } }

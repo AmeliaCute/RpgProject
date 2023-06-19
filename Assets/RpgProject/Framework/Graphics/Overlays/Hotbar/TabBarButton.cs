@@ -3,6 +3,7 @@ using System.Drawing;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using RpgProject.Framework.Resource;
 
 namespace RpgProject.Framework.Graphics.Overlays
 {
@@ -16,11 +17,11 @@ namespace RpgProject.Framework.Graphics.Overlays
 
             image.color = new UnityEngine.Color(Color.r,Color.g,Color.b, 0f);
 
-            Rendering.Text text = new Rendering.Text { Label = Label, LabelSize = Mathf.RoundToInt(1f * 30 * (Screen.height / 1080f)), Margin = Margin, LabelFont = Resources.Load<Font>("Fonts/fa-solid") };
+            Rendering.Text text = new Rendering.Text { Label = Label, LabelSize = Mathf.RoundToInt(1f * 30 * (Screen.height / 1080f)), Margin = Margin, LabelFont = ResourcesManager.FONT_AWESOME_SOLID };
             GameObject textobject = text.AddObject(buttonObject);
             textobject.GetComponent<RectTransform>().offsetMin = new Vector2(Mathf.Round(-7.5f * (Screen.height / 1080f)), 0f);
             
-            rectTransform.sizeDelta = new UnityEngine.Vector2(_Size * Screen.width / 16, _Size * Screen.height / 9);
+            rectTransform.sizeDelta = new UnityEngine.Vector2(Size * Screen.width / 16, Size * Screen.height / 9);
 
             TabButton_Handlers rtrt = buttonObject.AddComponent<TabButton_Handlers>();
             rtrt.Action = Action;
@@ -78,7 +79,7 @@ namespace RpgProject.Framework.Graphics.Overlays
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            Action.Start();
+            if(Action != null) Action.Start();
         }
     }
 }

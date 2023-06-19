@@ -1,93 +1,77 @@
 using System.IO;
 using System;
 using UnityEngine;
-using System.Collections;
 
 namespace RpgProject.Framework.Debug
 {
     public class Logger
     {
-        private string LOGGER_NAME;
-        private int VERBOSITY;
-        private string LOG_Filename;
+        private readonly string LOGGER_NAME;
+        private readonly int VERBOSITY;
+        private readonly string LOG_FILENAME;
+        private StreamWriter log;
 
-        private StreamWriter log = null;
-
-        public Logger(string name)
+        public Logger(string name, int verbosityLevel = 1)
         {
             LOGGER_NAME = name;
-            VERBOSITY = 1;
-            LOG_Filename = DateTime.Now.ToString("yyyy-MM-dd.HH-mm-ss.fffffff");
-            RpgClass.instance.StartCoroutine(createNewFile());
+            VERBOSITY = verbosityLevel;
+            LOG_FILENAME = DateTime.Now.ToString("yyyy-MM-dd.HH-mm-ss.fffffff");
+            CreateNewFile();
         }
 
-        public Logger(string name, int verbositylevel)
+        private void CreateNewFile()
         {
-            LOGGER_NAME = name;
-            VERBOSITY = verbositylevel;
-            LOG_Filename = DateTime.Now.ToString("yyyy-MM-dd.HH-mm-ss.fffffff");
-            RpgClass.instance.StartCoroutine(createNewFile());
+            string folderPath = Path.Combine(Application.persistentDataPath, "Logs");
+            string filePath = Path.Combine(folderPath, LOG_FILENAME + ".log");
+
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);
+
+            log = File.CreateText(filePath);
+            log.WriteLine($"RPG PROJECT → {LOG_FILENAME}");
+            log.WriteLine($"VERBOSITY LEVEL → {VERBOSITY}");
         }
 
-        private IEnumerator createNewFile()
+        private void PrintLog(string message, string prefix)
         {
-            string folderpath = Application.persistentDataPath+"/Logs";
-            string filepath = folderpath+"/"+LOG_Filename+".log";
-            if(!Directory.Exists(Application.persistentDataPath+"/Logs"))
-                Directory.CreateDirectory(Application.persistentDataPath+"/Logs");
-            
-            if(!File.Exists(filepath))
-            {
-                log = File.CreateText(filepath);
-                log.WriteLine("RPG PROJECT → "+LOG_Filename);
-                log.WriteLine("VERBOSITY LEVEL → "+VERBOSITY);
-            }
-            else 
-                yield return 1;
-
-            yield return 0;
+            string formattedMessage = $"{prefix} > {DateTime.Now.ToString("HH:mm:ss")} [{LOGGER_NAME}] {message}";
+            UnityEngine.Debug.Log(formattedMessage);
+            log?.WriteLine(formattedMessage);
         }
 
-        public void Warning(string mes)
+        public void Warning(string message)
         {
-            if(VERBOSITY >= 2)
-                RpgClass.instance.StartCoroutine(print("⚠️ > "+DateTime.Now.ToString("HH:mm:ss")+" ["+LOGGER_NAME+"] "+mes));
+            if (VERBOSITY >= 2)
+                PrintLog(message, "⚠️");
         }
 
-        public void Log(string mes)
+        public void Log(string message)
         {
-            if(VERBOSITY >= 3)
-                RpgClass.instance.StartCoroutine(print("👀 > "+DateTime.Now.ToString("HH:mm:ss")+" ["+LOGGER_NAME+"] "+mes));
+            if (VERBOSITY >= 3)
+                PrintLog(message, "👀");
         }
 
-        public void Error(string mes)
+        public void Error(string message)
         {
-            if(VERBOSITY >= 1)
-                RpgClass.instance.StartCoroutine(print("🚫 > "+DateTime.Now.ToString("HH:mm:ss")+" ["+LOGGER_NAME+"] "+mes));
+            if (VERBOSITY >= 1)
+                PrintLog(message, "🚫");
         }
 
-        public void Passed(string mes)
+        public void Passed(string message)
         {
-            if(VERBOSITY >= 3)
-                RpgClass.instance.StartCoroutine(print("✅ > "+DateTime.Now.ToString("HH:mm:ss")+" ["+LOGGER_NAME+"] "+mes));
+            if (VERBOSITY >= 3)
+                PrintLog(message, "✅");
         }
 
-        public void LogWithCustomPrefix(string mes, string pref)
+        public void LogWithCustomPrefix(string message, string prefix)
         {
-            if(VERBOSITY >= 3)
-                RpgClass.instance.StartCoroutine(print(pref+" > "+DateTime.Now.ToString("HH:mm:ss")+" ["+LOGGER_NAME+"] "+mes));
+            if (VERBOSITY >= 1)
+                PrintLog(message, prefix);
         }
 
-        public StreamWriter getWritedFile()
+        public StreamWriter GetWrittenFile()
         {
             return log;
-        }
-
-        private IEnumerator print(string x)
-        {
-            UnityEngine.Debug.Log(x);
-            log.WriteLine(x);
-            yield return null;
         }
     }
 }

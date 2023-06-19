@@ -179,46 +179,45 @@ class Player : Entity
 
         private void interact()
         {
-            if(inventory.getWeapon() == null) return;
-            
             if(Time.time > CurrentCooldown)
                 switch(inventory.getWeapon().secret_type)
                 {
                     case "211929052023":
                         Wand x = (Wand) inventory.getWeapon();
+                        if(Player.instance.endurance < x.enduranceUse) return;
                         x.SendAttack();
                         CurrentCooldown = Time.time + attackCooldown;
                         return;
-                }
-            RaycastHit hit;
-            
-            if (Time.time > CurrentCooldown)
-                if (Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.TransformDirection(Vector3.right), out hit, attackRange))
-                {
-                    Debug.DrawLine(transform.position + Vector3.up * 0.25f, hit.point, Color.red);
-                    Debug.Log("Entity name: " + hit.transform.name);
-
-                    switch (hit.transform.tag)
-                    {
-                        case "Enemy":
-                            hit.transform.GetComponent<enemy>().takeDamage(DamageGiven);
-                            if (inventory.getWeapon() != null)
-                                inventory.getWeapon().DamageItem(0.3f);
-                            CurrentCooldown = Time.time + attackCooldown;
-                            break;
-
-                        case "Ore":
-                            if (inventory.getPickaxe() != null)
+                    default:
+                        RaycastHit hit;
+                        if (Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.TransformDirection(Vector3.right), out hit, attackRange))
                             {
-                                inventory.getPickaxe().DamageItem(0.3f);
-                                hit.transform.GetComponent<ore>().Damage(inventory.getPickaxe().getDamage());
-                            }
-                            break;
-                    }
-                    return;
-                }
-        }
+                                Debug.DrawLine(transform.position + Vector3.up * 0.25f, hit.point, Color.red);
+                                Debug.Log("Entity name: " + hit.transform.name);
 
+                                switch (hit.transform.tag)
+                                {
+                                    case "Enemy":
+                                        hit.transform.GetComponent<enemy>().takeDamage(DamageGiven);
+                                        if (inventory.getWeapon() != null)
+                                            inventory.getWeapon().DamageItem(0.3f);
+                                        CurrentCooldown = Time.time + attackCooldown;
+                                        break;
+
+                                    case "Ore":
+                                        if (inventory.getPickaxe() != null)
+                                        {
+                                            inventory.getPickaxe().DamageItem(0.3f);
+                                            hit.transform.GetComponent<ore>().Damage(inventory.getPickaxe().getDamage());
+                                        }
+                                        break;
+                                }
+                                return;
+                            }
+                        break;
+                }
+        }       
+          
         public void restoreHealth()
         {
             health = maxHealth;

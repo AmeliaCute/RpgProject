@@ -10,6 +10,12 @@ namespace RpgProject.Framework.Graphics
         public UnityEngine.Color Color = UnityEngine.Color.clear;
         public float Gap { get; set;} = 0;
 
+        // Fade duration is in ms
+        public float AnimSpeed { get; set; } = -1;
+
+        public AnimationClip fadeContainerAnimation { get; set; } = Resources.Load<AnimationClip>("Animations/Ui/Container/FadeContainer");
+        public RuntimeAnimatorController fadeContainerAnimationController { get; set; } = Resources.Load<RuntimeAnimatorController>("Animations/Ui/Container/Container");
+
         public override GameObject CreateGameObject()
         {
             GameObject containerObject = new GameObject("Container");
@@ -37,6 +43,16 @@ namespace RpgProject.Framework.Graphics
                     if (childObject != null)
                         childObject.transform.SetParent(containerObject.transform, false);
                 }
+            }
+
+            if(AnimSpeed > 0)
+            {
+                var containerAnimator = containerObject.AddComponent<Animator>();
+                var containerAnimation = containerObject.AddComponent<Animation>();
+                containerAnimation.AddClip(fadeContainerAnimation, "fadeAnim");
+                containerAnimator.runtimeAnimatorController = fadeContainerAnimationController;
+                var containerFadeManager = containerObject.AddComponent<ContainerFadeManager>();
+                containerFadeManager.t = AnimSpeed;
             }
             return containerObject;
         }

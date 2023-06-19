@@ -1,15 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using System.Threading.Tasks;
-using System;
+using  RpgProject.Framework.Resource;
 
 namespace RpgProject.Framework.Graphics.Overlays
 {
     public class Header : Container
     {
         public int _LabelSize = Mathf.RoundToInt(1f * 35 * (Screen.height / 1080f));
-        public Font _LabelFont = Resources.Load<Font>("Fonts/Comfortaa-Bold");
+        public Font _LabelFont = ResourcesManager.COMFORTAA_BOLD;
         public float _Margin = 0;
 
         public string Label { get; set; }

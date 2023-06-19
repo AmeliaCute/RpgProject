@@ -1,34 +1,37 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using RpgProject.Framework.Resource;
 
 namespace RpgProject.Framework.Graphics
 {
     public class VerticalScrollableGrid : VerticalGrid
     {
-        public string optional_Name { get; set; } = null;
+        public string OptionalName { get; set; } = null;
+
+        // Fade duration is in ms
+        public float AnimSpeed { get; set; } = -1;
+
         public override GameObject CreateGameObject()
         {
-            GameObject containerObject = new GameObject("Container");
+            GameObject containerObject = new GameObject(string.IsNullOrEmpty(OptionalName) ? "Container" : OptionalName);
             var containerRectTransform = containerObject.AddComponent<RectTransform>();
             var containerImage = containerObject.AddComponent<Image>();
-            var scrollableDiv = containerObject.AddComponent<Scrollable_Handler>();
-            
+            var scrollableDiv = containerObject.AddComponent<ScrollableHandler>();
+
             containerObject.AddComponent<Mask>();
             containerImage.color = Color;
-            containerImage.sprite = Resources.Load<Sprite>("Sprites/WhiteSquare");
-            
+            containerImage.sprite = ResourcesManager.BUTTON_WHITE_SQUARE;
+
             GameObject backgroundObject = new GameObject("BackgroundContainer");
             var backgroundRectTransform = backgroundObject.AddComponent<RectTransform>();
             scrollableDiv.contentTransform = backgroundRectTransform;
-            backgroundRectTransform.SetParent(containerObject.transform);
+            backgroundRectTransform.SetParent(containerRectTransform);
 
             containerRectTransform.sizeDelta = new Vector2(Width * Screen.width / 16f, Height * Screen.height / 9f);
+            containerRectTransform.anchoredPosition = new Vector2(Offset.x * Screen.width / 16f, Offset.y * Screen.height / 9f);
             backgroundRectTransform.sizeDelta = containerRectTransform.sizeDelta;
-            containerRectTransform.transform.position = new UnityEngine.Vector2(Offset.x * Screen.width / 16f, Offset.y * Screen.height / 9f);
-            
 
             float yOffset = containerRectTransform.sizeDelta.y / 2;
             foreach (Drawable child in Children)
@@ -44,73 +47,84 @@ namespace RpgProject.Framework.Graphics
 
                     yOffset -= childHeight + (Gap * Screen.height / 9f);
 
-                    if (childObject != null)
-                        childObject.transform.SetParent(backgroundObject.transform, false);
+                    childObject.transform.SetParent(backgroundRectTransform, false);
                 }
             }
+
+            if (AnimSpeed > 0)
+            {
+                var containerAnimator = containerObject.AddComponent<Animator>();
+                var containerAnimation = containerObject.AddComponent<Animation>();
+                containerAnimation.AddClip(FadeContainerAnimation, "fadeAnim");
+                containerAnimator.runtimeAnimatorController = FadeContainerAnimationController;
+                var containerFadeManager = containerObject.AddComponent<ContainerFadeManager>();
+                containerFadeManager.t = AnimSpeed;
+            }
+
             return containerObject;
         }
     }
 
-    public class Scrollable_Handler : MonoBehaviour, IDragHandler,  IPointerEnterHandler, IPointerExitHandler        
+    public class ScrollableHandler : MonoBehaviour, IDragHandler, IPointerEnterHandler, IPointerExitHandler
     {
         public RectTransform contentTransform;
         public float speed = 400f;
         public float scrollSpeed = 100f;
         public float smoothing = 25.5f;
 
-        private Vector2 _startPos;
-        private Vector2 _contentStartPos;
-        private float _smoothY;
-        private float _childrensSize = 0;
-        [SerializeField] private bool _pointerInside;
+        private Vector2 startPos;
+        private Vector2 contentStartPos;
+        private float smoothY;
+        private float childrensSize = 0;
+        private bool pointerInside;
 
         private void Start()
         {
-            _startPos = transform.position;
-            _contentStartPos = contentTransform.position;
-            _smoothY = contentTransform.position.y;
-            
-            foreach (Transform child in contentTransform.transform) _childrensSize += child.GetComponent<RectTransform>().sizeDelta.y;
-            
+            startPos = transform.position;
+            contentStartPos = contentTransform.position;
+            smoothY = contentTransform.position.y;
+
+            foreach (Transform child in contentTransform)
+            {
+                childrensSize += child.GetComponent<RectTransform>().sizeDelta.y;
+            }
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            _pointerInside = true;
+            pointerInside = true;
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            _pointerInside = false;
+            pointerInside = false;
         }
 
         public void OnDrag(PointerEventData eventData)
         {
-            if(_childrensSize < contentTransform.sizeDelta.y) return;
+            if (childrensSize < contentTransform.sizeDelta.y)
+                return;
+
             float input = eventData.delta.y;
             float scrollInput = Input.GetAxis("Mouse ScrollWheel") * -1;
 
             float newY = contentTransform.position.y + (input + scrollInput * scrollSpeed) * speed * Time.deltaTime;
-            newY = Mathf.Clamp(newY, _contentStartPos.y, _contentStartPos.y + contentTransform.rect.height);
+            newY = Mathf.Clamp(newY, contentStartPos.y, contentStartPos.y + contentTransform.rect.height);
 
-            // smoothing pos y
-            _smoothY = Mathf.Lerp(_smoothY, newY, smoothing * Time.deltaTime);
+            // Smoothing pos y
+            smoothY = Mathf.Lerp(smoothY, newY, smoothing * Time.deltaTime);
 
-            contentTransform.position = new Vector2(contentTransform.position.x, _smoothY);
+            contentTransform.position = new Vector2(contentTransform.position.x, smoothY);
 
-            float percent = (contentTransform.position.y - _contentStartPos.y) / (contentTransform.rect.height);
-            contentTransform.position = new Vector2(_startPos.x, _startPos.y + percent * contentTransform.rect.height);
+            float percent = (contentTransform.position.y - contentStartPos.y) / contentTransform.rect.height;
+            contentTransform.position = new Vector2(startPos.x, startPos.y + percent * contentTransform.rect.height);
         }
 
         private void Update()
         {
-            if (_pointerInside)
+            if (pointerInside && Input.GetAxis("Mouse ScrollWheel") != 0)
             {
-                if (Input.GetAxis("Mouse ScrollWheel") != 0)
-                {
-                    OnDrag(new PointerEventData(EventSystem.current));
-                }
+                OnDrag(new PointerEventData(EventSystem.current));
             }
         }
     }

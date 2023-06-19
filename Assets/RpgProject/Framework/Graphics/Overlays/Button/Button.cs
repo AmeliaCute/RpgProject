@@ -6,12 +6,11 @@ namespace RpgProject.Framework.Graphics.Overlays
 {
     public class Button : Rendering.Text
     {
-        public float _Size = 1f; 
-        public float INTERFACE_MARGIN = 1f;
+        public float Size { get; set; } = 1f;
+        public float InterfaceMargin { get; set; } = 1f;
 
         public Action Action { get; set; }
-        public float Size { get {return _Size; } set { _Size = value; }}
-        
+
         public override GameObject CreateGameObject()
         {
             var buttonObject = new GameObject("Button");
@@ -20,75 +19,82 @@ namespace RpgProject.Framework.Graphics.Overlays
             image.color = Color;
 
             Rendering.Text text = new Rendering.Text { Label = Label, Margin = Margin };
-            GameObject textobject = text.AddObject(buttonObject);
-            textobject.GetComponent<RectTransform>().SetParent(rectTransform);
+            GameObject textObject = text.AddObject(buttonObject);
+            RectTransform textRectTransform = textObject.GetComponent<RectTransform>();
+            textRectTransform.SetParent(rectTransform);
 
-            rectTransform.sizeDelta = new UnityEngine.Vector2(_Size * Screen.width / 6, textobject.GetComponent<Text>().preferredHeight / 2);
-            
+            rectTransform.sizeDelta = new Vector2(Size * Screen.width / 6, textRectTransform.GetComponent<Text>().preferredHeight / 2);
+
             foreach (Drawable child in Children)
+            {
                 if (child != null)
                 {
                     GameObject childObject = child.CreateGameObject();
-                    RpgClass.RPGLOGGER.Log("Creating a "+childObject.name);
+                    RpgClass.RPGLOGGER.Log("Creating a " + childObject.name);
 
-                    childObject.transform.position = new UnityEngine.Vector2(child.Offset.x * Screen.width / 16f, child.Offset.y * Screen.height / 9f);
-                    RpgClass.RPGLOGGER.Log("Child offset applicated to current position ("+child.Offset.x + "," + child.Offset.y + ")");
-
+                    childObject.transform.position = new Vector2(child.Offset.x * Screen.width / 16f, child.Offset.y * Screen.height / 9f);
+                    RpgClass.RPGLOGGER.Log("Child offset applied to current position (" + child.Offset.x + "," + child.Offset.y + ")");
 
                     if (childObject != null)
                         childObject.transform.SetParent(buttonObject.transform, false);
 
                     RpgClass.RPGLOGGER.Passed("Child created");
                 }
+            }
 
-            Button_Handlers rtrt = buttonObject.AddComponent<Button_Handlers>();
-            rtrt.Action = Action;
-            rtrt.targetSize = new Vector2(_Size * Screen.width / 6  + 10, textobject.GetComponent<Text>().preferredHeight / 2 + 10);
+            ButtonHandlers buttonHandlers = buttonObject.AddComponent<ButtonHandlers>();
+            buttonHandlers.Action = Action;
+            buttonHandlers.targetSize = new Vector2(Size * Screen.width / 6 + 10, textRectTransform.GetComponent<Text>().preferredHeight / 2 + 10);
 
             return buttonObject;
         }
     }
 
-    public class Button_Handlers : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+    public class ButtonHandlers : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
         public Action Action { get; set; }
         private bool mouseOver = false;
 
-        public Vector3 targetSize;
-        public float duration = 1.5f; 
+        public Vector2 targetSize;
+        public float duration = 1.5f;
 
-        private Vector2 startSize; 
+        private Vector2 startSize;
         private float startTime;
-        
+
         void Start()
         {
-            startSize = GetComponent<RectTransform>().sizeDelta; 
+            startSize = GetComponent<RectTransform>().sizeDelta;
             startTime = Time.time;
         }
 
         void Update()
         {
-            Action.OnObjectUpdate();
+            if(Action != null) Action.OnObjectUpdate();
         }
 
-        public void OnPointerEnter(PointerEventData eventData) 
-        { 
-            mouseOver = true; 
-            Action.OnMouseEnter();
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            mouseOver = true;
+            if(Action != null) Action.OnMouseEnter();
         }
-        public void OnPointerExit(PointerEventData eventData) 
-        { 
-            mouseOver = false; 
-            Action.OnMouseExit();
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            mouseOver = false;
+            if(Action != null) Action.OnMouseExit();
         }
-        public void OnPointerClick(PointerEventData eventData) { Action.Start(); }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if(Action != null) Action.Start();
+        }
     }
 
     public abstract class Action
     {
         public abstract void Start();
-        public virtual void OnMouseEnter() {}
-        public virtual void OnMouseExit() {}
-        public virtual void OnObjectUpdate() {}
+        public virtual void OnMouseEnter() { }
+        public virtual void OnMouseExit() { }
+        public virtual void OnObjectUpdate() { }
     }
 }

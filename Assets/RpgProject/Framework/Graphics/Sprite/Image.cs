@@ -1,8 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using System.Threading.Tasks;
-using System;
+using image = UnityEngine.UI.Image;
 
 namespace RpgProject.Framework.Graphics.Rendering
 {
@@ -15,16 +12,18 @@ namespace RpgProject.Framework.Graphics.Rendering
         {
             GameObject imageObject = new GameObject("Image");
             RpgClass.RPGLOGGER.Log("Creating a new image component");
-            var imageRectTransform = imageObject.AddComponent<RectTransform>();
-            var imageComponent = imageObject.AddComponent<UnityEngine.UI.Image>();
-            imageRectTransform.anchorMin = UnityEngine.Vector2.zero;
-            imageRectTransform.anchorMax = UnityEngine.Vector2.one;
-            imageRectTransform.sizeDelta = UnityEngine.Vector2.zero;
+
+            RectTransform imageRectTransform = imageObject.AddComponent<RectTransform>();
+            imageRectTransform.anchorMin = Vector2.zero;
+            imageRectTransform.anchorMax = Vector2.one;
+            imageRectTransform.sizeDelta = Vector2.zero;
+            imageRectTransform.anchoredPosition = Offset * new Vector2(Screen.width / 16f, Screen.height / 9f);
+
+            image imageComponent = imageObject.AddComponent<image>();
             imageComponent.sprite = Sprite;
             imageComponent.color = Color.white;
 
             imageRectTransform.sizeDelta = new Vector2(Size * Screen.width / 16f, Size * Screen.height / 9f);
-            imageRectTransform.transform.position = new UnityEngine.Vector2(Offset.x * Screen.width / 16f, Offset.y * Screen.height / 9f);
 
             return imageObject;
         }

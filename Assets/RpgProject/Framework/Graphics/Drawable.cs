@@ -5,70 +5,100 @@ namespace RpgProject.Framework.Graphics
 {
     public abstract class Drawable
     {
-        public UnityEngine.Vector2 Offset { get; set; } = new UnityEngine.Vector2(0,0);
+        public Vector2 Offset { get; set; } = Vector2.zero;
+
         public float Width { get; set; }
+
         public float Height { get; set; }
-        public virtual GameObject CreateGameObject() { return null; }
+
+        public virtual GameObject CreateGameObject()
+        {
+            return null;
+        }
 
         public static GameObject Create(DrawableType type, params Drawable[] drawables)
         {
-            GameObject drawableObject = new GameObject(type+"_Drawable");
-            RpgClass.RPGLOGGER.Log("Creating a new drawable part of type "+type);
+            string typeName = type.ToString();
+            GameObject drawableObject = new GameObject(typeName + "_Drawable");
+            RpgClass.RPGLOGGER.Log("Creating a new drawable part of type " + typeName);
 
             foreach (Drawable drawable in drawables)
             {
                 GameObject childObject = drawable.CreateGameObject();
                 if (childObject != null)
+                {
                     childObject.transform.SetParent(drawableObject.transform, false);
+                }
             }
-            
-            drawableObject.transform.position = new Vector3(Screen.width/2, Screen.height/2, 0);
 
-            Texture2D cursorTexture = Resources.Load<Texture2D>("Sprites/Hud/cursor");
-            Cursor.SetCursor(cursorTexture, new Vector2(cursorTexture.width / 4f, cursorTexture.height / 4f), CursorMode.Auto);
+            Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+            if (canvas != null)
+            {
+                drawableObject.transform.SetParent(canvas.transform);
+            }
+            else
+            {
+                RpgClass.RPGLOGGER.Error("Canvas not found in the scene.");
+            }
 
-            drawableObject.transform.SetParent(GameObject.Find("Canvas").transform);
+            drawableObject.transform.position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
             return drawableObject;
         }
 
         public static GameObject Create(string type, params Drawable[] drawables)
         {
-            GameObject drawableObject = new GameObject(type+"_Drawable");
-            RpgClass.RPGLOGGER.Log("Creating a new drawable part of type"+type);
+            GameObject drawableObject = new GameObject(type + "_Drawable");
+            RpgClass.RPGLOGGER.Log("Creating a new drawable part of type " + type);
 
             foreach (Drawable drawable in drawables)
             {
                 GameObject childObject = drawable.CreateGameObject();
                 if (childObject != null)
+                {
                     childObject.transform.SetParent(drawableObject.transform, false);
+                }
             }
-            
-            drawableObject.transform.position = new Vector3(Screen.width/2, Screen.height/2, 0);
 
-            Texture2D cursorTexture = Resources.Load<Texture2D>("Sprites/Hud/cursor");
-            Cursor.SetCursor(cursorTexture, new Vector2(cursorTexture.width / 4f, cursorTexture.height / 4f), CursorMode.Auto);
+            Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+            if (canvas != null)
+            {
+                drawableObject.transform.SetParent(canvas.transform);
+            }
+            else
+            {
+                RpgClass.RPGLOGGER.Error("Canvas not found in the scene.");
+            }
 
-            drawableObject.transform.SetParent(GameObject.Find("Canvas").transform);
+            drawableObject.transform.position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
             return drawableObject;
         }
 
         public static void Clear(DrawableType type)
         {
-            GameObject.Destroy(GameObject.Find(type+"_Drawable"));
-            RpgClass.RPGLOGGER.Log("Clearing all Drawable of type "+type);
+            string typeName = type.ToString();
+            GameObject gameObject = GameObject.Find(typeName + "_Drawable");
+            if (gameObject != null)
+            {
+                GameObject.Destroy(gameObject);
+                RpgClass.RPGLOGGER.Log("Clearing all Drawable of type " + typeName);
+            }
         }
 
         public static void Clear(string type)
         {
-            GameObject.Destroy(GameObject.Find(type+"_Drawable"));
-            RpgClass.RPGLOGGER.Log("Clearing all Drawable of type "+type);
+            GameObject gameObject = GameObject.Find(type + "_Drawable");
+            if (gameObject != null)
+            {
+                GameObject.Destroy(gameObject);
+                RpgClass.RPGLOGGER.Log("Clearing all Drawable of type " + type);
+            }
         }
 
         public static void ClearAll()
         {
-            GameObject.Destroy(GameObject.Find("Overlay_Drawable"));
-            GameObject.Destroy(GameObject.Find("Foreground_Drawable"));
-            GameObject.Destroy(GameObject.Find("Background_Drawable"));
+            Clear(DrawableType.Overlay);
+            Clear(DrawableType.Foreground);
+            Clear(DrawableType.Background);
             RpgClass.RPGLOGGER.Log("Clearing all Drawable in the scene");
         }
     }

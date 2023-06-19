@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using RpgProject.Framework.Resource;
 
 namespace RpgProject.Framework.Graphics
 {
@@ -19,7 +20,7 @@ namespace RpgProject.Framework.Graphics
             {
                 var mask = containerObject.AddComponent<Mask>();
 
-                containerImage.sprite = Resources.Load<Sprite>("Sprites/RoundedWhiteSquare");
+                containerImage.sprite = ResourcesManager.BUTTON_ROUNDED_WHITE_SQUARE;
                 containerImage.type = Image.Type.Sliced;
 
                 var backgroundObject = new GameObject("Background");

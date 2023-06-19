@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System.Threading.Tasks;
-using System;
-using System.Threading;
+using RpgProject.Framework.Resource;
 
 namespace RpgProject.Framework.Graphics.Overlays
 {
@@ -16,7 +14,7 @@ namespace RpgProject.Framework.Graphics.Overlays
             var image = buttonObject.AddComponent<Image>();
             var mask = buttonObject.AddComponent<Mask>();
 
-            image.sprite = Resources.Load<Sprite>("Sprites/RoundedWhiteSquare");
+            image.sprite = ResourcesManager.BUTTON_ROUNDED_WHITE_SQUARE;
             image.type = Image.Type.Sliced;
             image.color = Color.white;
 
@@ -25,43 +23,37 @@ namespace RpgProject.Framework.Graphics.Overlays
             var backgroundComponent = backgroundObject.AddComponent<Image>();
             backgroundRectTransform.SetParent(rectTransform);
             backgroundComponent.color = Color;
-            
-            //Optional sprite >> x
 
             Rendering.Text text = new Rendering.Text { Label = Label, Margin = Margin };
-            GameObject textobject = text.AddObject(buttonObject);
-            
-            float xHeight = textobject.GetComponent<Text>().preferredHeight / 2;
-            rectTransform.sizeDelta = new UnityEngine.Vector2(_Size * Screen.width / 6, xHeight < 50 ? 50 : xHeight);
-            backgroundRectTransform.sizeDelta = new UnityEngine.Vector2(_Size * Screen.width / 6, xHeight < 50 ? 50 : xHeight);
+            GameObject textObject = text.AddObject(buttonObject);
 
-            RoundedButton_Handlers rtrt = buttonObject.AddComponent<RoundedButton_Handlers>();
-            rtrt.Action = Action;
-            rtrt.RectTransform = rectTransform;
+            float xHeight = textObject.GetComponent<Text>().preferredHeight / 2;
+            rectTransform.sizeDelta = new UnityEngine.Vector2(Size * Screen.width / 6, xHeight < 50 ? 50 : xHeight);
+            backgroundRectTransform.sizeDelta = rectTransform.sizeDelta;
+
+            RoundedButtonHandlers buttonHandlers = buttonObject.AddComponent<RoundedButtonHandlers>();
+            buttonHandlers.Action = Action;
+            buttonHandlers.RectTransform = rectTransform;
 
             return buttonObject;
         }
     }
 
-    public class RoundedButton_Handlers : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+    public class RoundedButtonHandlers : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
         public Action Action { get; set; }
-        public Animator animator;
-        public Animation animation_;
+        private Animator animator;
+        private Animation animations;
         public RectTransform RectTransform;
         private bool isPointerOver = false;
+
         void Start()
         {
             animator = gameObject.AddComponent<Animator>();
-            animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Ui/Button/Button");
-            animation_ = gameObject.AddComponent<Animation>();
-            animation_.AddClip(Resources.Load<AnimationClip>("Animations/Ui/Button/over_button"), "over_button");
-            animation_.AddClip(Resources.Load<AnimationClip>("Animations/Ui/Button/exit_button"), "exit_button");
-        }
-
-        void Update()
-        {
-            
+            animator.runtimeAnimatorController = ResourcesManager.BUTTON_CONTROLLER;
+            animations = gameObject.AddComponent<Animation>();
+            animations.AddClip(ResourcesManager.BUTTON_OVER_ANIMATION, "over_button");
+            animations.AddClip(ResourcesManager.BUTTON_OVER_ANIMATION, "exit_button");
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -89,5 +81,4 @@ namespace RpgProject.Framework.Graphics.Overlays
             Action.Start();
         }
     }
-
 }

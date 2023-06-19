@@ -31,5 +31,9 @@
     "hide-files.files": [
         ".vs",
         ".idea"
-    ]
+    ],
+    "docwriter.style": "XML",
+    "docwriter.progress.trackTypes": true,
+    "docwriter.progress.trackClasses": true,
+    "docwriter.language": "Spanish"
 }
