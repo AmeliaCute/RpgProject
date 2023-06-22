@@ -3,11 +3,16 @@ using UnityEngine;
 using RpgProject.Framework.Debug;
 using RpgProject.Framework.Resource;
 using Logger = RpgProject.Framework.Debug.Logger;
+using RpgProject.Game.Data;
 
 public class RpgClass : MonoBehaviour{
 
     public static LOADING_STATE LOADING_ETA = LOADING_STATE.STARTING;
     public static List<RecipeWorkbench> WORKBENCH_RECIPES;
+
+    private Bindable<int> VerbosityLevel = new Bindable<int>(3);
+
+
 
     public static Logger RPGLOGGER;
     public static Monitor PERFORMANCE_MONITOR;
@@ -16,10 +21,12 @@ public class RpgClass : MonoBehaviour{
     private void Awake()
     {
         Debug.Log("Starting client");
-        
+        BindableTool.BindWith<int>(RpgSettings.VerbosityLevel, VerbosityLevel);
+        Debug.Log(VerbosityLevel.Value);
+
         Debug.Log("Initializing logger");
         instance = this;
-        RPGLOGGER = new Logger("Rpg", 2);
+        RPGLOGGER = new Logger("Rpg", VerbosityLevel.Value);
         RPGLOGGER.LogWithCustomPrefix("Getting RpgClass instance","🧩");
 
         RPGLOGGER.LogWithCustomPrefix("Attaching performances monitor..", "🖥️");
@@ -42,12 +49,12 @@ public class RpgClass : MonoBehaviour{
     public void Start()
     {
         if(Player.instance != null)
-            Player.instance.inventory.weapon = Items.WAND_OF_AIR;
+            Player.instance.inventory.weapon = Items.DEBUG_SWORD;
     }
 
     public void OnApplicationQuit()
     {
-        RPGLOGGER.Log("Quitting game..");
+        RPGLOGGER.LogWithCustomPrefix("Quitting game..", "🎈");
         RPGLOGGER.LogWithCustomPrefix("Closing logs..", "📂");
         RPGLOGGER.GetWrittenFile().Close();
     }

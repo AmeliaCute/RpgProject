@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using RpgProject.Framework.Resource;
 
 namespace RpgProject.Framework.Graphics
 {
@@ -11,10 +12,10 @@ namespace RpgProject.Framework.Graphics
         public float Gap { get; set;} = 0;
 
         // Fade duration is in ms
-        public float AnimSpeed { get; set; } = -1;
+        public float FadeDuration { get; set; } = -1;
 
-        public AnimationClip fadeContainerAnimation { get; set; } = Resources.Load<AnimationClip>("Animations/Ui/Container/FadeContainer");
-        public RuntimeAnimatorController fadeContainerAnimationController { get; set; } = Resources.Load<RuntimeAnimatorController>("Animations/Ui/Container/Container");
+        public AnimationClip FadeContainerAnimation { get; set; } = ResourcesManager.CONTAINER_FADE_ANIMATION;
+        public RuntimeAnimatorController FadeContainerAnimationController { get; set; } = ResourcesManager.CONTAINER_CONTROLLER;
 
         public override GameObject CreateGameObject()
         {
@@ -45,14 +46,14 @@ namespace RpgProject.Framework.Graphics
                 }
             }
 
-            if(AnimSpeed > 0)
+            if(FadeDuration > 0)
             {
                 var containerAnimator = containerObject.AddComponent<Animator>();
                 var containerAnimation = containerObject.AddComponent<Animation>();
-                containerAnimation.AddClip(fadeContainerAnimation, "fadeAnim");
-                containerAnimator.runtimeAnimatorController = fadeContainerAnimationController;
+                containerAnimation.AddClip(FadeContainerAnimation, "fadeAnim");
+                containerAnimator.runtimeAnimatorController = FadeContainerAnimationController;
                 var containerFadeManager = containerObject.AddComponent<ContainerFadeManager>();
-                containerFadeManager.t = AnimSpeed;
+                containerFadeManager.t = FadeDuration;
             }
             return containerObject;
         }

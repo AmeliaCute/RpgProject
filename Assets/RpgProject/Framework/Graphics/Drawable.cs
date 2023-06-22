@@ -13,6 +13,7 @@ namespace RpgProject.Framework.Graphics
 
         public virtual GameObject CreateGameObject()
         {
+            RpgClass.RPGLOGGER.Error("You can't create a base Drawable object by using method CreateGameObject(). use extends of Drawable instead.");
             return null;
         }
 
@@ -25,21 +26,12 @@ namespace RpgProject.Framework.Graphics
             foreach (Drawable drawable in drawables)
             {
                 GameObject childObject = drawable.CreateGameObject();
-                if (childObject != null)
-                {
-                    childObject.transform.SetParent(drawableObject.transform, false);
-                }
+                if (childObject != null) childObject.transform.SetParent(drawableObject.transform, false);
             }
 
             Canvas canvas = GameObject.FindObjectOfType<Canvas>();
-            if (canvas != null)
-            {
-                drawableObject.transform.SetParent(canvas.transform);
-            }
-            else
-            {
-                RpgClass.RPGLOGGER.Error("Canvas not found in the scene.");
-            }
+            if (canvas != null) drawableObject.transform.SetParent(canvas.transform);
+            else RpgClass.RPGLOGGER.Error("Canvas not found in the scene.");
 
             drawableObject.transform.position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
             return drawableObject;
@@ -53,21 +45,12 @@ namespace RpgProject.Framework.Graphics
             foreach (Drawable drawable in drawables)
             {
                 GameObject childObject = drawable.CreateGameObject();
-                if (childObject != null)
-                {
-                    childObject.transform.SetParent(drawableObject.transform, false);
-                }
+                if (childObject != null) childObject.transform.SetParent(drawableObject.transform, false);
             }
 
             Canvas canvas = GameObject.FindObjectOfType<Canvas>();
-            if (canvas != null)
-            {
-                drawableObject.transform.SetParent(canvas.transform);
-            }
-            else
-            {
-                RpgClass.RPGLOGGER.Error("Canvas not found in the scene.");
-            }
+            if (canvas != null) drawableObject.transform.SetParent(canvas.transform);
+            else RpgClass.RPGLOGGER.Error("Canvas not found in the scene.");
 
             drawableObject.transform.position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
             return drawableObject;

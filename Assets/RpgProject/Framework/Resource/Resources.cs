@@ -23,10 +23,22 @@ namespace RpgProject.Framework.Resource
         public static Sprite BUTTON_WHITE_SQUARE;
         public static Sprite BUTTON_ROUNDED_WHITE_SQUARE;
         public static Sprite BUTTON_ROUNDED_WHITE_SQUARE_BORDERED;
+        public static Sprite WORLD_TALK_ICON;
+        public static Sprite ITEM_DEBUG;
+        public static Sprite ITEM_DEBUG_ALT;
+        public static Sprite ITEM_DEBUG_SWORD;
+        public static Sprite ITEM_DEBUG_SWORD_ALT;
+        public static Sprite ITEM_IRON_ORE; // Implement other resources later
+        public static Sprite ITEM_WOODEN_STICK;
+        public static Sprite ITEM_WOODEN_SWORD;
+        public static Sprite ITEM_WOODEN_WAND;
+        public static Sprite ITEM_LETTER;
 
         public static Font COMFORTAA_BOLD;
         public static Font COMFORTAA_REGULAR;
         public static Font FONT_AWESOME_SOLID;
+
+        public static Mesh TESTING_SWORD_MESH;
 
         public static void register()
         {
@@ -36,6 +48,17 @@ namespace RpgProject.Framework.Resource
             BUTTON_WHITE_SQUARE = Load<Sprite>("Sprites/WhiteSquare");
             BUTTON_ROUNDED_WHITE_SQUARE = Load<Sprite>("Sprites/RoundedWhiteSquare");
             BUTTON_ROUNDED_WHITE_SQUARE_BORDERED = Load<Sprite>("Sprites/RoundedWhiteSquareBorder");
+            WORLD_TALK_ICON = Load<Sprite>("Sprites/World/TalkIcon");
+            ITEM_DEBUG = Load<Sprite>("Sprites/Items/DEBUG_ITEM");
+            ITEM_DEBUG_ALT = Load<Sprite>("Sprites/Items/DEBUG_ITEM_ALT");
+            ITEM_DEBUG_SWORD = Load<Sprite>("Sprites/Items/DEBUG_SWORD");
+            ITEM_DEBUG_SWORD_ALT = Load<Sprite>("Sprites/Items/DEBUG_SWORD_ALT");
+            ITEM_IRON_ORE = Load<Sprite>("Sprites/Items/IRON_ORE");
+            ITEM_WOODEN_STICK = Load<Sprite>("Sprites/Items/WOODEN_STICK");
+            ITEM_WOODEN_SWORD = Load<Sprite>("Sprites/Items/WOODEN_SWORD");
+            ITEM_WOODEN_WAND = Load<Sprite>("Sprites/Items/WOODEN_WAND");
+            ITEM_LETTER = Load<Sprite>("Sprites/Items/LETTER");
+
 
             /* ANIMATIONS */
             CONTAINER_FADE_ANIMATION = Load<AnimationClip>("Animations/Ui/Container/FadeContainer");
@@ -57,6 +80,9 @@ namespace RpgProject.Framework.Resource
             COMFORTAA_BOLD = Load<Font>("Fonts/Comfortaa-Bold");
             COMFORTAA_REGULAR = Load<Font>("Fonts/Comfortaa-Regular");
             FONT_AWESOME_SOLID = Load<Font>("Fonts/fa-solid");
+
+            /* MESHES */
+            TESTING_SWORD_MESH = Load<Mesh>("Models/Testing/sword");
         }
 
         public static T Load<T>(string resourcePath) where T : Object

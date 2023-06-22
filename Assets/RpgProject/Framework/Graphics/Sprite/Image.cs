@@ -24,6 +24,7 @@ namespace RpgProject.Framework.Graphics.Rendering
             imageComponent.color = Color.white;
 
             imageRectTransform.sizeDelta = new Vector2(Size * Screen.width / 16f, Size * Screen.height / 9f);
+            imageRectTransform.localScale = new Vector3(Size/2,Size/2,1);
 
             return imageObject;
         }

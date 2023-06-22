@@ -18,15 +18,8 @@ namespace RpgProject.Framework.Graphics
         // Fade duration is in ms
         public float AnimSpeed { get; set; } = -1;
 
-        public AnimationClip fadeContainerAnimation;
-        public RuntimeAnimatorController fadeContainerAnimationController;
-
-        public Container()
-        {
-            fadeContainerAnimation = ResourcesManager.CONTAINER_FADE_ANIMATION;
-            fadeContainerAnimationController = ResourcesManager.CONTAINER_CONTROLLER;
-        }
-
+        public AnimationClip fadeContainerAnimation { get ; set; } = ResourcesManager.CONTAINER_FADE_ANIMATION;
+        public RuntimeAnimatorController fadeContainerAnimationController { get; set;} = ResourcesManager.CONTAINER_CONTROLLER;
         public override GameObject CreateGameObject()
         {
             GameObject containerObject = new GameObject("Container");
@@ -61,12 +54,12 @@ namespace RpgProject.Framework.Graphics
                 if (child != null)
                 {
                     GameObject childObject = child.CreateGameObject();
+                    RectTransform childRectTransform = childObject.GetComponent<RectTransform>();
                     RpgClass.RPGLOGGER.Log("Creating a " + childObject.name);
 
-                    childObject.transform.SetParent(containerObject.transform, false);
-                    RectTransform childRectTransform = childObject.GetComponent<RectTransform>();
+                    childObject?.transform.SetParent(containerObject.transform, false);
+                    
                     childRectTransform.anchoredPosition = child.Offset * new Vector2(Screen.width / 16f, Screen.height / 9f);
-
                     RpgClass.RPGLOGGER.Log("Child offset applied to current position (" + child.Offset.x + "," + child.Offset.y + ")");
                     RpgClass.RPGLOGGER.Log("Child created");
                 }

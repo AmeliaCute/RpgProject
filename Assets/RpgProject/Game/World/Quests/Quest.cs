@@ -14,7 +14,7 @@ public enum QuestType{
 [CreateAssetMenu(fileName = "Quest", menuName = "RpgProject/Quest")]
 public class Quest : ScriptableObject {
 
-    public string name;
+    public new string name;
     public QuestType questType;
     public string description;
     public Item[] rewards;

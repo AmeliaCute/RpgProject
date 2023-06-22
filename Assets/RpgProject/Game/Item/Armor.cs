@@ -24,5 +24,9 @@ namespace RpgProject.Objects
             this.MagicResistance = MagicRes;
             this.PhysiqueResistance = PhyRes;
         }
+        
+        public slot getSlot() { return slot; }
+        public int getMagicResistance() { return MagicResistance; }
+        public int getPhysiqueResistance() { return PhysiqueResistance; }
     }
 }

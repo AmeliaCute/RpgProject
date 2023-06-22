@@ -10,7 +10,7 @@ abstract class Entity : MonoBehaviour
     public virtual bool damageable => false;
     public virtual bool hasEndurance => false;
     public virtual bool byPassGamestatesPriority => false;
-    public virtual string name => "NULL";
+    public virtual new string name => "NULL";
     public string entityID { get => EntityMarker+":"+name; }
     public virtual string EntityMarker => "ENTITY";
 

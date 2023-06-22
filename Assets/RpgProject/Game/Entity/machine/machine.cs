@@ -1,12 +1,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-
 abstract class machine : Entity 
 {   
     public override bool damageable => false;
     public override string EntityMarker => "MACHINE";
-    public virtual bool byPassGamestatesPriority => true;
+    public new virtual bool byPassGamestatesPriority => true;
 
     public abstract bool isInteractable { get; }
     public virtual int usableAfterLevel => 0;

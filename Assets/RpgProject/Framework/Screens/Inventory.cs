@@ -6,7 +6,7 @@ using RpgProject.Framework.Screens.Inventory;
 using System.Collections.Generic;
 using UnityEngine;
 using RpgProject.Framework.Resource;
-
+using RpgProject.Objects;
 namespace RpgProject.Framework.Graphics.Screens
 {
     public class InventoryMenu
@@ -27,12 +27,17 @@ namespace RpgProject.Framework.Graphics.Screens
                 "Inventory.Container",
                 new VerticalScrollableGrid
                 {
-                    AnimSpeed = 250,
+                    FadeDuration = 500,
                     Width = 6.8f,
                     Height = 8.5f,
                     Offset = new UnityEngine.Vector2(-3.9f,-0.3f),
                     Color = new UnityEngine.Color32(40,40,40,255),
-                    Children = RenderItems(new List<ItemComponent> { new ItemComponent(Items.DEBUG_ITEM, Items.DEBUG_ITEM.getStackSize()), new ItemComponent(Items.DEBUG_ITEM, 3), new ItemComponent(Items.WOODEN_STICK, 1), new ItemComponent(Items.WOODEN_STICK, 1), new ItemComponent(Items.WOODEN_STICK, 1), new ItemComponent(Items.WOODEN_STICK, 1), new ItemComponent(Items.WOODEN_STICK, 1), new ItemComponent(Items.WOODEN_STICK, 1), new ItemComponent(Items.WOODEN_STICK, 1), new ItemComponent(Items.WOODEN_STICK, 1), new ItemComponent(Items.WOODEN_STICK, 5), new ItemComponent(Items.WOODEN_STICK, 1), new ItemComponent(Items.WOODEN_STICK, 1), new ItemComponent(Items.WOODEN_STICK, 1)})
+                    Children = RenderItems(new List<ItemComponent> { 
+                        new ItemComponent(Items.DEBUG_ITEM, Items.DEBUG_ITEM.getStackSize()), 
+                        new ItemComponent(Items.WOODEN_STICK, 1), 
+                        new ItemComponent(Items.DEBUG_SWORD, 1)
+
+                    })
                 }
             );
 
@@ -73,7 +78,7 @@ namespace RpgProject.Framework.Graphics.Screens
                                     Height = 1f,
                                     Children = 
                                     {
-                                        new Image {  Sprite = item.getItem().getIcon(), Color = Color.white, Size = 0.1f },
+                                        new Image {  Sprite = item.getItem().getIcon(), Color = Color.white, Size = 0.95f },
                                         new Text { Label = item.getQuantity().ToString(), Offset = new UnityEngine.Vector2(-0.5f, -0.5f), Color = Color.white, LabelSize = 20 }
                                     }
                                 },
@@ -94,7 +99,6 @@ namespace RpgProject.Framework.Graphics.Screens
                                             {
                                                 new Container { Width = 0.35f, Height = 0.1f, Color = Color.clear }, // Empty space
                                                 RenderSelectorStates(),
-                                                // TODO STATES
                                                  new Container { Width = 0.35f, Height = 0.1f, Color = Color.clear }, 
                                                 new Text { Label = item.getItem().getDescription(), TextAnchor = TextAnchor.MiddleLeft, Color = Color.white, LabelSize = 20 },
                                             }
@@ -112,18 +116,42 @@ namespace RpgProject.Framework.Graphics.Screens
         {
             var Children = new Container { Width = 5f, Height = 0.15f, Color = Color.clear };
             //Basic states:
-            Children.Children.Add(
-                new HorizontalGrid 
-                { 
-                    Width = 5f, Height = 0.15f, Color = Color.clear, Gap = 0.08f, Children = 
-                    {
-                        new Container { Width = 0.335f, Height = 0.15f, Color = Color.clear },
+            var SelectedStates = new List<Drawable>();
 
-                        State("", Color.white, selected.getItem().getRarity().ToString()),
-                        State("", Color.white, selected.getItem().getPrice().ToString())
-                    } 
+            Children.Children.Add(
+                new HorizontalScrollableGrid 
+                { 
+                    Width = 5f, Height = 0.15f, Color = new Color32(0,0,0,1), Gap = 0.08f, Children = CheckSelectorStates()
                 }
             );
+
+            return Children;
+        }
+
+        public static List<Drawable> CheckSelectorStates()
+        {
+            var Children = new List<Drawable>();
+
+            Children.Add( new Container { Width = 0.335f, Height = 0.15f, Color = Color.clear } ); // Add a space at the begin of the grid
+            
+            Children.Add(State("", Color.white, selected.getItem().getRarity().ToString()));
+            Children.Add(State("", Color.white, selected.getItem().getPrice().ToString()));
+
+            switch(selected.getItem().type)
+            {   
+                case "weapon":
+                    var _we_item = (Weapon) selected.getItem();
+                    Children.Add(State("", new Color32(255,56,59,255),_we_item.getDamage().ToString()));
+                    Children.Add(State("", Color.white,_we_item.getReloadTime().ToString()+"s"));
+                    break;
+                case "armor":
+                    var _ar_item = (Armor) selected.getItem();
+                    Children.Add(State("", Color.white,_ar_item.getSlot().ToString()));
+                    Children.Add(State("", new Color32(168,56,59,255),_ar_item.getMagicResistance().ToString()));
+                    Children.Add(State("", new Color32(255,56,59,255),_ar_item.getPhysiqueResistance().ToString()));
+                    break; 
+            }
+
 
             return Children;
         }
@@ -160,7 +188,7 @@ namespace RpgProject.Framework.Graphics.Screens
                                 Action = new InventorySelector(items[index]),
                                 Children = 
                                 { 
-                                    new Image {  Sprite = items[index].getItem().getIcon(), Color = Color.white, Size = 0.10f },
+                                    new Image {  Sprite = items[index].getItem().getIcon(), Color = Color.white, Size = 0.75f },
                                     new Text { Label = items[index].getQuantity().ToString(), TextAnchor = TextAnchor.MiddleLeft, Offset = new UnityEngine.Vector2(0, -0.35f), Color = Color.white, LabelSize = 20 }
                                 }
                             }
