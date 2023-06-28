@@ -65,7 +65,7 @@ namespace RpgProject.Objects
                 RaycastHit hit;
                 if (Physics.Raycast(currentTrail.transform.position,  playerPos, out hit, trailSpeed * Time.deltaTime))
                 {
-                    RpgClass.RPGLOGGER.Warning("The trail touched somethings: " + hit.collider.gameObject.name);
+                    RpgClass.LOGGER.Warning("The trail touched somethings: " + hit.collider.gameObject.name);
                     if(hit.collider.gameObject.tag == "Entity" || hit.collider.gameObject.tag == "Enemy")
                     {
                         hit.collider.gameObject.GetComponent<Entity>().takeDamage(Damage);

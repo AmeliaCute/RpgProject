@@ -32,7 +32,7 @@
         ".vs",
         ".idea"
     ],
-    "docwriter.style": "XML",
+    "docwriter.style": "Auto-detect",
     "docwriter.progress.trackTypes": true,
     "docwriter.progress.trackClasses": true,
     "docwriter.language": "English"

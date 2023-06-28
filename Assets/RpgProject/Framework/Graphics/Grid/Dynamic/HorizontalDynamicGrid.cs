@@ -4,7 +4,7 @@
  *
  */
 
-/*using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -86,4 +86,3 @@ namespace RpgProject.Framework.Graphics
 
     }
 }
-*/

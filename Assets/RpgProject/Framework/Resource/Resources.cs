@@ -33,6 +33,8 @@ namespace RpgProject.Framework.Resource
         public static Sprite ITEM_WOODEN_SWORD;
         public static Sprite ITEM_WOODEN_WAND;
         public static Sprite ITEM_LETTER;
+        public static Sprite GLOW_TEXTURE;
+        public static Sprite GLOW_TEXTURE_ALT;
 
         public static Font COMFORTAA_BOLD;
         public static Font COMFORTAA_REGULAR;
@@ -58,7 +60,8 @@ namespace RpgProject.Framework.Resource
             ITEM_WOODEN_SWORD = Load<Sprite>("Sprites/Items/WOODEN_SWORD");
             ITEM_WOODEN_WAND = Load<Sprite>("Sprites/Items/WOODEN_WAND");
             ITEM_LETTER = Load<Sprite>("Sprites/Items/LETTER");
-
+            GLOW_TEXTURE = Load<Sprite>("Sprites/Hud/GLOW");
+            GLOW_TEXTURE_ALT = Load<Sprite>("Sprites/Hud/GLOW_ALT");
 
             /* ANIMATIONS */
             CONTAINER_FADE_ANIMATION = Load<AnimationClip>("Animations/Ui/Container/FadeContainer");
@@ -91,11 +94,11 @@ namespace RpgProject.Framework.Resource
 
             if (loadedResource != null)
             {
-                RpgClass.RPGLOGGER.Passed("The resource " + resourcePath + " has been loaded");
+                RpgClass.LOGGER.Passed("The resource " + resourcePath + " has been loaded");
                 return loadedResource as T;
             }
             else
-                RpgClass.RPGLOGGER.Error("Failed to load resource: " + resourcePath);
+                RpgClass.LOGGER.Error("Failed to load resource: " + resourcePath);
 
             return null;
         }

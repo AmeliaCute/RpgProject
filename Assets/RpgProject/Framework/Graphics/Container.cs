@@ -23,7 +23,7 @@ namespace RpgProject.Framework.Graphics
         public override GameObject CreateGameObject()
         {
             GameObject containerObject = new GameObject("Container");
-            RpgClass.RPGLOGGER.Log("Creating a new container");
+            RpgClass.LOGGER.Log("Creating a new container");
             RectTransform rectTransform = containerObject.AddComponent<RectTransform>();
             rectTransform.anchoredPosition = Offset * new Vector2(Screen.width / 16f, Screen.height / 9f);
             Image image = containerObject.AddComponent<Image>();
@@ -48,20 +48,20 @@ namespace RpgProject.Framework.Graphics
             rectTransform.sizeDelta = new Vector2(Width * Screen.width / 16f, Height * Screen.height / 9f);
             image.color = Color;
 
-            RpgClass.RPGLOGGER.Log("Adding children to the container");
+            RpgClass.LOGGER.Log("Adding children to the container");
             foreach (Drawable child in Children)
             {
                 if (child != null)
                 {
                     GameObject childObject = child.CreateGameObject();
                     RectTransform childRectTransform = childObject.GetComponent<RectTransform>();
-                    RpgClass.RPGLOGGER.Log("Creating a " + childObject.name);
+                    RpgClass.LOGGER.Log("Creating a " + childObject.name);
 
                     childObject?.transform.SetParent(containerObject.transform, false);
                     
                     childRectTransform.anchoredPosition = child.Offset * new Vector2(Screen.width / 16f, Screen.height / 9f);
-                    RpgClass.RPGLOGGER.Log("Child offset applied to current position (" + child.Offset.x + "," + child.Offset.y + ")");
-                    RpgClass.RPGLOGGER.Log("Child created");
+                    RpgClass.LOGGER.Log("Child offset applied to current position (" + child.Offset.x + "," + child.Offset.y + ")");
+                    RpgClass.LOGGER.Log("Child created");
                 }
             }
 

@@ -13,7 +13,7 @@ namespace RpgProject.Framework.Graphics
 
         public virtual GameObject CreateGameObject()
         {
-            RpgClass.RPGLOGGER.Error("You can't create a base Drawable object by using method CreateGameObject(). use extends of Drawable instead.");
+            RpgClass.LOGGER.Error("You can't create a base Drawable object by using method CreateGameObject(). use extends of Drawable instead.");
             return null;
         }
 
@@ -21,7 +21,7 @@ namespace RpgProject.Framework.Graphics
         {
             string typeName = type.ToString();
             GameObject drawableObject = new GameObject(typeName + "_Drawable");
-            RpgClass.RPGLOGGER.Log("Creating a new drawable part of type " + typeName);
+            RpgClass.LOGGER.Log("Creating a new drawable part of type " + typeName);
 
             foreach (Drawable drawable in drawables)
             {
@@ -31,7 +31,7 @@ namespace RpgProject.Framework.Graphics
 
             Canvas canvas = GameObject.FindObjectOfType<Canvas>();
             if (canvas != null) drawableObject.transform.SetParent(canvas.transform);
-            else RpgClass.RPGLOGGER.Error("Canvas not found in the scene.");
+            else RpgClass.LOGGER.Error("Canvas not found in the scene.");
 
             drawableObject.transform.position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
             return drawableObject;
@@ -40,7 +40,7 @@ namespace RpgProject.Framework.Graphics
         public static GameObject Create(string type, params Drawable[] drawables)
         {
             GameObject drawableObject = new GameObject(type + "_Drawable");
-            RpgClass.RPGLOGGER.Log("Creating a new drawable part of type " + type);
+            RpgClass.LOGGER.Log("Creating a new drawable part of type " + type);
 
             foreach (Drawable drawable in drawables)
             {
@@ -50,7 +50,7 @@ namespace RpgProject.Framework.Graphics
 
             Canvas canvas = GameObject.FindObjectOfType<Canvas>();
             if (canvas != null) drawableObject.transform.SetParent(canvas.transform);
-            else RpgClass.RPGLOGGER.Error("Canvas not found in the scene.");
+            else RpgClass.LOGGER.Error("Canvas not found in the scene.");
 
             drawableObject.transform.position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
             return drawableObject;
@@ -63,7 +63,7 @@ namespace RpgProject.Framework.Graphics
             if (gameObject != null)
             {
                 GameObject.Destroy(gameObject);
-                RpgClass.RPGLOGGER.Log("Clearing all Drawable of type " + typeName);
+                RpgClass.LOGGER.Log("Clearing all Drawable of type " + typeName);
             }
         }
 
@@ -73,7 +73,7 @@ namespace RpgProject.Framework.Graphics
             if (gameObject != null)
             {
                 GameObject.Destroy(gameObject);
-                RpgClass.RPGLOGGER.Log("Clearing all Drawable of type " + type);
+                RpgClass.LOGGER.Log("Clearing all Drawable of type " + type);
             }
         }
 
@@ -82,7 +82,7 @@ namespace RpgProject.Framework.Graphics
             Clear(DrawableType.Overlay);
             Clear(DrawableType.Foreground);
             Clear(DrawableType.Background);
-            RpgClass.RPGLOGGER.Log("Clearing all Drawable in the scene");
+            RpgClass.LOGGER.Log("Clearing all Drawable in the scene");
         }
     }
 

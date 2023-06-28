@@ -30,15 +30,15 @@ namespace RpgProject.Framework.Graphics.Overlays
                 if (child != null)
                 {
                     GameObject childObject = child.CreateGameObject();
-                    RpgClass.RPGLOGGER.Log("Creating a " + childObject.name);
+                    RpgClass.LOGGER.Log("Creating a " + childObject.name);
 
                     childObject.transform.position = new Vector2(child.Offset.x * Screen.width / 16f, child.Offset.y * Screen.height / 9f);
-                    RpgClass.RPGLOGGER.Log("Child offset applied to current position (" + child.Offset.x + "," + child.Offset.y + ")");
+                    RpgClass.LOGGER.Log("Child offset applied to current position (" + child.Offset.x + "," + child.Offset.y + ")");
 
                     if (childObject != null)
                         childObject.transform.SetParent(buttonObject.transform, false);
 
-                    RpgClass.RPGLOGGER.Passed("Child created");
+                    RpgClass.LOGGER.Passed("Child created");
                 }
             }
 

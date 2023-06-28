@@ -21,10 +21,10 @@ namespace RpgProject.Framework.Resource
                     return loadedResource;
                 }
                 else
-                    RpgClass.RPGLOGGER?.Error("Failed to load resource: " + path + " cause it is not valid json");
+                    RpgClass.LOGGER?.Error("Failed to load resource: " + path + " cause it is not valid json");
             }
             else
-                RpgClass.RPGLOGGER?.Error("Failed to load resource: " + path + " cause it does not exist");
+                RpgClass.LOGGER?.Error("Failed to load resource: " + path + " cause it does not exist");
 
             return default(T);
         }

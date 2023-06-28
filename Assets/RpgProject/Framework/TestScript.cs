@@ -32,11 +32,12 @@ public class TestScript : MonoBehaviour
                         Sprite = Resources.Load<Sprite>("Sprites/Test/Banner/Banner_Blacksmith"),
                         Offset = new Vector2(-4.5f, 0)
                     },
-                    new Container
+                    new VerticalScrollableGrid
                     {
                         Color = new UnityEngine.Color(0.5f,0.5f,0f),
-                        Width = 4,
+                        Width = 4f,
                         Height = 4.5f,
+                        Gap = 0.2f,
                         Offset = new UnityEngine.Vector2(3, 0),
                         Children = {
                             new RoundedButton
@@ -45,7 +46,6 @@ public class TestScript : MonoBehaviour
                                 Size = 1.2f,
                                 Color = new UnityEngine.Color(0f,0f,0.553f),
                                 Action = null,
-                                Offset = new UnityEngine.Vector2(0, -1),
                             },
                             new RoundedButton
                             {
@@ -53,7 +53,6 @@ public class TestScript : MonoBehaviour
                                 Size = 1.2f,
                                 Color = new UnityEngine.Color(0f,0f,0.553f),
                                 Action = new ShowStartingMenu(),
-                                Offset = new UnityEngine.Vector2(0,2),
                             },
                             new RoundedButton
                             {
@@ -61,7 +60,6 @@ public class TestScript : MonoBehaviour
                                 Size = 1.2f,
                                 Color = new UnityEngine.Color(0f,0f,0.553f),
                                 Action = new ShowInventoryMenu(),
-                                Offset = new UnityEngine.Vector2(0,0),
                             },
                             new RoundedButton
                             {
@@ -69,7 +67,13 @@ public class TestScript : MonoBehaviour
                                 Size = 1.2f,
                                 Color = new UnityEngine.Color(0f,0f,0.553f),
                                 Action = new ShowOverlay(),
-                                Offset = new UnityEngine.Vector2(0,1),
+                            },
+                            new RoundedButton
+                            {
+                                Label = "Show Pause menu",
+                                Size = 1.2f,
+                                Color = new UnityEngine.Color(0f,0f,0.553f),
+                                Action = new ShowPauseMenu(),
                             }
                         }
                     }
@@ -79,6 +83,7 @@ public class TestScript : MonoBehaviour
     }
 }
 
-class ShowOverlay : Action { public override void Start() { Drawable.ClearAll(); new HotbarOverlay();  } }
-class ShowStartingMenu : Action { public override void Start() { Drawable.ClearAll(); new StartingMenu();  } }
-class ShowInventoryMenu : Action { public override void Start() { Drawable.ClearAll(); new InventoryMenu();  } }
+class ShowOverlay : Action { public override void Start() { Drawable.ClearAll(); new HotbarOverlay(); } }
+class ShowStartingMenu : Action { public override void Start() { Drawable.ClearAll(); new StartingMenu(); } }
+class ShowInventoryMenu : Action { public override void Start() { Drawable.ClearAll(); new InventoryMenu(); } }
+class ShowPauseMenu : Action { public override void Start() { Drawable.ClearAll(); new PauseMenu(); } }

@@ -47,11 +47,14 @@ namespace RpgProject.Framework.Graphics.Screens
             );
         }
 
+        /// <summary>
+        /// This function creates a graphical user interface for selecting an item in an inventory.
+        /// </summary>
         public static void Selector(ItemComponent item)
         {
             if (selected == item) return;
             selected = item;
-            RpgClass.RPGLOGGER.Warning("Selected: " + selected.getItem().getName() + "./" + selected.quantity);
+            RpgClass.LOGGER.Warning("Selected: " + selected.getItem().getName() + "./" + selected.quantity);
             Drawable.Clear("Inventory.Selector.Container");
             Drawable.Create(
                 "Inventory.Selector.Container",
@@ -70,7 +73,11 @@ namespace RpgProject.Framework.Graphics.Screens
                             Height = 1.5f,
                             Children = 
                             {
-                                new Container { Width = 0.25f, Height = 0.3f, Color = Color.clear }, // Empty space
+                                new Container { Width = 0.05f, Height = 1.5f, Color = item.getItem().getRarityColor() },
+                                
+                                // Spacing 
+                                new Container { Width = 0.25f, Height = 0.2f, Color = Color.clear },
+
                                 new Container
                                 {
                                     Color = Color.clear,
@@ -82,10 +89,14 @@ namespace RpgProject.Framework.Graphics.Screens
                                         new Text { Label = item.getQuantity().ToString(), Offset = new UnityEngine.Vector2(-0.5f, -0.5f), Color = Color.white, LabelSize = 20 }
                                     }
                                 },
-                                new Container { Width = 0.25f, Height = 0.3f, Color = Color.clear }, // Empty space
-                                new VerticalGrid{
+
+                                // Spacing
+                                new Container { Width = 0.25f, Height = 0.3f, Color = Color.clear },
+
+                                new VerticalGrid
+                                {
                                     Color = Color.clear,
-                                    Width = 5f,
+                                    Width = 4.75f,
                                     Height = 0.5f,
                                     Gap = 0.1f,
                                     Children =
@@ -93,13 +104,18 @@ namespace RpgProject.Framework.Graphics.Screens
                                         new Text { Label = item.getItem().getName(), TextAnchor = TextAnchor.MiddleLeft, Color = Color.white, LabelSize = 25 },
                                         new VerticalScrollableGrid {
                                             Color = new Color32(0,0,0,1),
-                                            Width = 5f,
-                                            Height = 0.7f,
+                                            Width = 4.75f,
+                                            Height = 0.5f,
                                             Children = 
                                             {
-                                                new Container { Width = 0.35f, Height = 0.1f, Color = Color.clear }, // Empty space
+                                                // Spacing
+                                                new Container { Width = 0.35f, Height = 0.1f, Color = Color.clear },
+                                                
                                                 RenderSelectorStates(),
-                                                 new Container { Width = 0.35f, Height = 0.1f, Color = Color.clear }, 
+
+                                                // Spacing
+                                                new Container { Width = 0.35f, Height = 0.1f, Color = Color.clear }, 
+
                                                 new Text { Label = item.getItem().getDescription(), TextAnchor = TextAnchor.MiddleLeft, Color = Color.white, LabelSize = 20 },
                                             }
                                         }
@@ -114,27 +130,31 @@ namespace RpgProject.Framework.Graphics.Screens
 
         public static Drawable RenderSelectorStates()
         {
-            var Children = new Container { Width = 5f, Height = 0.15f, Color = Color.clear };
+            var Children = new Container { Width = 4.75f, Height = 0.15f, Color = Color.clear };
             //Basic states:
             var SelectedStates = new List<Drawable>();
 
             Children.Children.Add(
                 new HorizontalScrollableGrid 
                 { 
-                    Width = 5f, Height = 0.15f, Color = new Color32(0,0,0,1), Gap = 0.08f, Children = CheckSelectorStates()
+                    Width = 4.75f, Height = 0.15f, Color = new Color32(0,0,0,1), Gap = 0.08f, Children = CheckSelectorStates()
                 }
             );
 
             return Children;
         }
 
+        /// <summary>
+        /// The function returns a list of Drawable objects based on the state of a selected item, with
+        /// different states displayed depending on the type of item.
+        /// </summary>
         public static List<Drawable> CheckSelectorStates()
         {
             var Children = new List<Drawable>();
 
             Children.Add( new Container { Width = 0.335f, Height = 0.15f, Color = Color.clear } ); // Add a space at the begin of the grid
             
-            Children.Add(State("", Color.white, selected.getItem().getRarity().ToString()));
+            Children.Add(State("", selected.getItem().getRarityColor(), selected.getItem().getRarity().ToString())); // Can be delete cause something else is used to show rarity
             Children.Add(State("", Color.white, selected.getItem().getPrice().ToString()));
 
             switch(selected.getItem().type)
@@ -164,7 +184,7 @@ namespace RpgProject.Framework.Graphics.Screens
                 Children = 
                 {
                     new Text { Label = icon, TextAnchor = TextAnchor.MiddleLeft, Color = color, LabelSize = 15, LabelFont = ResourcesManager.FONT_AWESOME_SOLID},
-                    new Text { Label = state.ToLower(), TextAnchor = TextAnchor.MiddleLeft, Color = Color.white, LabelSize = 15}
+                    new Text { Label = state.ToLower(), TextAnchor = TextAnchor.MiddleLeft, Color = color, LabelSize = 15}
                 }
             };
         }
@@ -188,6 +208,11 @@ namespace RpgProject.Framework.Graphics.Screens
                                 Action = new InventorySelector(items[index]),
                                 Children = 
                                 { 
+                                    // Glowing effect 
+                                    new Image { Sprite = ResourcesManager.GLOW_TEXTURE_ALT, Color = items[index].getItem().getRarityColor(), Size = 1f },
+
+
+
                                     new Image {  Sprite = items[index].getItem().getIcon(), Color = Color.white, Size = 0.75f },
                                     new Text { Label = items[index].getQuantity().ToString(), TextAnchor = TextAnchor.MiddleLeft, Offset = new UnityEngine.Vector2(0, -0.35f), Color = Color.white, LabelSize = 20 }
                                 }

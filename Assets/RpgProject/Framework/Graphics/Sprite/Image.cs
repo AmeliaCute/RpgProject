@@ -11,7 +11,7 @@ namespace RpgProject.Framework.Graphics.Rendering
         public override GameObject CreateGameObject()
         {
             GameObject imageObject = new GameObject("Image");
-            RpgClass.RPGLOGGER.Log("Creating a new image component");
+            RpgClass.LOGGER.Log("Creating a new image component");
 
             RectTransform imageRectTransform = imageObject.AddComponent<RectTransform>();
             imageRectTransform.anchorMin = Vector2.zero;
@@ -21,7 +21,7 @@ namespace RpgProject.Framework.Graphics.Rendering
 
             image imageComponent = imageObject.AddComponent<image>();
             imageComponent.sprite = Sprite;
-            imageComponent.color = Color.white;
+            imageComponent.color = Color;
 
             imageRectTransform.sizeDelta = new Vector2(Size * Screen.width / 16f, Size * Screen.height / 9f);
             imageRectTransform.localScale = new Vector3(Size/2,Size/2,1);

@@ -4,46 +4,51 @@ using RpgProject.Framework.Debug;
 using RpgProject.Framework.Resource;
 using Logger = RpgProject.Framework.Debug.Logger;
 using RpgProject.Game.Data;
+using System.IO;
 
 public class RpgClass : MonoBehaviour{
 
     public static LOADING_STATE LOADING_ETA = LOADING_STATE.STARTING;
     public static List<RecipeWorkbench> WORKBENCH_RECIPES;
 
-    private Bindable<int> VerbosityLevel = new Bindable<int>(3);
+    private int VerbosityLevel;
 
 
-
-    public static Logger RPGLOGGER;
+    public static Settings SETTINGS;
+    public static User USER;
+    public static Logger LOGGER;
     public static Monitor PERFORMANCE_MONITOR;
     public static RpgClass instance;
 
     private void Awake()
     {
         Debug.Log("Starting client");
-        BindableTool.BindWith<int>(RpgSettings.VerbosityLevel, VerbosityLevel);
-        Debug.Log(VerbosityLevel.Value);
+        instance = this;
+
+        Debug.Log("Loading settings");
+        SETTINGS = new Settings(Path.Combine(Application.persistentDataPath, "rpgsettings.json"));
 
         Debug.Log("Initializing logger");
-        instance = this;
-        RPGLOGGER = new Logger("Rpg", VerbosityLevel.Value);
-        RPGLOGGER.LogWithCustomPrefix("Getting RpgClass instance","🧩");
+        LOGGER = new Logger("Rpg", SETTINGS.Values.VerbosityLevel);
 
-        RPGLOGGER.LogWithCustomPrefix("Attaching performances monitor..", "🖥️");
+        LOGGER.LogWithCustomPrefix("Attaching performances monitor..", "🖥️");
         PERFORMANCE_MONITOR = gameObject.AddComponent<Monitor>();
 
-        RPGLOGGER.LogWithCustomPrefix("Loading assets..", "🧊");
+        LOGGER.LogWithCustomPrefix("Loading assets..", "🧊");
         ResourcesManager.register();
 
-        RPGLOGGER.LogWithCustomPrefix("Loading items..","🔁");
+        LOGGER.LogWithCustomPrefix("Loading items..","🔁");
         Items.register();
 
-        RPGLOGGER.LogWithCustomPrefix("Loading recipes..","🔁");
+        LOGGER.LogWithCustomPrefix("Loading recipes..","🔁");
         WORKBENCH_RECIPES = new List<RecipeWorkbench>();
         Recipes.register();
 
+        LOGGER.LogWithCustomPrefix("Loading user data..","🔁");
+        USER = new User(Application.persistentDataPath+"/Local/user.json");
+
         LOADING_ETA = LOADING_STATE.FINISH;
-        RPGLOGGER.Passed("Loading finished");
+        LOGGER.Passed("Loading finished");
     }
 
     public void Start()
@@ -54,9 +59,9 @@ public class RpgClass : MonoBehaviour{
 
     public void OnApplicationQuit()
     {
-        RPGLOGGER.LogWithCustomPrefix("Quitting game..", "🎈");
-        RPGLOGGER.LogWithCustomPrefix("Closing logs..", "📂");
-        RPGLOGGER.GetWrittenFile().Close();
+        LOGGER.LogWithCustomPrefix("Quitting game..", "🎈");
+        LOGGER.LogWithCustomPrefix("Closing logs..", "📂");
+        LOGGER.GetWrittenFile().Close();
     }
 }
 

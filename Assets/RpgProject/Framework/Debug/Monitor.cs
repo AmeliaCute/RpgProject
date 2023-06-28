@@ -47,7 +47,7 @@ namespace RpgProject.Framework.Debug
                 float currentFrameTime = Time.unscaledDeltaTime * 1000f;
 
                 if (currentFrameTime > SpikeThreshold)
-                    RpgClass.RPGLOGGER.Warning("Game has experienced a lag spike, frame time: " + currentFrameTime.ToString("F2") + "ms");
+                    RpgClass.LOGGER.Warning("Game has experienced a lag spike, frame time: " + currentFrameTime.ToString("F2") + "ms");
                 yield return new WaitForSecondsRealtime(CheckInterval); 
             }
         }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ namespace RpgProject.Objects
         RARE,
         EPIC,
         LEGENDARY,
+        MYTHIC,
+        UNIQUE
     }
 
     public class Item
@@ -32,7 +35,7 @@ namespace RpgProject.Objects
             this.itemModel = itemModel;
             this.itemIcon = itemIcon;
             this.itemRarity = rarity;
-            RpgClass.RPGLOGGER.Log("Item created: " + this.name + " (" + this.type + ")");
+            RpgClass.LOGGER.Log("Item created: " + this.name + " (" + this.type + ")");
         }
 
         public string getName() { return name; }
@@ -43,6 +46,29 @@ namespace RpgProject.Objects
         public Rarity getRarity() { return itemRarity; }
         public int getStackSize() { return stackSize; }
 
+        public Color32 getRarityColor()
+        {
+            switch (itemRarity)
+            {
+                case Rarity.UNCOMON:
+                    return new Color32(165, 165, 165, 255);
+                case Rarity.COMMON:
+                    return new Color32(72, 252, 96, 255);
+                case Rarity.RARE:
+                    return new Color32(35, 151, 226, 255);
+                case Rarity.EPIC:
+                    return new Color32(169, 5, 213, 255);
+                case Rarity.LEGENDARY:
+                    return new Color32(250, 218, 57, 255);
+                case Rarity.MYTHIC:
+                    return new Color32(251, 87, 241, 255);
+                case Rarity.UNIQUE:
+                    return new Color32(234, 27, 27, 255);
+            }
+            return new Color32(255, 255, 255, 255);
+        }
+
+        [ObsoleteAttribute("Use getRarityColor instead")]
         public Sprite getSpriteFromRarity()
         {
             switch(itemRarity)

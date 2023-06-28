@@ -19,7 +19,7 @@ namespace RpgProject.Framework.Graphics.Rendering
         {
             text textComponent;
             GameObject textObject = new GameObject("Text");
-            RpgClass.RPGLOGGER.Log("Creating a new text component");
+            RpgClass.LOGGER.Log("Creating a new text component");
 
             RectTransform textRectTransform = textObject.AddComponent<RectTransform>();
             textRectTransform.anchorMin = Vector2.zero;
@@ -35,7 +35,7 @@ namespace RpgProject.Framework.Graphics.Rendering
             textComponent.alignment = TextAnchor;
             textComponent.text = Label;
 
-            RpgClass.RPGLOGGER.Passed("Text finished to be created");
+            RpgClass.LOGGER.Passed("Text finished to be created");
             return textObject;
         }
 
@@ -43,17 +43,17 @@ namespace RpgProject.Framework.Graphics.Rendering
         {
             text textComponent;
             GameObject textObject = new GameObject("Text");
-            RpgClass.RPGLOGGER.Log("Creating a new text component");
+            RpgClass.LOGGER.Log("Creating a new text component");
 
             RectTransform textRectTransform = textObject.AddComponent<RectTransform>();
             try
             {
-                RpgClass.RPGLOGGER.Log("Attaching a text component to a " + gameObject.name);
+                RpgClass.LOGGER.Log("Attaching a text component to a " + gameObject.name);
                 textRectTransform.SetParent(gameObject.GetComponent<RectTransform>());
             }
             catch
             {
-                RpgClass.RPGLOGGER.Error("Attach failed.");
+                RpgClass.LOGGER.Error("Attach failed.");
             }
 
             textRectTransform.anchorMin = Vector2.zero;
@@ -69,7 +69,7 @@ namespace RpgProject.Framework.Graphics.Rendering
             textComponent.alignment = TextAnchor.MiddleCenter;
             textComponent.text = Label;
 
-            RpgClass.RPGLOGGER.Passed("Text finished to be created");
+            RpgClass.LOGGER.Passed("Text finished to be created");
             return textObject;
         }
     }
