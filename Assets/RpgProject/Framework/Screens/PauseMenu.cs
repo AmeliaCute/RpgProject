@@ -1,7 +1,9 @@
 using System.Reflection.Emit;
 using System.Net.Mime;
 using RpgProject.Framework.Graphics.Rendering;
+using RpgProject.Framework.Graphics.Overlays;
 using UnityEngine;
+using RpgProject.Framework.Resource;
 
 namespace RpgProject.Framework.Graphics.Screens
 {
@@ -14,7 +16,7 @@ namespace RpgProject.Framework.Graphics.Screens
                 new Container{
                     Width = 16f,
                     Height = 9f,
-                    Color = new UnityEngine.Color32(0,0,0, 150),
+                    Color = new UnityEngine.Color32(0,0,0, 200),
                 }
             );
 
@@ -44,13 +46,13 @@ namespace RpgProject.Framework.Graphics.Screens
                                 },
                                 new VerticalGrid{
                                     Color = new UnityEngine.Color32(20,20,20,255),
-                                    Width = 2.96f,
-                                    Height = .9f,
+                                    Width = 3.06f,
+                                    Height = .8f,
                                     Children = {
                                         new Container
                                         {
-                                            Width = 2.96f,
-                                            Height = .26f,
+                                            Width = 3.06f,
+                                            Height = .25f,
                                             Color = new UnityEngine.Color32(20,20,20,255),
                                             Children = {
                                                 new Text
@@ -64,8 +66,8 @@ namespace RpgProject.Framework.Graphics.Screens
                                         },
                                         new Container
                                         {
-                                            Width = 2.96f,
-                                            Height = .15f,
+                                            Width = 3.06f,
+                                            Height = .14f,
                                             Color = new UnityEngine.Color32(20,20,20,255),
                                             Children = {
                                                 new Text
@@ -81,10 +83,97 @@ namespace RpgProject.Framework.Graphics.Screens
                                     }
                                 }
                             }
+                        },
+                    
+                        // Level advancement
+                        new HorizontalGrid
+                        {
+                            Width = 15.5f,
+                            Height = .1f,
+                            Color = new UnityEngine.Color32(20,20,20,255),
+                            Offset = new UnityEngine.Vector2(0,.525f),
+                            Children = {
+                                new Container
+                                {
+                                    Color = new UnityEngine.Color32(158,134,255,255),
+                                    Width = RpgClass.USER.NextLevelAdvancement() * 15.5f,
+                                    Height = 0.1f,
+                                }
+                            }
+                        },
+
+                        new HorizontalMiddleGrid
+                        {
+                            Width = 5f,
+                            Height = .30f,
+                            Color = new UnityEngine.Color32(20,20,20,255),
+                            Offset = new UnityEngine.Vector2(0,.25f),
+                            Children = {
+                                new Text
+                                {
+                                    Label = "Level "+RpgClass.USER.Values.Level,
+                                    Color = new UnityEngine.Color32(158,134,255,255),
+                                    LabelSize = 30
+                                }
+                            }
+                        },
+
+                        new HorizontalMiddleGrid {
+                            Color = new UnityEngine.Color32(20,20,20,255),
+                            Width = 5f,
+                            Height = .14f,
+                            Offset = new UnityEngine.Vector2(0,.05f),
+                            Children = {
+                                new Text
+                                {
+                                    Label = "("+RpgClass.USER.Values.Exp +"/"+RpgClass.USER.CalculateExpNextLevel()+"exp)",
+                                    Color = new UnityEngine.Color32(158,134,255,255),
+                                    LabelSize = 14
+                                }
+                            }
+                        },
+
+                        new HorizontalGrid{
+                            Color = new UnityEngine.Color32(20,20,20,255),
+                            Width = 2.7f,
+                            Height = .9f,
+                            Offset = new UnityEngine.Vector2(6.25f,0),
+                            Children = {
+                                new FloatingButton // Notifications
+                                {
+                                    Label = "",
+                                    Size = .9f,
+                                    Color = new UnityEngine.Color32(255,255,255,255),
+                                    Action = new QuitGameButtonHandler()
+                                },
+                                new FloatingButton // Settings
+                                {
+                                    Label = "",
+                                    Size = .9f,
+                                    Color = new UnityEngine.Color32(255,255,255,255),
+                                    Action = new QuitGameButtonHandler()
+                                },
+                                new FloatingButton // Quit
+                                {
+                                    Label = "",
+                                    Size = .9f,
+                                    Color = new UnityEngine.Color32(255,255,255,255),
+                                    Action = new QuitGameButtonHandler()
+                                }
+                            }
                         }
                     }
                 }
             );
+        }
+    }
+
+    public class QuitGameButtonHandler : Action
+    {
+        public override void Start()
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+            Application.Quit();
         }
     }
 }

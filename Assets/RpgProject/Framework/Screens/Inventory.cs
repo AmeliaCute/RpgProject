@@ -23,7 +23,7 @@ namespace RpgProject.Framework.Graphics.Screens
                     Color = new UnityEngine.Color32(0,0,0, 210),
                 }
             );
-            Drawable.Create(
+            /*Drawable.Create(
                 "Inventory.Container",
                 new VerticalScrollableGrid
                 {
@@ -44,7 +44,9 @@ namespace RpgProject.Framework.Graphics.Screens
             Drawable.Create(
                 DrawableType.Foreground,
                 ItemHotBar.Menu
-            );
+            );*/
+
+            new ItemsContainer(null /*for test*/);
         }
 
         /// <summary>
@@ -83,7 +85,7 @@ namespace RpgProject.Framework.Graphics.Screens
                                     Color = Color.clear,
                                     Width = 1f,
                                     Height = 1f,
-                                    Children = 
+                                    Children =
                                     {
                                         new Image {  Sprite = item.getItem().getIcon(), Color = Color.white, Size = 0.95f },
                                         new Text { Label = item.getQuantity().ToString(), Offset = new UnityEngine.Vector2(-0.5f, -0.5f), Color = Color.white, LabelSize = 20 }
@@ -187,53 +189,6 @@ namespace RpgProject.Framework.Graphics.Screens
                     new Text { Label = state.ToLower(), TextAnchor = TextAnchor.MiddleLeft, Color = color, LabelSize = 15}
                 }
             };
-        }
-
-        public List<Drawable> RenderItems(List<ItemComponent> items)
-        {
-            List<Drawable> Children = new List<Drawable>() { new Container { Width = 0.1f, Height = 0.3f, Color = Color.clear } };
-            for (int i = 0; i < Mathf.Ceil(items.Count / 7f)+0.1f; ++i)
-            {
-                List<Drawable> row = new List<Drawable>();
-                for (int j = 0; j < 6; ++j)
-                {
-                    int index = i * 6 + j;
-                    if (index < items.Count && items[index] != null)
-                    {
-                        row.Add(
-                            new BorderRoundedButton
-                            {
-                                Size = new UnityEngine.Vector2(1f, 1f),
-                                Color = new Color(0.1f,0.1f,0.1f),
-                                Action = new InventorySelector(items[index]),
-                                Children = 
-                                { 
-                                    // Glowing effect 
-                                    new Image { Sprite = ResourcesManager.GLOW_TEXTURE_ALT, Color = items[index].getItem().getRarityColor(), Size = 1f },
-
-
-
-                                    new Image {  Sprite = items[index].getItem().getIcon(), Color = Color.white, Size = 0.75f },
-                                    new Text { Label = items[index].getQuantity().ToString(), TextAnchor = TextAnchor.MiddleLeft, Offset = new UnityEngine.Vector2(0, -0.35f), Color = Color.white, LabelSize = 20 }
-                                }
-                            }
-                        );
-                    }
-                }
-
-                Children.Add(
-                    new HorizontalGrid
-                    {
-                        Gap = 0.2f,
-                        Color = new UnityEngine.Color32(40, 40, 40, 255),
-                        Width = 6f,
-                        Height = 1.05f,
-                        Children = row
-                    }
-                );
-            }
-
-            return Children;
         }
     }
 }

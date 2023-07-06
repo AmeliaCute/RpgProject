@@ -37,13 +37,15 @@ class BadHuman : enemy
             Follow();
         if (distance < attackRange)
             attack();
-
     }
 
     void Idle() {}
 
     void Follow() { agent.destination = target.position; }
-
+    public override void busyUpdate()
+    {
+        agent.ResetPath();
+    }
     void attack()
     {
         if(Time.time > attackTime)

@@ -28,7 +28,15 @@ namespace RpgProject.Game.Data
 
         public void Initialize()
         {
-            RpgSettingsData config = Files.Json<RpgSettingsData>(Path.Combine(CONFIG_PATH));
+            RpgSettingsData config = new RpgSettingsData();
+            try
+            {
+                config = Files.Json<RpgSettingsData>(CONFIG_PATH);
+            }
+            catch
+            {
+                File.Create(CONFIG_PATH).Close();
+            }
 
             // INITIALIZING VALUES
             Values.VerbosityLevel = Load<int>(config.VerbosityLevel, 2);

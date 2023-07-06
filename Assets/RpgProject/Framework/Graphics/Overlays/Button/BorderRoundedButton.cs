@@ -9,7 +9,7 @@ namespace RpgProject.Framework.Graphics.Overlays
     public class BorderRoundedButton : Button
     {
         public new Vector2 Size { get; set; } = new Vector2(1f, 1f);
-        public UnityEngine.Color OptionalBorderColor { get; set; } = Color.white;
+        public UnityEngine.Color32 OptionalBorderColor { get; set; } = new(255,255,255,255);
         public Sprite Sprite { get; set; } = null;
 
         public override GameObject CreateGameObject()
@@ -34,7 +34,7 @@ namespace RpgProject.Framework.Graphics.Overlays
 
             image.sprite = ResourcesManager.BUTTON_ROUNDED_WHITE_SQUARE;
             image.type = Image.Type.Sliced;
-            image.color = Color.white;
+            image.color = new(255,255,255,255);
 
             GameObject backgroundObject = new GameObject("Background");
             var backgroundRectTransform = backgroundObject.AddComponent<RectTransform>();

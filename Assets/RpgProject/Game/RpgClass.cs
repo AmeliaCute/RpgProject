@@ -5,20 +5,20 @@ using RpgProject.Framework.Resource;
 using Logger = RpgProject.Framework.Debug.Logger;
 using RpgProject.Game.Data;
 using System.IO;
+using RpgProject.Framework.Screens.Game;
+using RpgProject.Game.Threaded;
 
 public class RpgClass : MonoBehaviour{
-
     public static LOADING_STATE LOADING_ETA = LOADING_STATE.STARTING;
     public static List<RecipeWorkbench> WORKBENCH_RECIPES;
-
-    private int VerbosityLevel;
-
 
     public static Settings SETTINGS;
     public static User USER;
     public static Logger LOGGER;
     public static Monitor PERFORMANCE_MONITOR;
     public static RpgClass instance;
+
+    public static Interface INTERFACE;
 
     private void Awake()
     {
@@ -46,6 +46,7 @@ public class RpgClass : MonoBehaviour{
 
         LOGGER.LogWithCustomPrefix("Loading user data..","🔁");
         USER = new User(Application.persistentDataPath+"/Local/user.json");
+        LOGGER.Error(USER.Values.Exp + " " + USER.Values.Level);
 
         LOADING_ETA = LOADING_STATE.FINISH;
         LOGGER.Passed("Loading finished");
@@ -54,22 +55,34 @@ public class RpgClass : MonoBehaviour{
     public void Start()
     {
         if(Player.instance != null)
+        {
             Player.instance.inventory.weapon = Items.DEBUG_SWORD;
+            INTERFACE = new Interface();
+            INTERFACE.Start();
+        }
     }
 
     public void OnApplicationQuit()
     {
+        INTERFACE.Stop();
+
+        LOGGER.LogWithCustomPrefix("Saving user data..", "🧪");
+        SETTINGS.Save();
+        USER.Save();
+
+        LOGGER.LogWithCustomPrefix("Quit client", "🗑");
         LOGGER.LogWithCustomPrefix("Quitting game..", "🎈");
         LOGGER.LogWithCustomPrefix("Closing logs..", "📂");
         LOGGER.GetWrittenFile().Close();
     }
 }
 
-public enum LOADING_STATE {
-    STARTING,
-    LOADING_ASSETS,
-    LOADING_ITEMS,
-    LOADING_RECIPES,
-    LOADING_ENTITY,
-    FINISH,
+public enum LOADING_STATE
+{
+    STARTING = 0,
+    LOADING_ASSETS = 1,
+    LOADING_ITEMS = 2,
+    LOADING_RECIPES = 3,
+    LOADING_ENTITY = 4,
+    FINISH = 5,
 }

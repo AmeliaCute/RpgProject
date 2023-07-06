@@ -598,7 +598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   maxShadowDistance:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 96.95
   directionalTransmissionMultiplier:
     m_OverrideState: 0

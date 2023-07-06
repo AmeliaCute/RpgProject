@@ -64,7 +64,7 @@ namespace RpgProject.Framework.Graphics.Rendering
 
             textComponent = textObject.AddComponent<text>();
             textComponent.font = LabelFont;
-            textComponent.color = Color.white;
+            textComponent.color = Color;
             textComponent.fontSize = Mathf.RoundToInt(1f * LabelSize * (Screen.height / 1080f));
             textComponent.alignment = TextAnchor.MiddleCenter;
             textComponent.text = Label;

@@ -8,7 +8,7 @@ namespace RpgProject.Framework.Graphics
     public class HorizontalGrid : Drawable
     {
         public List<Drawable> Children = new List<Drawable>();
-        public UnityEngine.Color Color = UnityEngine.Color.clear;
+        public UnityEngine.Color32 Color = UnityEngine.Color.clear;
         public float Gap { get; set;} = 0;
 
         // Fade duration is in ms

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 using RpgProject.Framework.Resource;
@@ -8,7 +9,7 @@ namespace RpgProject.Game.Data
     // WARNING: change that after the save system is implemented
     public class User
     {
-        private string LOCAL_USER_PATH;
+        private readonly string LOCAL_USER_PATH;
         public UserData Values;
         public User(string userPath)
         {
@@ -17,20 +18,34 @@ namespace RpgProject.Game.Data
             Initialize();
         }
 
-        public static T Load<T>(T bind, T defaultValue) { if(bind == null) return defaultValue; return bind; }
+        public static T Load<T>(T bind, T defaultValue)
+        {
+            if (bind == null || EqualityComparer<T>.Default.Equals(bind, default))
+                return defaultValue;
+            return bind;
+        }
 
         public void Initialize()
         {
-            UserData user = Files.Json<UserData>(LOCAL_USER_PATH);
+            UserData user = new();
+            try
+            {
+                user = Files.Json<UserData>(LOCAL_USER_PATH);
+            }
+            catch
+            {
+                File.Create(LOCAL_USER_PATH).Close();
+            }
 
             // INITIALIZING VALUES
-            Values.DisplayName = Load<string>(user.DisplayName, "Guest");
-            Values.Identifier = Load<string>(user.Identifier, "imtheguest");
-            Values.Avatar = Load<string>(user.Avatar, "guest");
+            Values.DisplayName = Load(user.DisplayName, "Guest");
+            Values.Identifier = Load(user.Identifier, "imtheguest");
+            Values.Avatar = Load(user.Avatar, "guest");
+            Values.Exp = Load(user.Exp, 0);
+            Values.Level = Load(user.Level, 1);
 
             Save();
         }
-
         public void Save()
         {
             if (!Directory.Exists(Path.GetDirectoryName(LOCAL_USER_PATH)))
@@ -40,6 +55,15 @@ namespace RpgProject.Game.Data
                 File.Create(LOCAL_USER_PATH).Close();
 
             File.WriteAllText(LOCAL_USER_PATH, JsonConvert.SerializeObject(Values));
+        }
+
+        public int CalculateExpNextLevel()
+        {
+            return Mathf.RoundToInt(100 * Mathf.Pow(1.5f, Values.Level));
+        }
+        public float NextLevelAdvancement()
+        {
+            return ((float) Values.Exp) / ((float) CalculateExpNextLevel());
         }
     }
 
@@ -53,6 +77,11 @@ namespace RpgProject.Game.Data
 
         [JsonProperty("Avatar")]
         public string Avatar;
-        
+
+        [JsonProperty("Exp")]
+        public int Exp;
+
+        [JsonProperty("Level")]
+        public int Level;
     }
 }

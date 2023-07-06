@@ -14,11 +14,13 @@ namespace RpgProject.Framework.Resource
         public static AnimationClip BUTTON_FLOATING_OVER_ANIMATION;
         public static AnimationClip BUTTON_FLOATING_EXIT_ANIMATION;
         public static AnimationClip BUTTON_FLOATING_CLICK_ANIMATION;
+        public static AnimationClip CONTAINER_PAUSE_MENU_ANIMATION;
 
         public static RuntimeAnimatorController CONTAINER_CONTROLLER;
         public static RuntimeAnimatorController BUTTON_BORDER_CONTROLLER;
         public static RuntimeAnimatorController BUTTON_CONTROLLER;
         public static RuntimeAnimatorController BUTTON_FLOATING_CONTROLLER;
+        public static RuntimeAnimatorController CONTAINER_PAUSE_MENU_CONTROLLER;
 
         public static Sprite BUTTON_WHITE_SQUARE;
         public static Sprite BUTTON_ROUNDED_WHITE_SQUARE;
@@ -72,12 +74,14 @@ namespace RpgProject.Framework.Resource
             BUTTON_FLOATING_OVER_ANIMATION = Load<AnimationClip>("Animations/Ui/Button/over_buttonfloating");
             BUTTON_FLOATING_EXIT_ANIMATION = Load<AnimationClip>("Animations/Ui/Button/exit_buttonfloating");
             BUTTON_FLOATING_CLICK_ANIMATION = Load<AnimationClip>("Animations/Ui/Button/click_buttonfloating");
+            CONTAINER_PAUSE_MENU_ANIMATION = Load<AnimationClip>("Animations/Ui/Container/PauseMenuOpen");
 
             /* ANIMATIONS CONTROLLER */
             CONTAINER_CONTROLLER = Load<RuntimeAnimatorController>("Animations/Ui/Container/Container");
             BUTTON_BORDER_CONTROLLER = Load<RuntimeAnimatorController>("Animations/Ui/Button/Buttonborder");
             BUTTON_CONTROLLER = Load<RuntimeAnimatorController>("Animations/Ui/Button/Button");
             BUTTON_FLOATING_CONTROLLER = Load<RuntimeAnimatorController>("Animations/Ui/Button/ButtonFloating");
+            CONTAINER_PAUSE_MENU_CONTROLLER = Load<RuntimeAnimatorController>("Animations/Ui/Container/PauseMenu");
 
             /* FONTS */
             COMFORTAA_BOLD = Load<Font>("Fonts/Comfortaa-Bold");

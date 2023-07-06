@@ -78,7 +78,7 @@ namespace RpgProject.Framework.Graphics.Overlays
         {
             animator.Play(null);
             animator.Play("click_buttonfloating", 0);
-            if(Action != null) Action.Start();
+            Action?.Start();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace RpgProject.Framework.Graphics.Overlays
 
             image.sprite = ResourcesManager.BUTTON_ROUNDED_WHITE_SQUARE;
             image.type = Image.Type.Sliced;
-            image.color = Color.white;
+            image.color = new(255,255,255,255);
 
             GameObject backgroundObject = new GameObject("Background");
             var backgroundRectTransform = backgroundObject.AddComponent<RectTransform>();

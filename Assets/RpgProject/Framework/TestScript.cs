@@ -8,7 +8,6 @@ public class TestScript : MonoBehaviour
 {
     void Start()
     {
-
         Drawable.Create
         (
             DrawableType.Foreground,

@@ -1,13 +1,18 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using RpgProject.Objects;
+using RpgProject.Framework.Graphics;
+using RpgProject.Framework.Graphics.Screens;
+using RpgProject.Framework.Screens.Game;
 
 class Player : Entity
 {
     /*===================( ENTITY )===================*/
 
         /*==============={ Basic datas }================*/
+            [ObsoleteAttribute("Use RpgClass.USER instead")]
             public override string name => "Emilia";
             public override string EntityMarker => "PLAYER";
 
@@ -45,9 +50,7 @@ class Player : Entity
 
         /*==============={ Objects }================*/
             private CharacterController Controller;
-            [SerializeField] private Image EnduranceBar;
-            [SerializeField] private Image HealthBar;
-            private Animation CharacterAnimation;
+            //private Animation CharacterAnimation; << UNUSED
 
         /*==============={ Others }================*/
             public bool isAlive = true;
@@ -56,8 +59,7 @@ class Player : Entity
             public Quest[] quests;
             public bool isCheckingQuest = false;
 
-
-        public void Start() 
+        public void Start()
         {
             Controller = GetComponent<CharacterController>();
             inventory = GetComponent<Inventory>();
@@ -67,13 +69,13 @@ class Player : Entity
 
             maxEndurance = endurance;
             maxHealth = health;
-            
             CurrentCooldown = Time.time;
 
             DialogueMan.Instance.OnShowDialogue += () => { Gamestates.set(GameState.BUSY); };
             DialogueMan.Instance.OnCloseDialogue += () => { Gamestates.set(GameState.PLAYING);};
             Stat.StatsUpdateEvent += () => { updateStats(); };
             Job.StatsUpdateEvent += () => { updateStats(); };
+            TakeDamage += () => { Drawable.NewSize(GameObject.Find("statbar.health.overlay").GetComponent<RectTransform>(), new(Player.instance.health / Player.instance.maxHealth * 2.4f, 0.05f)); };
         }
 
         public override void update()
@@ -85,7 +87,7 @@ class Player : Entity
                 Quest.hideQuest();
 
             if (!isAlive) return;
-            if (isBusy) return; 
+            if (isBusy) return;
 
             updateInput();
             if(Gamestates.get() != GameState.BUSY)
@@ -99,18 +101,31 @@ class Player : Entity
         {
             Vector3 moveVector = Vector3.zero;
 
-            if (Controller.isGrounded == false) moveVector += Physics.gravity;
+            if (!Controller.isGrounded) moveVector += Physics.gravity;
             Controller.Move(moveVector * Time.deltaTime);
         }
 
         private void updateHud()
         {
-            HealthBar.fillAmount =  ((health * 100) / maxHealth) / 100;
-            EnduranceBar.fillAmount = ((endurance * 100) / maxEndurance) / 100;
         }
 
         private void updateInput()
         {
+            if(Input.GetButtonUp("Cancel"))
+            {
+                if(Gamestates.get() == GameState.PLAYING)
+                {
+                    Gamestates.set(GameState.BUSY);
+                    Drawable.ClearAll();
+                    new PauseMenu();
+                }
+                else if(Gamestates.get() == GameState.BUSY)
+                {
+                    Drawable.ClearAll();
+                    Gamestates.set(GameState.PLAYING);
+                }
+            }
+
             if(Input.GetButtonUp("Fire1")) interact();
 
             if(Input.GetButtonUp("Inventory")) inventory.ToggleInventory();
@@ -120,7 +135,6 @@ class Player : Entity
         {
             maxHealth = InventoryStats.getStat("Vitality").GetTotal();
             maxEndurance = InventoryStats.getStat("Stamina").GetTotal();
-
 
             if (inventory.getWeapon() != null)
             {
@@ -150,7 +164,7 @@ class Player : Entity
                     if (endurance != 0)
                         speed = SprintingSpeed;
                     if (endurance > 0)
-                        endurance = endurance - 0.5f;
+                    endurance -= 0.5f;
                 }
                 else
                     if (endurance < maxEndurance)
@@ -160,21 +174,21 @@ class Player : Entity
                 float Angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, TargetAngle, ref TargetAngleSmoothVelocity, TargetAngleSmoothTime);
                 transform.rotation = Quaternion.Euler(0f, Angle, 0f);
 
-                Controller.Move(Direction * speed * Time.deltaTime);
+                Controller.Move(speed * Time.deltaTime * Direction);
             }
-            else 
+            else
                 if (endurance < maxEndurance)
+                {
                     endurance++;
+                }
         }
 
         private void updateSprint()
         {
-            if (Input.GetButtonDown("Sprint"))
-                if (isSprinting != true)
-                    isSprinting = true;
-            if (Input.GetButtonUp("Sprint"))
-                if (isSprinting != false)
-                    isSprinting = false;
+        if (Input.GetButtonDown("Sprint") && !isSprinting)
+            isSprinting = true;
+        if (Input.GetButtonUp("Sprint") && isSprinting)
+            isSprinting = false;
         }
 
         private void interact()
@@ -216,7 +230,7 @@ class Player : Entity
                             }
                         break;
                 }
-        }       
+        }
           
         public void restoreHealth()
         {
@@ -245,7 +259,7 @@ class Player : Entity
 
         public void removeMoney(int quantity)
         {
-            if(!(money - quantity < 0))
+            if(money - quantity >= 0)
                 money -= quantity;
         }
 

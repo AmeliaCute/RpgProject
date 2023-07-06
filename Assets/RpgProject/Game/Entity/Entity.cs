@@ -34,6 +34,7 @@ abstract class Entity : MonoBehaviour
     // UPDATE FUNCTION:
     private void Update() {
         if(Gamestates.get() != GameState.BUSY || byPassGamestatesPriority) update();
+        if(Gamestates.get() == GameState.BUSY) busyUpdate();
     }
 
     // TOOLS FUNCTIONS:
@@ -55,6 +56,7 @@ abstract class Entity : MonoBehaviour
     }
     
     public virtual void init(){ }
-    public virtual void update(){ }
+    public virtual void update() { }
     public virtual void die() { }
+    public virtual void busyUpdate() { }
 }

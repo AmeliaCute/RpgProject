@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ namespace RpgProject.Framework.Graphics
         public float Width { get; set; }
 
         public float Height { get; set; }
+
+        public string Optional_Name { get; set; } = null;
 
         public virtual GameObject CreateGameObject()
         {
@@ -83,6 +86,12 @@ namespace RpgProject.Framework.Graphics
             Clear(DrawableType.Foreground);
             Clear(DrawableType.Background);
             RpgClass.LOGGER.Log("Clearing all Drawable in the scene");
+        }
+
+        public static void NewSize(RectTransform rectTransform, Vector2 sizes)
+        {
+            try { rectTransform.sizeDelta = new(sizes.x * Screen.width / 16f, sizes.y * Screen.height / 9f); }
+            catch(Exception exception) { RpgClass.LOGGER.Warning(exception.ToString()); }
         }
     }
 

@@ -22,7 +22,7 @@ namespace RpgProject.Framework.Graphics.Overlays
             textComponent.text = Label;
             textRectTransform.sizeDelta = new Vector2(Width * Screen.width / 16, Height * Screen.height / 9f);
             textComponent.font = _LabelFont;
-            textComponent.color = Color.white;
+            textComponent.color = new(255,255,255,255);
             textComponent.fontSize = LabelSize;
             textComponent.alignment = TextAnchor.MiddleCenter;
 
@@ -41,7 +41,7 @@ namespace RpgProject.Framework.Graphics.Overlays
             textRectTransform.offsetMin = new Vector2(_Margin, _Margin);
             textRectTransform.offsetMax = new Vector2(-_Margin, -_Margin);
             textComponent.font = _LabelFont;
-            textComponent.color = Color.white;
+            textComponent.color = new(255,255,255,255);
             textComponent.fontSize = LabelSize;
             textComponent.alignment = TextAnchor.MiddleCenter;
             textComponent.text = Label;

@@ -9,7 +9,7 @@ namespace RpgProject.Framework.Graphics
     {
         public List<Drawable> Children { get; set; } = new List<Drawable>();
 
-        public Color Color { get; set; } = Color.clear;
+        public Color32 Color { get; set; } = new(255,255,255,255);
 
         public Sprite Optional_ContainerSprite { get; set; } = null;
 
@@ -22,10 +22,11 @@ namespace RpgProject.Framework.Graphics
         public RuntimeAnimatorController fadeContainerAnimationController { get; set;} = ResourcesManager.CONTAINER_CONTROLLER;
         public override GameObject CreateGameObject()
         {
-            GameObject containerObject = new GameObject("Container");
+            GameObject containerObject = new GameObject(string.IsNullOrEmpty(Optional_Name) ? "Container" : Optional_Name);
             RpgClass.LOGGER.Log("Creating a new container");
             RectTransform rectTransform = containerObject.AddComponent<RectTransform>();
             rectTransform.anchoredPosition = Offset * new Vector2(Screen.width / 16f, Screen.height / 9f);
+            rectTransform.sizeDelta = new Vector2(Width * Screen.width / 16f, Height * Screen.height / 9f);
             Image image = containerObject.AddComponent<Image>();
             image.color = Color;
 
@@ -33,19 +34,20 @@ namespace RpgProject.Framework.Graphics
             {
                 GameObject backgroundObject = new GameObject("Background");
                 RectTransform backgroundRectTransform = backgroundObject.AddComponent<RectTransform>();
+                backgroundRectTransform.anchoredPosition = Offset * new Vector2(Screen.width / 16f, Screen.height / 9f);
                 Image backgroundComponent = backgroundObject.AddComponent<Image>();
                 backgroundRectTransform.SetParent(rectTransform);
                 backgroundComponent.color = Color;
                 backgroundComponent.sprite = Optional_ContainerSprite;
+
                 backgroundRectTransform.sizeDelta = new Vector2(Width * Screen.width / 16f, Height * Screen.height / 9f);
 
-                Mask mask = containerObject.AddComponent<Mask>();
+                containerObject.AddComponent<Mask>();
                 image.sprite = ResourcesManager.BUTTON_ROUNDED_WHITE_SQUARE;
                 image.type = Image.Type.Sliced;
-                image.color = Color.white;
+                image.color = new (255,255,255,255);
             }
 
-            rectTransform.sizeDelta = new Vector2(Width * Screen.width / 16f, Height * Screen.height / 9f);
             image.color = Color;
 
             RpgClass.LOGGER.Log("Adding children to the container");
@@ -58,7 +60,6 @@ namespace RpgProject.Framework.Graphics
                     RpgClass.LOGGER.Log("Creating a " + childObject.name);
 
                     childObject?.transform.SetParent(containerObject.transform, false);
-                    
                     childRectTransform.anchoredPosition = child.Offset * new Vector2(Screen.width / 16f, Screen.height / 9f);
                     RpgClass.LOGGER.Log("Child offset applied to current position (" + child.Offset.x + "," + child.Offset.y + ")");
                     RpgClass.LOGGER.Log("Child created");
@@ -86,7 +87,7 @@ namespace RpgProject.Framework.Graphics
         private void Start()
         {
             Animator animator = transform.GetComponent<Animator>();
-            animator.speed = -0.004f * t + 5; // Adjust the animation speed based on t
+            animator.speed = (-0.004f * t) + 5; // Adjust the animation speed based on t
             animator.Play("fadeAnim");
         }
     }
