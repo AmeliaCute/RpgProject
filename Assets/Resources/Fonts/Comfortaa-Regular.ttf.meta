@@ -3,14 +3,16 @@ guid: c2e9a45f080657c47a0582015d931d11
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 16
-  forceTextureCase: -2
+  fontSize: 100
+  forceTextureCase: -1
   characterSpacing: 0
   characterPadding: 1
-  includeFontData: 1
+  includeFontData: 0
   fontNames:
   - Comfortaa
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3443202c00e150b4cac11114c4fa4b0d, type: 3}
+  - {fileID: 12800000, guid: 0b7610045dfb7c24f80eb0d6eb020d29, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

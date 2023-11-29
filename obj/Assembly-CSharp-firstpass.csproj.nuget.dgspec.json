@@ -1,0 +1,3665 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\source\\repos\\RpgProject-URP\\Assembly-CSharp-firstpass.csproj": {}
+  },
+  "projects": {
+    "E:\\source\\repos\\RpgProject-URP\\Assembly-CSharp-firstpass.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Assembly-CSharp-firstpass.csproj",
+        "projectName": "Assembly-CSharp-firstpass",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Assembly-CSharp-firstpass.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Coffee.SoftMaskForUGUI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Coffee.SoftMaskForUGUI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Coffee.SoftMaskForUGUI.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Coffee.SoftMaskForUGUI.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\PPv2URPConverters.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\PPv2URPConverters.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.2D.Sprite.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.2D.Sprite.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Burst.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Burst.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Burst.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Burst.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Mathematics.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Mathematics.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Mathematics.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Mathematics.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.PlasticSCM.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.PlasticSCM.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.AddOns.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.AddOns.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.AssetIdRemapUtility.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.AssetIdRemapUtility.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipeline.Universal.ShaderLibrary.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipeline.Universal.ShaderLibrary.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.ShaderLibrary.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.ShaderLibrary.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Runtime.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Runtime.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Shaders.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Shaders.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Rider.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Rider.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Searcher.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Searcher.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.Analytics.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.Analytics.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.Environments.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.Environments.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.ShaderGraph.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ShaderGraph.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.TextMeshPro.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.TextMeshPro.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.TextMeshPro.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.TextMeshPro.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Timeline.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Timeline.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Timeline.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Timeline.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.SettingsProvider.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.SettingsProvider.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Shared.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Shared.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualStudio.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualStudio.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Coffee.SoftMaskForUGUI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Coffee.SoftMaskForUGUI.csproj",
+        "projectName": "Coffee.SoftMaskForUGUI",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Coffee.SoftMaskForUGUI.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Coffee.SoftMaskForUGUI.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Coffee.SoftMaskForUGUI.Editor.csproj",
+        "projectName": "Coffee.SoftMaskForUGUI.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Coffee.SoftMaskForUGUI.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Coffee.SoftMaskForUGUI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Coffee.SoftMaskForUGUI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\PPv2URPConverters.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\PPv2URPConverters.csproj",
+        "projectName": "PPv2URPConverters",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\PPv2URPConverters.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Runtime.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Runtime.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.2D.Sprite.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.2D.Sprite.Editor.csproj",
+        "projectName": "Unity.2D.Sprite.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.2D.Sprite.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.Burst.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.Burst.csproj",
+        "projectName": "Unity.Burst",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Burst.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.Burst.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.Burst.Editor.csproj",
+        "projectName": "Unity.Burst.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Burst.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Burst.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Burst.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.Mathematics.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.Mathematics.csproj",
+        "projectName": "Unity.Mathematics",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Mathematics.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.Mathematics.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.Mathematics.Editor.csproj",
+        "projectName": "Unity.Mathematics.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Mathematics.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Mathematics.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Mathematics.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.PlasticSCM.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.PlasticSCM.Editor.csproj",
+        "projectName": "Unity.PlasticSCM.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.PlasticSCM.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.AddOns.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.AddOns.Editor.csproj",
+        "projectName": "Unity.ProBuilder.AddOns.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.AddOns.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.AssetIdRemapUtility.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.AssetIdRemapUtility.csproj",
+        "projectName": "Unity.ProBuilder.AssetIdRemapUtility",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.AssetIdRemapUtility.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Csg.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Csg.csproj",
+        "projectName": "Unity.ProBuilder.Csg",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Csg.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.csproj",
+        "projectName": "Unity.ProBuilder",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.KdTree.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.KdTree.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Poly2Tri.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Poly2Tri.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Editor.csproj",
+        "projectName": "Unity.ProBuilder.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.AssetIdRemapUtility.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.AssetIdRemapUtility.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Csg.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Csg.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Stl.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Stl.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Settings.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Settings.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.KdTree.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.KdTree.csproj",
+        "projectName": "Unity.ProBuilder.KdTree",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.KdTree.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Poly2Tri.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Poly2Tri.csproj",
+        "projectName": "Unity.ProBuilder.Poly2Tri",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Poly2Tri.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Stl.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Stl.csproj",
+        "projectName": "Unity.ProBuilder.Stl",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ProBuilder.Stl.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipeline.Universal.ShaderLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipeline.Universal.ShaderLibrary.csproj",
+        "projectName": "Unity.RenderPipeline.Universal.ShaderLibrary",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipeline.Universal.ShaderLibrary.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Editor.csproj",
+        "projectName": "Unity.RenderPipelines.Core.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj",
+        "projectName": "Unity.RenderPipelines.Core.Runtime",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.ShaderLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.ShaderLibrary.csproj",
+        "projectName": "Unity.RenderPipelines.Core.ShaderLibrary",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.ShaderLibrary.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj",
+        "projectName": "Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Editor.csproj",
+        "projectName": "Unity.RenderPipelines.Universal.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Burst.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Burst.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Mathematics.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Mathematics.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Runtime.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Runtime.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.ShaderGraph.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ShaderGraph.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Runtime.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Runtime.csproj",
+        "projectName": "Unity.RenderPipelines.Universal.Runtime",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Runtime.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Burst.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Burst.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Mathematics.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Mathematics.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipeline.Universal.ShaderLibrary.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipeline.Universal.ShaderLibrary.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Shaders.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Shaders.csproj",
+        "projectName": "Unity.RenderPipelines.Universal.Shaders",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Universal.Shaders.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.Rider.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.Rider.Editor.csproj",
+        "projectName": "Unity.Rider.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Rider.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.Searcher.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.Searcher.Editor.csproj",
+        "projectName": "Unity.Searcher.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Searcher.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.Analytics.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.Analytics.csproj",
+        "projectName": "Unity.Services.Core.Analytics",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.Analytics.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.csproj",
+        "projectName": "Unity.Services.Core",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.Environments.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.Environments.csproj",
+        "projectName": "Unity.Services.Core.Environments",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.Environments.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.Internal.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.Internal.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.Internal.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.Internal.csproj",
+        "projectName": "Unity.Services.Core.Internal",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.Internal.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Services.Core.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.Settings.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.Settings.Editor.csproj",
+        "projectName": "Unity.Settings.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Settings.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.ShaderGraph.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.ShaderGraph.Editor.csproj",
+        "projectName": "Unity.ShaderGraph.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ShaderGraph.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.RenderPipelines.Core.Runtime.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Searcher.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Searcher.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.ShaderGraph.Utilities.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ShaderGraph.Utilities.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.ShaderGraph.Utilities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.ShaderGraph.Utilities.csproj",
+        "projectName": "Unity.ShaderGraph.Utilities",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.ShaderGraph.Utilities.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.TextMeshPro.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.TextMeshPro.csproj",
+        "projectName": "Unity.TextMeshPro",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.TextMeshPro.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.TextMeshPro.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.TextMeshPro.Editor.csproj",
+        "projectName": "Unity.TextMeshPro.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.TextMeshPro.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.TextMeshPro.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.TextMeshPro.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.Timeline.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.Timeline.csproj",
+        "projectName": "Unity.Timeline",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Timeline.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.Timeline.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.Timeline.Editor.csproj",
+        "projectName": "Unity.Timeline.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Timeline.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.Timeline.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.Timeline.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj",
+        "projectName": "Unity.VisualScripting.Core",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.Editor.csproj",
+        "projectName": "Unity.VisualScripting.Core.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.csproj",
+        "projectName": "Unity.VisualScripting.Flow",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.Editor.csproj",
+        "projectName": "Unity.VisualScripting.Flow.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.SettingsProvider.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.SettingsProvider.Editor.csproj",
+        "projectName": "Unity.VisualScripting.SettingsProvider.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.SettingsProvider.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Shared.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Shared.Editor.csproj",
+        "projectName": "Unity.VisualScripting.Shared.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Shared.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.csproj",
+        "projectName": "Unity.VisualScripting.State",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.Editor.csproj",
+        "projectName": "Unity.VisualScripting.State.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Core.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.Editor.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.Flow.Editor.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualScripting.State.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\Unity.VisualStudio.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualStudio.Editor.csproj",
+        "projectName": "Unity.VisualStudio.Editor",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\Unity.VisualStudio.Editor.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj",
+        "projectName": "UnityEditor.TestRunner",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj",
+        "projectName": "UnityEditor.UI",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.UI.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEditor.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj"
+              },
+              "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+                "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj",
+        "projectName": "UnityEngine.TestRunner",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.TestRunner.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj",
+        "projectName": "UnityEngine.UI",
+        "projectPath": "E:\\source\\repos\\RpgProject-URP\\UnityEngine.UI.csproj",
+        "packagesPath": "C:\\Users\\PROPRIETAIRE\\.nuget\\packages\\",
+        "outputPath": "E:\\source\\repos\\RpgProject-URP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PROPRIETAIRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

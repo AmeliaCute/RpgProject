@@ -3,13 +3,13 @@ guid: 1b9b75c3a18b78242b636cc63004539a
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 16
-  forceTextureCase: -2
+  fontSize: 100
+  forceTextureCase: -1
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Font Awesome 5 Free
+  - Font Awesome 5 Pro
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

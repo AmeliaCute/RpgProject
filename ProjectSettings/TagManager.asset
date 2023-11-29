@@ -4,11 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-  - Npc
-  - Teleporter
-  - Ore
-  - CANVAS
+  - SpawnableObject
   layers:
   - Default
   - TransparentFX
@@ -18,8 +14,8 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - Walkable
+  - 
+  - 
   - 
   - 
   - 
