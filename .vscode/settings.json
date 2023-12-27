@@ -1,23 +1,39 @@
 {
     "files.exclude": {
-        "**/.git": false,
-        "**/.svn": false,
-        "**/.hg": false,
-        "**/CVS": false,
-        "**/.DS_Store": false,
-        "**/Thumbs.db": false,
-        "**/*.meta": true,
-        "Library":true,
-        "obj":true,
-        "Logs":true,
-        "Packages":true,
-        "ProjectSettings":true,
-        "Temp":true,
-        "UserSettings":true,
-        "**/*.csproj":true,
-        "*.vs*":true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        ".vscode/": true
     },
-    "explorerExclude.backup": {},
-    "FSharp.suggestGitignore": false,
-    "dotnet.defaultSolution": "RpgProject-URP.sln"
+    "hidefiles.configurationType": "local",
+    "hidefiles.globalConfig": {
+        "profiles": [
+            {
+                "name": "Default",
+                "detail": "",
+                "description": "Test",
+                "hidden": [
+                    ".vscode/"
+                ]
+            },
+            {
+                "name": "Strict",
+                "detail": "Hide everything not immediately required",
+                "hidden": [
+                    "$Default"
+                ]
+            },
+            {
+                "hidden": [],
+                "name": "UwU",
+                "description": "",
+                "detail": "",
+                "peek": []
+            }
+        ]
+    },
+    "hidefiles.selectedProfile": "Default",
+    "dotnet.defaultSolution": "RpgProject.sln"
 }

@@ -1,9 +1,10 @@
 /Temp
+/Library
+/obj
 /Packages
+/ProjectSettings
 /UserSettings
 /Logs
-/Library
+*.csproj
 /.vscode
 /.vs
-/ProjectSettings
-**/*.csproj
