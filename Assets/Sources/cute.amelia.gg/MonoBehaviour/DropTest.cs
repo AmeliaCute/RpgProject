@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InteractableTest : MonoBehaviour
+public class DropTest : MonoBehaviour
 {
     [SerializeField] private InputActionReference use;
-    [SerializeField] private GameObject prefab;
+    [SerializeField] private ItemInstance items;
     [SerializeField] private bool isTrigger = false;
 
     void OnTriggerEnter(Collider other)
@@ -32,7 +32,7 @@ public class InteractableTest : MonoBehaviour
     {
         if(isTrigger)
         {
-            GameObject.Instantiate(prefab).transform.SetParent(GameObject.FindGameObjectsWithTag("CANVAS")[0].GetComponent<Canvas>().transform, false);
+            GameObject.FindObjectOfType<Player>().AddItem(items);
         }
     }
 }

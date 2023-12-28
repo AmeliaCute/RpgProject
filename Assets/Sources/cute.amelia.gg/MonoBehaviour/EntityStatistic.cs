@@ -1,7 +1,11 @@
+using UnityEngine;
+
 [System.Serializable]
 public class Statistic
 {
+    [Range(0,999)]
     public float baseValue;
+    [Range(0,999)]
     public float bonusValue;
 
     public Statistic(float baseValue, float bonusValue)

@@ -1,17 +1,24 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class Toolkit : MonoBehaviour
 {
     [SerializeField] private InputActionReference exit;
     [SerializeField] private Animator animator;
-    private PlayerInput Input;
+    private PlayerInput input;
+    private Volume volume;
+    private DepthOfField depthOfField;
     void Start()
     {
-        Input = GameObject.FindFirstObjectByType<PlayerInput>();
-        Input.actions.FindActionMap("Player").Disable();
-        Input.actions.FindActionMap("Inventory").Enable();
+        volume = GameObject.FindObjectOfType<Volume>();
+        input = GameObject.FindObjectOfType<PlayerInput>();
+        input.actions.FindActionMap("Player").Disable();
+        input.actions.FindActionMap("Inventory").Enable();
+        volume.profile.TryGet(out depthOfField);
+        depthOfField.active = true;
     }
 
     void OnEnable()
@@ -27,8 +34,9 @@ public class Toolkit : MonoBehaviour
     private void exitWindow(InputAction.CallbackContext context)
     {
         animator.Play("ToolkitClose");
-        Input.actions.FindActionMap("Inventory").Disable();
-        Input.actions.FindActionMap("Player").Enable();
+        input.actions.FindActionMap("Inventory").Disable();
+        input.actions.FindActionMap("Player").Enable();
+        depthOfField.active = false;
     }
 
     public void Kill()

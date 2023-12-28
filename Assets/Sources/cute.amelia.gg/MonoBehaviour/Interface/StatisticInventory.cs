@@ -19,14 +19,14 @@ public class StatisticInventory : MonoBehaviour
         player = FindObjectOfType<Player>();
         addedDef.text = $"{player.defense.bonusValue}";
         addedAtk.text = $"{player.attack.bonusValue}";
-        addedSpd.text = $"{player.speed.bonusValue * 10}";
+        addedSpd.text = $"{player.speed.bonusValue * 10}%";
 
         baseDef.text = $"{player.defense.baseValue}";
         baseAtk.text = $"{player.attack.baseValue}";
-        baseSpd.text = $"{player.speed.baseValue * 10}";
+        baseSpd.text = $"{player.speed.baseValue * 10}%";
 
         totalDef.text = $"{player.defense.TotalValue}";
         totalAtk.text = $"{player.attack.TotalValue}";
-        totalSpd.text = $"{player.speed.TotalValue * 10}";
+        totalSpd.text = $"{player.speed.TotalValue * 10}%";
     }
 }
