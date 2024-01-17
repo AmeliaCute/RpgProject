@@ -5,28 +5,25 @@ using UnityEngine.InputSystem;
 
 public class Player : Entity
 {
-    [SerializeField] private new Rigidbody rigidbody;
+    [SerializeField] public new Rigidbody rigidbody;
     [SerializeField] private InputActionReference movement;
     [SerializeField] private float TargetAngleSmoothTime = 0.1f;
-    [SerializeField] private List<JobInstance> Jobs;
+    [SerializeField] private List<JobInstance> jobs;
     private float TargetAngleSmoothVelocity;
-
-
-    
 
     void Update()
     {
         Movements();
     }
 
-    void Movements()
+    public virtual void Movements()
     {
         Vector2 inputVector = movement.action.ReadValue<Vector2>();
         inputVector.Normalize();
 
         Vector3 movementVector = new Vector3(inputVector.x, 0f, inputVector.y);
 
-        rigidbody.velocity = movementVector * 10;
+        rigidbody.velocity = movementVector * speed.TotalValue;
 
         if (movementVector.magnitude > 0.1f)
         {
@@ -35,6 +32,19 @@ public class Player : Entity
             transform.rotation = Quaternion.Euler(0f, Angle, 0f);
         }
     }
+    
+    public void CopyStateFrom(Player otherPlayer)
+    {
+        rigidbody = otherPlayer.rigidbody;
+        movement = otherPlayer.movement;
 
+        jobs = otherPlayer.jobs;
+        inventory = otherPlayer.inventory;
 
+        health = otherPlayer.health;
+        defense = otherPlayer.defense;
+        attack = otherPlayer.attack;
+        speed = otherPlayer.speed;
+        level = otherPlayer.level;
+    }
 }

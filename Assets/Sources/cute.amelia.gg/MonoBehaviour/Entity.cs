@@ -18,8 +18,8 @@ public class Entity : MonoBehaviour
         if (inventory == null)
             inventory = new List<ItemInstance>();
 
-        List<ItemInstance> sameTypeItems = inventory.FindAll(i => i.itemType == item.itemType);
-        ItemInstance instance = new ItemInstance { itemType = item.itemType, quantity = item.quantity};
+        List<ItemInstance> sameTypeItems = inventory.FindAll(i => i.itemType == item.itemType && i.flag == item.flag);
+        ItemInstance instance = new ItemInstance { itemType = item.itemType, quantity = item.quantity, flag = item.flag };
 
         int totalQuantity = instance.quantity;
 
@@ -46,7 +46,8 @@ public class Entity : MonoBehaviour
             inventory.Add(new ItemInstance
             {
                 itemType = instance.itemType,
-                quantity = quantityToAdd
+                quantity = quantityToAdd,
+                flag = instance.flag
             });
 
             totalQuantity -= quantityToAdd;

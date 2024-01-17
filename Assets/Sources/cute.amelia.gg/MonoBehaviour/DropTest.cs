@@ -4,17 +4,16 @@ using UnityEngine.InputSystem;
 public class DropTest : MonoBehaviour
 {
     [SerializeField] private InputActionReference use;
-    [SerializeField] private ItemInstance items;
+    public ItemInstance items;
+    [SerializeField] private bool infinite = false;
     [SerializeField] private bool isTrigger = false;
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("HEYYYYYYYYYYYY");
         isTrigger = true;
     }
     void OnTriggerExit(Collider other)
     {
-        Debug.Log("BYYYYYYYYYYYYYYE");
         isTrigger = false;
     }
 
@@ -33,6 +32,8 @@ public class DropTest : MonoBehaviour
         if(isTrigger)
         {
             GameObject.FindObjectOfType<Player>().AddItem(items);
+            if(!infinite)
+                Destroy(gameObject);
         }
     }
 }

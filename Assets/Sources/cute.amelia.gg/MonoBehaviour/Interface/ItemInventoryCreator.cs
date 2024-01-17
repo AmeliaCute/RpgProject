@@ -8,11 +8,13 @@ public class ItemInventoryCreator : MonoBehaviour
     void Start()
     {
         player = FindFirstObjectByType<Player>();
-        foreach(ItemInstance items in player.inventory)
-        {
-            var it = Instantiate(ItemButtonPrefab);
-            it.GetComponent<ItemInventoryButton>().Setup(items);
-            it.transform.SetParent(transform, false);
-        }
+        
+        if(player.inventory.Count > 0)
+            foreach(ItemInstance items in player.inventory)
+            {
+                var it = Instantiate(ItemButtonPrefab);
+                it.GetComponent<ItemInventoryButton>().Setup(items);
+                it.transform.SetParent(transform, false);
+            }
     }
 }

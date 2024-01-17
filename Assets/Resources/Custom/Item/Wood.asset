@@ -10,8 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c29c74b011af6a44da4e271cba8181ad, type: 3}
-  m_Name: Apple
+  m_Name: Wood
   m_EditorClassIdentifier: 
-  itemName: Apple
-  icon: {fileID: 21300000, guid: 5ca7513e651a50649b9ace5b46d8bb73, type: 3}
-  description: It's a Apple
+  flag:
+  - itemName: Wood 1
+    icon: {fileID: 21300000, guid: 5ca7513e651a50649b9ace5b46d8bb73, type: 3}
+    description: 
+  - itemName: Wood 2
+    icon: {fileID: 21300000, guid: 5ca7513e651a50649b9ace5b46d8bb73, type: 3}
+    description: 
+  - itemName: Wood 3
+    icon: {fileID: 21300000, guid: 5ca7513e651a50649b9ace5b46d8bb73, type: 3}
+    description: 

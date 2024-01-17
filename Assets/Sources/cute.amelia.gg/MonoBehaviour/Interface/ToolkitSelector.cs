@@ -10,11 +10,11 @@ public class ToolkitSelector : MonoBehaviour
     [SerializeField] private Text description;
     [SerializeField] private Animator animator;
 
-    public void SetSelector(ItemData item)
+    public void SetSelector(ItemFlag item)
     {
         animator.Play("SelectorReload"); /*Supposed to be played only once*/
         icon.sprite = item.icon;
-        title.text = item.name;
+        title.text = item.itemName;
         description.text = item.description;
     }
 }

@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InteractableTest : MonoBehaviour
+public class EnduranceTaskTrigger : MonoBehaviour
 {
     [SerializeField] private InputActionReference use;
-    [SerializeField] private GameObject prefab;
+    [SerializeField] private GameObject transitions;
+    [SerializeField] private ItemInstance itemInstance;
     [SerializeField] private bool isTrigger = false;
+
 
     void OnTriggerEnter(Collider other)
     {
@@ -30,7 +32,8 @@ public class InteractableTest : MonoBehaviour
     {
         if(isTrigger)
         {
-            GameObject.Instantiate(prefab).transform.SetParent(GameObject.FindGameObjectsWithTag("CANVAS")[0].GetComponent<Canvas>().transform, false);
+            Instantiate(transitions).transform.SetParent(GameObject.FindGameObjectsWithTag("CANVAS")[0].GetComponent<Canvas>().transform, false);
+            gameObject.AddComponent<EnduranceTaskSystem>().Setup(GameObject.FindObjectOfType<Player>(), gameObject, itemInstance);
         }
     }
 }
