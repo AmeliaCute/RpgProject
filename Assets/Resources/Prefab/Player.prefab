@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8713301375188258300}
   - component: {fileID: 8713301375188258297}
   - component: {fileID: 6712749937410292836}
+  - component: {fileID: 3804311968701877914}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -28,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8713301375188258241}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8713301375188258302
 MeshFilter:
@@ -94,9 +95,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8713301375188258241}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8713301375188258297
@@ -106,10 +115,21 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8713301375188258241}
-  serializedVersion: 2
+  serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -130,8 +150,8 @@ MonoBehaviour:
   health:
     baseValue: 100
     bonusValue: 0
-  endurance:
-    baseValue: 100
+  attack:
+    baseValue: 4
     bonusValue: 0
   speed:
     baseValue: 10
@@ -145,4 +165,20 @@ MonoBehaviour:
   movement: {fileID: 5729218111592279589, guid: eaa59d5c434ddf043b31228636f65576,
     type: 3}
   TargetAngleSmoothTime: 0.1
-  Jobs: []
+  jobManager: {fileID: 3804311968701877914}
+--- !u!114 &3804311968701877914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8713301375188258241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99b1f400246dc741993bb8b54c331c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jobs:
+  - jobData: {fileID: 11400000, guid: 4b5351d9891c9c7469c5af5faa584a1d, type: 2}
+    level: 0
+    exp: 0

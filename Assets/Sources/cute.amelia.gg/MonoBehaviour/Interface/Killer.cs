@@ -6,4 +6,9 @@ public class Killer : MonoBehaviour
     {
         GameObject.Destroy(gameObject);
     }
+
+    public static void UltraOmegaKill()
+    {
+        Application.Quit(0);
+    }
 }

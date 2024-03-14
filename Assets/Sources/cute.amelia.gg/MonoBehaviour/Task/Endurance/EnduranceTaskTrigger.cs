@@ -7,7 +7,18 @@ public class EnduranceTaskTrigger : MonoBehaviour
     [SerializeField] private GameObject transitions;
     [SerializeField] private ItemInstance itemInstance;
     [SerializeField] private bool isTrigger = false;
+    public bool hasBeenActivated = false;
+    [SerializeField] private int jobRequire;
+    [SerializeField] private QuestObjective quest;
+    [SerializeField] private bool connectToQuest = true;
+    private Player player;
+    private JobManager jobManager;
 
+    private void Start()
+    {
+        player = GameObject.FindObjectOfType<Player>();
+        jobManager = GameObject.FindObjectOfType<JobManager>(); 
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -28,12 +39,13 @@ public class EnduranceTaskTrigger : MonoBehaviour
         use.action.performed -= PerformUse;
     }
 
-    private void PerformUse(InputAction.CallbackContext context)
+    public void PerformUse(InputAction.CallbackContext context)
     {
-        if(isTrigger)
+        if(isTrigger && !hasBeenActivated && player.jobManager.jobs[0].level >= 1)
         {
-            Instantiate(transitions).transform.SetParent(GameObject.FindGameObjectsWithTag("CANVAS")[0].GetComponent<Canvas>().transform, false);
-            gameObject.AddComponent<EnduranceTaskSystem>().Setup(GameObject.FindObjectOfType<Player>(), gameObject, itemInstance);
+            hasBeenActivated = true;
+            Instantiate(transitions, GameObject.FindGameObjectsWithTag("CANVAS")[0].GetComponent<Canvas>().transform);
+            gameObject.AddComponent<EnduranceTaskSystem>().Setup(GameObject.FindObjectOfType<Player>(), gameObject, itemInstance, quest, connectToQuest);
         }
     }
 }

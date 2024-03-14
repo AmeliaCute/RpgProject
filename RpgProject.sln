@@ -73,6 +73,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.AI.Navigation.Editor.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.State.Editor", "Unity.VisualScripting.State.Editor.csproj", "{068F41C8-FAD3-3005-C684-E1E823D0243E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elringus.SpriteGlow.Runtime", "Elringus.SpriteGlow.Runtime.csproj", "{F192B87B-9DAE-A198-E060-AA72C9E90C6D}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI", "UnityEngine.UI.csproj", "{D75272DA-D392-609F-9C75-ABF8AED65A1F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Editor", "Unity.Services.Core.Editor.csproj", "{CC5A919A-1D93-C84D-F783-15D15C869E64}"
@@ -329,6 +331,10 @@ Global
 		{068F41C8-FAD3-3005-C684-E1E823D0243E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{068F41C8-FAD3-3005-C684-E1E823D0243E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{068F41C8-FAD3-3005-C684-E1E823D0243E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F192B87B-9DAE-A198-E060-AA72C9E90C6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F192B87B-9DAE-A198-E060-AA72C9E90C6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F192B87B-9DAE-A198-E060-AA72C9E90C6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F192B87B-9DAE-A198-E060-AA72C9E90C6D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D75272DA-D392-609F-9C75-ABF8AED65A1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D75272DA-D392-609F-9C75-ABF8AED65A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D75272DA-D392-609F-9C75-ABF8AED65A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU

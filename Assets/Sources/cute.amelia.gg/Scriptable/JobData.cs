@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "JobData")]
+[CreateAssetMenu(menuName = "RpgProject/JobData")] 
 public class JobData : ScriptableObject
 {
     public new string name;
@@ -8,5 +8,7 @@ public class JobData : ScriptableObject
     public string description;
     [Range(1,20)]
     public int maxLevel;
-    public int baseLevelExp;
+    public int[] levelExp;
+    public JobQuest[] quests;
+
 }

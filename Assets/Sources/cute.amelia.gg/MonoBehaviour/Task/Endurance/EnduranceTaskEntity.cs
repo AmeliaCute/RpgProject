@@ -7,19 +7,25 @@ public class EnduranceTaskEntity : MonoBehaviour
     public EnduranceTaskSystem enduranceTaskSystem;
     public ItemInstance itemInstance;
     public Statistic defense = new Statistic(10, 0);
-    public Statistic health = new Statistic(100, 0);
+    public Statistic health = new Statistic(10, 0);
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public void OnDamage()
     {
-
+        animator.Play("OreDamage");
     }
 
     public void OnDeath()
     {
-        GameObject drop = Instantiate(Resources.Load<GameObject>("Prefab/DropableTest"));
+        animator.Play("OreDeath");
+        GameObject drop = Instantiate(Resources.Load<GameObject>("Prefab/PseudoEntity/DropableTest"));
         drop.GetComponent<DropTest>().items = itemInstance;
-        drop.transform.position = transform.position;
-        Destroy(gameObject, 1.5f);
+        drop.transform.position = new(transform.position.x, 0.3f, transform.position.z);
+        Destroy(gameObject, 0.19f);
     }
 
     public void Damage(float damage)

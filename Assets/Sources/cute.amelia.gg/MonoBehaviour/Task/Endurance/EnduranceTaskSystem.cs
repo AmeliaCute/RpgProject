@@ -6,31 +6,52 @@ public class EnduranceTaskSystem : MonoBehaviour
 {
     [SerializeField] private EnduranceTaskEntity entity;
     [SerializeField] private EnduranceTaskPlayer player;
+    [SerializeField] private int jobRequire;
+    [SerializeField] private QuestObjective quest;
+    [SerializeField] private bool ConnectToQuest = true;
+
+    public delegate void OnEnduranceTaskComplete(QuestObjective quest, int offset);
+    public static event OnEnduranceTaskComplete OnEnduranceTaskCompleteEvent;
+
     private PlayerInput input;
     private Player playerInstance;
     private GameObject playerGameObject;
 
+    private float attackCooldown = 1f;
+    private float CurrentCooldown;
+
     void OnEnable()
     {
-        GameObject.FindObjectOfType<PlayerInput>().actions.FindActionMap("EnduranceTask").FindAction("Abort").performed += AbortEvent;
-        GameObject.FindObjectOfType<PlayerInput>().actions.FindActionMap("EnduranceTask").FindAction("Use").performed += Damage;
+        FindObjectOfType<PlayerInput>().actions.FindActionMap("EnduranceTask").FindAction("Abort").performed += AbortEvent;
+        FindObjectOfType<PlayerInput>().actions.FindActionMap("EnduranceTask").FindAction("Use").performed += Damage;
     }
 
     void OnDisable()
     {
-        GameObject.FindObjectOfType<PlayerInput>().actions.FindActionMap("EnduranceTask").FindAction("Abort").performed -= AbortEvent;
-        GameObject.FindObjectOfType<PlayerInput>().actions.FindActionMap("EnduranceTask").FindAction("Use").performed -= Damage;
+        FindObjectOfType<PlayerInput>().actions.FindActionMap("EnduranceTask").FindAction("Abort").performed -= AbortEvent;
+        FindObjectOfType<PlayerInput>().actions.FindActionMap("EnduranceTask").FindAction("Use").performed -= Damage;
     }
 
-    private void Damage(InputAction.CallbackContext context) { entity.Damage(playerInstance.attack.TotalValue); }
-    private void AbortEvent(InputAction.CallbackContext context) { Finish(); }
+    private void Damage(InputAction.CallbackContext context) 
+    {  
+        if(Time.time > CurrentCooldown)
+        {
+            entity.Damage(playerInstance.attack.TotalValue);
+            CurrentCooldown = Time.time + attackCooldown;
+        }
+    }
+    private void AbortEvent(InputAction.CallbackContext context) {
+        Finish(true); 
+        FindObjectOfType<PlayerInput>().actions.FindActionMap("EnduranceTask").FindAction("Abort").performed -= AbortEvent;
+        FindObjectOfType<PlayerInput>().actions.FindActionMap("EnduranceTask").FindAction("Use").performed -= Damage;
+    }
 
-    public void Setup(Player player, GameObject target, ItemInstance itemInstance)
+    public void Setup(Player player, GameObject target, ItemInstance itemInstance, QuestObjective quest, bool ConnectToQuest)
     {
         playerInstance = player;
         playerGameObject = player.gameObject;
 
-        input = GameObject.FindObjectOfType<PlayerInput>();
+        input = FindObjectOfType<PlayerInput>();
         input.actions.FindActionMap("Player").Disable();
         input.actions.FindActionMap("EnduranceTask").Enable();
         this.entity = target.AddComponent<EnduranceTaskEntity>();
@@ -38,12 +59,31 @@ public class EnduranceTaskSystem : MonoBehaviour
         this.entity.itemInstance = itemInstance;
         this.player = playerGameObject.AddComponent<EnduranceTaskPlayer>();
         this.player.taskPos = target.transform.position;
+        this.quest = quest;
+        this.ConnectToQuest = ConnectToQuest;
+
     }
 
-    public void Finish()
+    public void Finish(bool abort = false)
     {
         input.actions.FindActionMap("EnduranceTask").Disable();
         input.actions.FindActionMap("Player").Enable();
+
+        if(ConnectToQuest && !abort)
+        {
+            quest.currentAmount++;
+            
+            OnEnduranceTaskCompleteEvent(
+                quest,  
+                0       // MINER OFFSET
+            );
+        }
+
+        if(abort)
+        {
+            FindObjectOfType<EnduranceTaskTrigger>().hasBeenActivated = false;
+        }
+
         Destroy(player);
     }
 }

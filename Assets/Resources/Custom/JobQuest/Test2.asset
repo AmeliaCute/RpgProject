@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb2df353bf3f0643b18a5b50e4cc0fa, type: 3}
+  m_Name: Test2
+  m_EditorClassIdentifier: 
+  questName: Jsp
+  description: For real i dont know
+  levelRequire: 0
+  objectives: {fileID: 11400000, guid: 39863fe0fb6977c4d8fe1fdac3575516, type: 2}
+  experienceReward: 100
+  goldReward: 4435
+  finished: 0

@@ -15,10 +15,11 @@ MonoBehaviour:
   flag:
   - itemName: Wood 1
     icon: {fileID: 21300000, guid: 5ca7513e651a50649b9ace5b46d8bb73, type: 3}
-    description: 
+    description: This is the description of wood 1
   - itemName: Wood 2
     icon: {fileID: 21300000, guid: 5ca7513e651a50649b9ace5b46d8bb73, type: 3}
-    description: 
+    description: This is the description of wood 2
   - itemName: Wood 3
     icon: {fileID: 21300000, guid: 5ca7513e651a50649b9ace5b46d8bb73, type: 3}
-    description: 
+    description: Why aru gay?
+  category: 2
