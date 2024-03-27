@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8713301375188258297}
   - component: {fileID: 6712749937410292836}
   - component: {fileID: 3804311968701877914}
+  - component: {fileID: 2806111914765014231}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -159,13 +160,29 @@ MonoBehaviour:
   defense:
     baseValue: 10
     bonusValue: 0
-  inventory: []
+  inventory:
+  - itemType: {fileID: 11400000, guid: 295fd4a80d252d14b983a733c841d85a, type: 2}
+    quantity: 999
+    flag: 1
+  - itemType: {fileID: 11400000, guid: 295fd4a80d252d14b983a733c841d85a, type: 2}
+    quantity: 443
+    flag: 2
+  - itemType: {fileID: 11400000, guid: 24fea913f8785bd48b9e028f0f19af4e, type: 2}
+    quantity: 1
+    flag: 0
+  - itemType: {fileID: 11400000, guid: 295fd4a80d252d14b983a733c841d85a, type: 2}
+    quantity: 56
+    flag: 0
   level: 10
-  rigidbody: {fileID: 8713301375188258297}
-  movement: {fileID: 5729218111592279589, guid: eaa59d5c434ddf043b31228636f65576,
+  pauseMenu: {fileID: 6023780251167617955, guid: 0f43d2689fa201c459975c571f8d9c02,
     type: 3}
+  rigidbody: {fileID: 8713301375188258297}
+  movement: {fileID: 8340975042637290365, guid: b0e4413db341c0b4892575a7d9005626,
+    type: 3}
+  exit: {fileID: -6762175891521884071, guid: b0e4413db341c0b4892575a7d9005626, type: 3}
   TargetAngleSmoothTime: 0.1
   jobManager: {fileID: 3804311968701877914}
+  questManager: {fileID: 0}
 --- !u!114 &3804311968701877914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,5 +197,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jobs:
   - jobData: {fileID: 11400000, guid: 4b5351d9891c9c7469c5af5faa584a1d, type: 2}
-    level: 0
+    level: 14
     exp: 0
+--- !u!114 &2806111914765014231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8713301375188258241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b191a360f8b1a5943ac1d2d0b2b46229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quests:
+  - {fileID: 11400000, guid: 489bc575233f44941bf662ebfd8596f5, type: 2}
+  current: {fileID: 11400000, guid: 489bc575233f44941bf662ebfd8596f5, type: 2}

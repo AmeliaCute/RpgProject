@@ -17,6 +17,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
+        WidgetManagement.instance.ClosePanel();
         player = FindObjectOfType<Player>();
         CameraAnimator = FindObjectOfType<Camera>().GetComponent<Animator>();
         CameraAnimator.Play("CameraZoom");
@@ -52,6 +53,7 @@ public class PauseMenu : MonoBehaviour
     private void closeFR(InputAction.CallbackContext context)
     {
         CameraAnimator.Play("CameraDezoom");
+        WidgetManagement.instance.OpenPanel();
     }
     
     public static void ForceExit()

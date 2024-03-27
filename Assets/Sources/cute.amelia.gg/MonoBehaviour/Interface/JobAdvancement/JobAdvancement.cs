@@ -18,6 +18,7 @@ public class JobAdvancement : MonoBehaviour
 
     void Start()
     {
+        WidgetManagement.instance.ClosePanel();
         CameraAnimator = FindObjectOfType<Camera>().GetComponent<Animator>();
         volume = FindObjectOfType<Volume>();
         input = FindObjectOfType<PlayerInput>();
@@ -40,6 +41,7 @@ public class JobAdvancement : MonoBehaviour
 
     public void exitWindow(InputAction.CallbackContext context)
     {
+        WidgetManagement.instance.OpenPanel();
         CameraAnimator.Play("CameraDezoom");
         animator.Play("JobAdvancementClose");
         input.actions.FindActionMap("JobAdvancement").Disable();

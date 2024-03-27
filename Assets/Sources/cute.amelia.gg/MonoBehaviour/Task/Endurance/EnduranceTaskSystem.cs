@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class EnduranceTaskSystem : MonoBehaviour
@@ -64,7 +65,7 @@ public class EnduranceTaskSystem : MonoBehaviour
 
     }
 
-    public void Finish(bool abort = false)
+    public UnityEvent Finish(bool abort = false)
     {
         input.actions.FindActionMap("EnduranceTask").Disable();
         input.actions.FindActionMap("Player").Enable();
@@ -83,7 +84,13 @@ public class EnduranceTaskSystem : MonoBehaviour
         {
             FindObjectOfType<EnduranceTaskTrigger>().hasBeenActivated = false;
         }
+        else
+        {
+            FindObjectOfType<EnduranceTaskTrigger>().onFinish?.Invoke();
+        }
 
         Destroy(player);
+
+        return null;
     }
 }

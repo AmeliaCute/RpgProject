@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2217b4e92e655364a9babffeab6b7f58, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ec4b07884a0c834fa3cffa2edb488c6, type: 3}
   m_Name: Miner
   m_EditorClassIdentifier: 
   name: miner
   description: 
   maxLevel: 18
-  baseLevelExp: 0
   levelExp: 
   quests:
   - {fileID: 11400000, guid: 407a1763bc2ff3647b078d16e7b78c48, type: 2}

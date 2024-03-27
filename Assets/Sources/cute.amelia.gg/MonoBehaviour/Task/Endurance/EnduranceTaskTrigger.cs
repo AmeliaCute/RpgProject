@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class EnduranceTaskTrigger : MonoBehaviour
@@ -11,6 +12,8 @@ public class EnduranceTaskTrigger : MonoBehaviour
     [SerializeField] private int jobRequire;
     [SerializeField] private QuestObjective quest;
     [SerializeField] private bool connectToQuest = true;
+    public UnityEvent onFinish;
+
     private Player player;
     private JobManager jobManager;
 

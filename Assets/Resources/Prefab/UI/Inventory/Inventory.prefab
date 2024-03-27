@@ -1191,6 +1191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 3005644266458278420}
+  background: {fileID: 2951657980246779474}
   title: {fileID: 281828459979436933}
   description: {fileID: 3008142881727161509}
   MainStat: {fileID: 3202944922825294738}
@@ -1701,7 +1702,7 @@ PrefabInstance:
     - target: {fileID: 6892193588195319437, guid: 1d7c8dd0f0e1bf944913e419a0481299,
         type: 3}
       propertyPath: category
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8970838066747710331, guid: 1d7c8dd0f0e1bf944913e419a0481299,
         type: 3}
@@ -1836,7 +1837,7 @@ PrefabInstance:
     - target: {fileID: 6892193588195319437, guid: 1d7c8dd0f0e1bf944913e419a0481299,
         type: 3}
       propertyPath: category
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2239,7 +2240,7 @@ PrefabInstance:
     - target: {fileID: 6892193588195319437, guid: 1d7c8dd0f0e1bf944913e419a0481299,
         type: 3}
       propertyPath: category
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

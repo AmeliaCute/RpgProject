@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2217b4e92e655364a9babffeab6b7f58, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ec4b07884a0c834fa3cffa2edb488c6, type: 3}
   m_Name: Tank
   m_EditorClassIdentifier: 
-  name: tank
+  name: 
   description: 
   maxLevel: 0
-  baseLevelExp: 0
+  levelExp: 
+  quests: []

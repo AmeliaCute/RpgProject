@@ -9,13 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c29c74b011af6a44da4e271cba8181ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 0bf889c0dfa30484a8d9da1bb00e3d50, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
   flag:
   - itemName: Cute sword
     icon: {fileID: 21300000, guid: 5ca7513e651a50649b9ace5b46d8bb73, type: 3}
     description: this is a cute sword :333333333333333
+    itemRarity: 2
     attribute:
     - name: Damage
       value: 545

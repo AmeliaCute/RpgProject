@@ -49,9 +49,7 @@ public class JobManager : MonoBehaviour
         if(quest.finished == false && quest.objectives.currentAmount >= quest.objectives.targetAmount)
         {
             quest.finished = true;
-            Debug.Log("Quest: " + quest.questName + " finished");
-            Instantiate(Resources.Load<GameObject>("Prefab/Ui/QuestNotifications"), GameObject.FindGameObjectsWithTag("CANVAS")[0].GetComponent<Canvas>().transform).GetComponent<QuestNotif>().Setup(QuestStateType.QUEST_STATE_COMPLETED, quest.questName);
-            
+            Debug.Log("Quest: " + quest.questName + " finished");            
         }
     }
 

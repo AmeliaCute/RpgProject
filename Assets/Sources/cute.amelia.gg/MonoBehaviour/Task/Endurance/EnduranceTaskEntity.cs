@@ -21,7 +21,6 @@ public class EnduranceTaskEntity : MonoBehaviour
 
     public void OnDeath()
     {
-        animator.Play("OreDeath");
         GameObject drop = Instantiate(Resources.Load<GameObject>("Prefab/PseudoEntity/DropableTest"));
         drop.GetComponent<DropTest>().items = itemInstance;
         drop.transform.position = new(transform.position.x, 0.3f, transform.position.z);

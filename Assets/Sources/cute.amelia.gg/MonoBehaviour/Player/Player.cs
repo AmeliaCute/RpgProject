@@ -12,6 +12,7 @@ public class Player : Entity
     [SerializeField] private InputActionReference exit;
     [SerializeField] private float TargetAngleSmoothTime = 0.1f;
     public JobManager jobManager;
+    public QuestManager questManager;
     private float TargetAngleSmoothVelocity;
 
     void Update()

@@ -730,7 +730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 0.8509804}
+  m_Color: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -862,7 +862,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 37.285713, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2276548807540161869
@@ -1002,16 +1002,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8552715271970354167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd651dc3e59267489ef9c01eab2ee13, type: 3}
+  m_Script: {fileID: 11500000, guid: 367433d0c307105499ab96ab54f49c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   use: {fileID: -4799303103845280608, guid: b0e4413db341c0b4892575a7d9005626, type: 3}
   panel: {fileID: 3169033881572875044}
   cameraLooker: {fileID: 3692481524089115617}
   items:
-    itemType: {fileID: 11400000, guid: 295fd4a80d252d14b983a733c841d85a, type: 2}
-    quantity: 2690
-    flag: 1
+    itemType: {fileID: 0}
+    quantity: 0
+    flag: 0
   infinite: 0
   isTrigger: 0
 --- !u!198 &7611909448682452405
