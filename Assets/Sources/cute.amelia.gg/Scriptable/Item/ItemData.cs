@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
 
-[CreateAssetMenu]
+[System.Serializable, CreateAssetMenu(menuName = "RpgProject/ItemData")]
 public class ItemData : ScriptableObject
 {   
     public List<ItemFlag> flag;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "RpgProject/QuestObjective")]
+[System.Serializable, CreateAssetMenu(menuName = "RpgProject/QuestObjective")]
 public class QuestObjective : ScriptableObject
 {
     public string customName = null;

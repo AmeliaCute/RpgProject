@@ -11,8 +11,8 @@ public class Player : Entity
     [SerializeField] private InputActionReference movement;
     [SerializeField] private InputActionReference exit;
     [SerializeField] private float TargetAngleSmoothTime = 0.1f;
-    public JobManager jobManager;
-    public QuestManager questManager;
+    [SerializeField] private JobManager jobManager;
+    [SerializeField] private QuestManager questManager;
     private float TargetAngleSmoothVelocity;
 
     void Update()
@@ -51,6 +51,7 @@ public class Player : Entity
         }
     }
     
+    //NOTE - Useless ngl but maybe one day :)
     public void CopyStateFrom(Player otherPlayer)
     {
         rigidbody = otherPlayer.rigidbody;

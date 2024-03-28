@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Test1
   m_EditorClassIdentifier: 
   customName: Ore
+  actionDescription: 
   currentAmount: 1
   targetAmount: 1
+  hidden: 0

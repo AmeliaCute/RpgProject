@@ -19,27 +19,21 @@ public class JobManager : MonoBehaviour
     {
         EnduranceTaskSystem.OnEnduranceTaskCompleteEvent += PublishUpdate;
     }
-    
 
     public void PublishUpdate(QuestObjective quest, int offset)
     {
         JobInstance job = jobs[offset];
-        for(int i = 0; i < job.jobData.quests.Length; i++)
+        JobQuest jQuest = job.jobData.quests.Find(x => x.objectives == quest);
+        if(jQuest != null)
         {
-            Debug.Log("Comparing: " + job.jobData.quests[i].questName + " with " + quest.name);
-
-            if(job.jobData.quests[i].questName == quest.name)
-            {   
-                if(!job.jobData.quests[i].finished)
-                {
-                    jobs[offset].jobData.quests[i].objectives = quest;
-                    QuestChecking(jobs[offset].jobData.quests[i]);
-                }
-                else 
-                    Debug.LogWarning("JobManager: PublishUpdate: Quest already finished");
-
-                return;
+            if(!jQuest.finished)
+            {
+                jQuest.objectives = quest;
+                QuestChecking(jQuest);
             }
+            else 
+                Debug.LogWarning("JobManager: PublishUpdate: Quest already finished");
+            return;
         }
         Debug.LogError("JobManager: HandleCallback: Quest not found");
     }

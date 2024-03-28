@@ -17,7 +17,8 @@ MonoBehaviour:
   Rarity: 1
   Objectives:
   - {fileID: 11400000, guid: dfdc24643ce46f744ba7343348b55746, type: 2}
+  - {fileID: 11400000, guid: 59a815f071169fc4db52d82459f81eaa, type: 2}
   Step: 1
-  isFinished: 1
+  isFinished: 0
   UnlockCondition: []
   isInstantUnlockAfterMetCondition: 0

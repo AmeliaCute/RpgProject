@@ -8,6 +8,8 @@ public class EnduranceTaskSystem : MonoBehaviour
     [SerializeField] private EnduranceTaskEntity entity;
     [SerializeField] private EnduranceTaskPlayer player;
     [SerializeField] private int jobRequire;
+
+    //TODO - Make JobQuestObjectiveInteraction system:
     [SerializeField] private QuestObjective quest;
     [SerializeField] private bool ConnectToQuest = true;
 
@@ -18,7 +20,7 @@ public class EnduranceTaskSystem : MonoBehaviour
     private Player playerInstance;
     private GameObject playerGameObject;
 
-    private float attackCooldown = 1f;
+    private float attackCooldown = .55f;
     private float CurrentCooldown;
 
     void OnEnable()
@@ -81,13 +83,9 @@ public class EnduranceTaskSystem : MonoBehaviour
         }
 
         if(abort)
-        {
             FindObjectOfType<EnduranceTaskTrigger>().hasBeenActivated = false;
-        }
         else
-        {
             FindObjectOfType<EnduranceTaskTrigger>().onFinish?.Invoke();
-        }
 
         Destroy(player);
 

@@ -18,4 +18,4 @@ MonoBehaviour:
   experienceReward: 110
   goldReward: 110
   objectives: {fileID: 11400000, guid: a69d0038ef19cde438daec6e0df503c9, type: 2}
-  finished: 1
+  finished: 0

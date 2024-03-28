@@ -1,6 +1,7 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "RpgProject/JobData")] 
+[System.Serializable, CreateAssetMenu(menuName = "RpgProject/JobData")] 
 public class JobData : ScriptableObject
 {
     public new string name;
@@ -9,6 +10,6 @@ public class JobData : ScriptableObject
     [Range(1,20)]
     public int maxLevel;
     public int[] levelExp;
-    public JobQuest[] quests;
+    public List<JobQuest> quests;
 
 }

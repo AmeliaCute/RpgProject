@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "RpgProject/Quest")]
+[System.Serializable, CreateAssetMenu(menuName = "RpgProject/Quest")]
 public class Quest : ScriptableObject
 {
     public string Name;
